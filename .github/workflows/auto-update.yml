@@ -16,10 +16,10 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
         with:
           persist-credentials: false
-      - uses: actions/setup-python@v5
+      - uses: actions/setup-python@v6
         with:
           python-version: '3.12'
           cache: pip
@@ -28,7 +28,24 @@ jobs:
       - run: python scripts/verify_release.py
       - name: Run complete read-only URL sweep on pull requests
         if: github.event_name == 'pull_request'
-        run: python scripts/update_index.py --dry-run
+        shell: bash
+        run: |
+          report=$(mktemp)
+          trap 'rm -f "$report"' EXIT
+          result=0
+          python scripts/update_index.py --dry-run >"$report" 2>&1 || result=$?
+          cat "$report"
+          if (( result != 0 )); then
+            error=$(tail -n 45 "$report")
+            error=${error//%/%25}
+            error=${error//$'\r'/%0D}
+            error=${error//$'\n'/%0A}
+            echo "::error title=URL sweep failed::$error"
+            exit "$result"
+          fi
+          summary=$(grep '^Verdict totals:' "$report")
+          echo "::notice title=URL sweep::$summary"
+          sed '/^## All probe results/,$d' "$report" >> "$GITHUB_STEP_SUMMARY"
 
   update:
     name: Refresh the index on main
@@ -42,10 +59,10 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 15
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
         with:
           ref: main
-      - uses: actions/setup-python@v5
+      - uses: actions/setup-python@v6
         with:
           python-version: '3.12'
           cache: pip
