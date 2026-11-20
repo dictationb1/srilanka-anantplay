@@ -43,9 +43,14 @@ jobs:
             echo "::error title=URL sweep failed::$error"
             exit "$result"
           fi
-          summary=$(grep '^Verdict totals:' "$report")
+          summary=$(sed '/^## All probe results/,$d' "$report")
+          summary=${summary//%/%25}
+          summary=${summary//$'\n'/%0A}
           echo "::notice title=URL sweep::$summary"
-          sed '/^## All probe results/,$d' "$report" >> "$GITHUB_STEP_SUMMARY"
+          while IFS= read -r missing; do
+            echo "::notice title=Missing URL observation::${missing//%/%25}"
+          done < <(sed '/^## All probe results/,$!d; /^--- a\//,$d' "$report" | grep -E ' \| (missing|dns-not-found|non-hls) \|' || true)
+          sed '/^--- a\//,$d' "$report" >> "$GITHUB_STEP_SUMMARY"
 
   update:
     name: Refresh the index on main

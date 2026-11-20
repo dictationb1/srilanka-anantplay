@@ -267,7 +267,7 @@ def make_playlist(channels, selected, group_by):
 
 
 def render_status(channels, selected, results, policy, stamp):
-    manifests = {s['url'] for s, r in results.items() if s.kind == 'stream' and r.verdict == 'manifest'}
+    manifests = {e.url for e, r in results.items() if e.kind == 'stream' and r.verdict == 'manifest'}
     published_channels = sum(any(s['url'] in selected for s in c['streams']) for c in channels)
     confirmed_channels = sum(any(s['url'] in manifests & selected for s in c['streams']) for c in channels)
     site_http = sum(results[Endpoint('site', c['site'])].code == 200 for c in channels)

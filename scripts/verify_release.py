@@ -14,7 +14,7 @@ import yaml
 
 from update_index import (CATEGORIES, GENERATED, LANGUAGES, PLAYLISTS, RAW, ROOT, SITE_FILE,
                           Endpoint, Result, build_index, classify_http, endpoint_inventory,
-                          load_catalog, load_json, probe, render_outputs,
+                          load_catalog, load_json, probe, render_outputs, render_status,
                           require, select_streams, stream_endpoint, url_ok)
 
 MAJORS = set('TVDerana AdaDerana24x7 SirasaTV TV1 Swarnavahini HiruTV Rupavahini ChannelEye '
@@ -211,6 +211,15 @@ class HealthTests(unittest.TestCase):
         selected, message = select_streams(self.catalog, self.results, self.previous)
         self.assertGreaterEqual(selected, self.previous)
         self.assertIn('exceeded 20%', message)
+
+    def test_successful_sweep_records_published_manifest_and_site(self):
+        target = 'https://sites.invalid/live'
+        channels = [dict(self.catalog[0], site=target)]
+        stream = stream_endpoint(self.streams[0])
+        results = {stream: Result(200, 'manifest'), Endpoint('site', target): Result(200, 'reachable')}
+        report = render_status(channels, {stream.url}, results, 'test policy', '2026-11-20T12:00:00+05:30')
+        self.assertIn('Published IPTV manifests verified this run: **1** across **1** channels.', report)
+        self.assertIn('Primary site HTTP 200 responses: **1/1**;', report)
 
     def test_individual_failure_geo_dns_and_manual_override(self):
         protected = next(s for s in self.streams if s['keep_if_missing'])
