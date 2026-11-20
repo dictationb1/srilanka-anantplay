@@ -1,0 +1,744 @@
+{
+  "rows": {
+    "live": [
+      {
+        "name": "Rupavahini Live",
+        "url": "https://tv.rupavahini.lk/rupavahini-live-webcast",
+        "mirrors": [
+          "https://www.youtube.com/@rupavahiniLiveStream/live"
+        ],
+        "tags": [
+          "Sinhala",
+          "General",
+          "Official"
+        ],
+        "group": "Sri Lanka Live TV",
+        "pick": true,
+        "index": 1
+      },
+      {
+        "name": "Channel Eye Live",
+        "url": "https://channeleye.lk/rupavahini-live-webcast/",
+        "mirrors": [
+          "https://www.youtube.com/@ChannelEyeRupavahini/live"
+        ],
+        "tags": [
+          "Sinhala",
+          "General",
+          "Official"
+        ],
+        "group": "Sri Lanka Live TV",
+        "pick": true,
+        "index": 2
+      },
+      {
+        "name": "ITN Live",
+        "url": "https://itn.lk/live",
+        "mirrors": [
+          "https://www.youtube.com/@ITNSriLanka/live"
+        ],
+        "tags": [
+          "Sinhala",
+          "General",
+          "Official"
+        ],
+        "group": "Sri Lanka Live TV",
+        "pick": true,
+        "index": 3
+      },
+      {
+        "name": "TV Derana Live",
+        "url": "https://www.derana.lk/live/index.php",
+        "mirrors": [
+          "https://www.youtube.com/@TVDeranaLIVE/live"
+        ],
+        "tags": [
+          "Sinhala",
+          "General",
+          "Official"
+        ],
+        "group": "Sri Lanka Live TV",
+        "pick": true,
+        "index": 4
+      },
+      {
+        "name": "Ada Derana 24x7 Live",
+        "url": "https://www.youtube.com/@AdaDerana_24/live",
+        "mirrors": [
+          "https://www.adaderana.lk/"
+        ],
+        "tags": [
+          "Sinhala",
+          "News",
+          "Official"
+        ],
+        "group": "Sri Lanka Live TV",
+        "pick": true,
+        "index": 5
+      },
+      {
+        "name": "Sirasa TV Live",
+        "url": "https://live.sirasatv.lk/",
+        "mirrors": [
+          "https://www.youtube.com/@SirasaTV/live"
+        ],
+        "tags": [
+          "Sinhala",
+          "General",
+          "Official"
+        ],
+        "group": "Sri Lanka Live TV",
+        "pick": true,
+        "index": 6
+      },
+      {
+        "name": "TV 1 Live",
+        "url": "https://www.youtube.com/@TV1SriLanka/live",
+        "mirrors": [
+          "http://tv1.lk/"
+        ],
+        "tags": [
+          "Sinhala",
+          "News",
+          "Official"
+        ],
+        "group": "Sri Lanka Live TV",
+        "pick": true,
+        "index": 7
+      },
+      {
+        "name": "News1st Live",
+        "url": "https://www.newsfirst.lk/live",
+        "mirrors": [],
+        "tags": [
+          "Sinhala",
+          "News",
+          "Official"
+        ],
+        "group": "Sri Lanka Live TV",
+        "pick": true,
+        "index": 8
+      },
+      {
+        "name": "Hiru TV Live",
+        "url": "https://www.hirutv.lk/hirulive.php",
+        "mirrors": [
+          "https://www.youtube.com/channel/UC5II-XiFOAMHfqIcdH3JOXQ/live"
+        ],
+        "tags": [
+          "Sinhala",
+          "Entertainment",
+          "Official"
+        ],
+        "group": "Sri Lanka Live TV",
+        "pick": true,
+        "index": 9
+      },
+      {
+        "name": "Swarnavahini Live",
+        "url": "https://www.youtube.com/channel/UCaIc6SgS90ud_RgMSC6hW_w/live",
+        "mirrors": [
+          "https://www.swarnavahini.lk/"
+        ],
+        "tags": [
+          "Sinhala",
+          "Entertainment",
+          "Official"
+        ],
+        "group": "Sri Lanka Live TV",
+        "pick": true,
+        "index": 10
+      },
+      {
+        "name": "Siyatha TV Live",
+        "url": "https://siyathatv.lk/live",
+        "mirrors": [
+          "https://www.youtube.com/@SiyathaTVOfficial/live"
+        ],
+        "tags": [
+          "Sinhala",
+          "Entertainment",
+          "Official"
+        ],
+        "group": "Sri Lanka Live TV",
+        "pick": true,
+        "index": 11
+      },
+      {
+        "name": "TNL TV Live",
+        "url": "http://tnltv.lk/tv.html",
+        "mirrors": [
+          "https://www.youtube.com/channel/UCgFK94EtfymL9AvhxQucaTw/live"
+        ],
+        "tags": [
+          "Sinhala",
+          "General",
+          "Official"
+        ],
+        "group": "Sri Lanka Live TV",
+        "pick": true,
+        "index": 12
+      },
+      {
+        "name": "Ahasa TV Live",
+        "url": "https://ahasatv.lk/",
+        "mirrors": [
+          "https://www.youtube.com/@AhasaTVOfficial/live"
+        ],
+        "tags": [
+          "Sinhala",
+          "Religious",
+          "Official"
+        ],
+        "group": "Sri Lanka Live TV",
+        "pick": true,
+        "index": 13
+      },
+      {
+        "name": "Jaya TV Live",
+        "url": "https://www.jayatv.lk/live",
+        "mirrors": [],
+        "tags": [
+          "Sinhala",
+          "Religious",
+          "Official"
+        ],
+        "group": "Sri Lanka Live TV",
+        "pick": true,
+        "index": 14
+      },
+      {
+        "name": "Charana TV Live",
+        "url": "https://www.charanatv.lk/watch-live",
+        "mirrors": [],
+        "tags": [
+          "Sinhala",
+          "Education",
+          "Official"
+        ],
+        "group": "Sri Lanka Live TV",
+        "pick": true,
+        "index": 15
+      },
+      {
+        "name": "Rangiri TV Live",
+        "url": "https://rangirisrilanka.lk/tv/",
+        "mirrors": [
+          "https://www.youtube.com/@RangiriSrilankaTelevision/live"
+        ],
+        "tags": [
+          "Sinhala",
+          "Religious",
+          "Official"
+        ],
+        "group": "Sri Lanka Live TV",
+        "pick": true,
+        "index": 16
+      },
+      {
+        "name": "Shraddha TV Live",
+        "url": "https://www.shraddha.lk/",
+        "mirrors": [
+          "https://www.youtube.com/@ShraddhaTVLive/live"
+        ],
+        "tags": [
+          "Sinhala",
+          "Religious",
+          "Official"
+        ],
+        "group": "Sri Lanka Live TV",
+        "pick": true,
+        "index": 17
+      },
+      {
+        "name": "The Buddhist TV",
+        "url": "https://www.youtube.com/c/TheBuddhistTV",
+        "mirrors": [
+          "https://www.thebuddhist.tv/"
+        ],
+        "tags": [
+          "Sinhala",
+          "Religious",
+          "Official"
+        ],
+        "group": "Sri Lanka Live TV",
+        "pick": true,
+        "index": 18
+      },
+      {
+        "name": "Swarga TV Live",
+        "url": "https://www.youtube.com/@SwargaTV-Sri-Lanka/live",
+        "mirrors": [],
+        "tags": [
+          "Sinhala",
+          "Religious",
+          "Official"
+        ],
+        "group": "Sri Lanka Live TV",
+        "pick": true,
+        "index": 19
+      },
+      {
+        "name": "TV Didula Live",
+        "url": "https://www.youtube.com/c/TVDidula/live",
+        "mirrors": [],
+        "tags": [
+          "Sinhala",
+          "Religious",
+          "Official"
+        ],
+        "group": "Sri Lanka Live TV",
+        "pick": true,
+        "index": 20
+      },
+      {
+        "name": "Meth TV Live",
+        "url": "https://www.youtube.com/@MethTV/live",
+        "mirrors": [],
+        "tags": [
+          "Sinhala",
+          "Religious",
+          "Official"
+        ],
+        "group": "Sri Lanka Live TV",
+        "pick": true,
+        "index": 21
+      },
+      {
+        "name": "Verbum TV Live",
+        "url": "https://www.verbumtv.com/",
+        "mirrors": [],
+        "tags": [
+          "Sinhala",
+          "Religious",
+          "Official"
+        ],
+        "group": "Sri Lanka Live TV",
+        "pick": true,
+        "index": 22
+      },
+      {
+        "name": "Monara TV",
+        "url": "https://www.youtube.com/@monaratvlk/live",
+        "mirrors": [],
+        "tags": [
+          "Sinhala",
+          "Entertainment",
+          "Official"
+        ],
+        "group": "Sri Lanka Live TV",
+        "pick": true,
+        "index": 23
+      },
+      {
+        "name": "Haritha TV Live",
+        "url": "https://www.youtube.com/@HarithaTVLIVE/live",
+        "mirrors": [],
+        "tags": [
+          "Sinhala",
+          "Entertainment",
+          "Official"
+        ],
+        "group": "Sri Lanka Live TV",
+        "pick": true,
+        "index": 24
+      },
+      {
+        "name": "Ridee TV",
+        "url": "https://www.youtube.com/channel/UCDR8ZWHRheX5Y1jn5ZS1Vag/live",
+        "mirrors": [],
+        "tags": [
+          "Sinhala",
+          "Culture",
+          "Official"
+        ],
+        "group": "Sri Lanka Live TV",
+        "pick": true,
+        "index": 25
+      },
+      {
+        "name": "Knowledge TV",
+        "url": "https://www.youtube.com/@knowledgetv9248",
+        "mirrors": [],
+        "tags": [
+          "Sinhala",
+          "Education",
+          "Official"
+        ],
+        "group": "Sri Lanka Live TV",
+        "pick": true,
+        "index": 26
+      },
+      {
+        "name": "A Plus Kids TV",
+        "url": "https://www.apluskidstvsl.com/",
+        "mirrors": [
+          "https://www.youtube.com/@Apluskidstvofficial/live"
+        ],
+        "tags": [
+          "Sinhala",
+          "Kids",
+          "Official"
+        ],
+        "group": "Sri Lanka Live TV",
+        "pick": true,
+        "index": 27
+      },
+      {
+        "name": "Talent TV Live",
+        "url": "https://talenttv.lk/",
+        "mirrors": [],
+        "tags": [
+          "Sinhala",
+          "Sports",
+          "Official"
+        ],
+        "group": "Sri Lanka Live TV",
+        "pick": true,
+        "index": 28
+      },
+      {
+        "name": "ThePapare Live",
+        "url": "https://www.thepapare.com/live/",
+        "mirrors": [
+          "https://www.youtube.com/@thepapareofficial/live"
+        ],
+        "tags": [
+          "English",
+          "Sports",
+          "Official"
+        ],
+        "group": "Sri Lanka Live TV",
+        "pick": true,
+        "index": 29
+      },
+      {
+        "name": "Parliament TV Live",
+        "url": "https://www.parliament.lk/en/parliament-live/chamber-live",
+        "mirrors": [
+          "https://www.youtube.com/@ParliamentofSriLankaOfficial"
+        ],
+        "tags": [
+          "Sinhala",
+          "Legislative",
+          "Official"
+        ],
+        "group": "Sri Lanka Live TV",
+        "pick": true,
+        "index": 30
+      },
+      {
+        "name": "Vasantham TV Live",
+        "url": "https://vasantham.lk/",
+        "mirrors": [
+          "https://www.youtube.com/@VasanthamTV/live"
+        ],
+        "tags": [
+          "Tamil",
+          "General",
+          "Official"
+        ],
+        "group": "Sri Lanka Live TV",
+        "pick": true,
+        "index": 31
+      },
+      {
+        "name": "Nethra TV Live",
+        "url": "https://nethratv.lk/rupavahini-live-webcast/",
+        "mirrors": [
+          "https://www.youtube.com/@NethraTV/live"
+        ],
+        "tags": [
+          "Tamil",
+          "General",
+          "Official"
+        ],
+        "group": "Sri Lanka Live TV",
+        "pick": true,
+        "index": 32
+      },
+      {
+        "name": "Shakthi TV Live",
+        "url": "https://www.youtube.com/@ShakthiTVOfficial/live",
+        "mirrors": [
+          "https://shakthitv.lk/"
+        ],
+        "tags": [
+          "Tamil",
+          "General",
+          "Official"
+        ],
+        "group": "Sri Lanka Live TV",
+        "pick": true,
+        "index": 33
+      },
+      {
+        "name": "Athavan TV Live",
+        "url": "https://athavantv.com/live/new-stream.php",
+        "mirrors": [
+          "https://www.youtube.com/@AthavanTV/live"
+        ],
+        "tags": [
+          "Tamil",
+          "General",
+          "Official"
+        ],
+        "group": "Sri Lanka Live TV",
+        "pick": true,
+        "index": 34
+      },
+      {
+        "name": "Dan Tamil Oli Live",
+        "url": "https://www.youtube.com/c/DANTamilOli/live",
+        "mirrors": [
+          "https://www.dantv.lk/"
+        ],
+        "tags": [
+          "Tamil",
+          "General",
+          "Official"
+        ],
+        "group": "Sri Lanka Live TV",
+        "pick": true,
+        "index": 35
+      },
+      {
+        "name": "UTV Live",
+        "url": "https://www.youtube.com/@UTVHDLK/live",
+        "mirrors": [
+          "https://utv.lk/"
+        ],
+        "tags": [
+          "Tamil",
+          "General",
+          "Official"
+        ],
+        "group": "Sri Lanka Live TV",
+        "pick": true,
+        "index": 36
+      },
+      {
+        "name": "Star Tamil Live",
+        "url": "https://www.youtube.com/channel/UChDLy_EdNeFmw54sQqWVjfg/live",
+        "mirrors": [],
+        "tags": [
+          "Tamil",
+          "Movies",
+          "Official"
+        ],
+        "group": "Sri Lanka Live TV",
+        "pick": true,
+        "index": 37
+      },
+      {
+        "name": "Guru TV Live",
+        "url": "https://www.youtube.com/@GuruTVofficial/live",
+        "mirrors": [],
+        "tags": [
+          "Tamil",
+          "Education",
+          "Official"
+        ],
+        "group": "Sri Lanka Live TV",
+        "pick": true,
+        "index": 38
+      },
+      {
+        "name": "Yarl TV",
+        "url": "https://www.facebook.com/DanYarlTV",
+        "mirrors": [],
+        "tags": [
+          "Tamil",
+          "General",
+          "Official"
+        ],
+        "group": "Sri Lanka Live TV",
+        "pick": true,
+        "index": 39
+      },
+      {
+        "name": "Lankasri TV",
+        "url": "https://www.youtube.com/user/lankasrinews",
+        "mirrors": [
+          "https://lankasri.com/"
+        ],
+        "tags": [
+          "Tamil",
+          "News",
+          "Official"
+        ],
+        "group": "Sri Lanka Live TV",
+        "pick": true,
+        "index": 40
+      }
+    ]
+  },
+  "languages": {
+    "Sinhala": [
+      {
+        "name": "Rupavahini Live",
+        "url": "https://tv.rupavahini.lk/rupavahini-live-webcast"
+      },
+      {
+        "name": "Channel Eye Live",
+        "url": "https://channeleye.lk/rupavahini-live-webcast/"
+      },
+      {
+        "name": "ITN Live",
+        "url": "https://itn.lk/live"
+      },
+      {
+        "name": "TV Derana Live",
+        "url": "https://www.derana.lk/live/index.php"
+      },
+      {
+        "name": "Ada Derana 24x7 Live",
+        "url": "https://www.youtube.com/@AdaDerana_24/live"
+      },
+      {
+        "name": "Sirasa TV Live",
+        "url": "https://live.sirasatv.lk/"
+      },
+      {
+        "name": "TV 1 Live",
+        "url": "https://www.youtube.com/@TV1SriLanka/live"
+      },
+      {
+        "name": "News1st Live",
+        "url": "https://www.newsfirst.lk/live"
+      },
+      {
+        "name": "Hiru TV Live",
+        "url": "https://www.hirutv.lk/hirulive.php"
+      },
+      {
+        "name": "Swarnavahini Live",
+        "url": "https://www.youtube.com/channel/UCaIc6SgS90ud_RgMSC6hW_w/live"
+      },
+      {
+        "name": "Siyatha TV Live",
+        "url": "https://siyathatv.lk/live"
+      },
+      {
+        "name": "TNL TV Live",
+        "url": "http://tnltv.lk/tv.html"
+      },
+      {
+        "name": "Ahasa TV Live",
+        "url": "https://ahasatv.lk/"
+      },
+      {
+        "name": "Jaya TV Live",
+        "url": "https://www.jayatv.lk/live"
+      },
+      {
+        "name": "Charana TV Live",
+        "url": "https://www.charanatv.lk/watch-live"
+      },
+      {
+        "name": "Rangiri TV Live",
+        "url": "https://rangirisrilanka.lk/tv/"
+      },
+      {
+        "name": "Shraddha TV Live",
+        "url": "https://www.shraddha.lk/"
+      },
+      {
+        "name": "The Buddhist TV",
+        "url": "https://www.youtube.com/c/TheBuddhistTV"
+      },
+      {
+        "name": "Swarga TV Live",
+        "url": "https://www.youtube.com/@SwargaTV-Sri-Lanka/live"
+      },
+      {
+        "name": "TV Didula Live",
+        "url": "https://www.youtube.com/c/TVDidula/live"
+      },
+      {
+        "name": "Meth TV Live",
+        "url": "https://www.youtube.com/@MethTV/live"
+      },
+      {
+        "name": "Verbum TV Live",
+        "url": "https://www.verbumtv.com/"
+      },
+      {
+        "name": "Monara TV",
+        "url": "https://www.youtube.com/@monaratvlk/live"
+      },
+      {
+        "name": "Haritha TV Live",
+        "url": "https://www.youtube.com/@HarithaTVLIVE/live"
+      },
+      {
+        "name": "Ridee TV",
+        "url": "https://www.youtube.com/channel/UCDR8ZWHRheX5Y1jn5ZS1Vag/live"
+      },
+      {
+        "name": "Knowledge TV",
+        "url": "https://www.youtube.com/@knowledgetv9248"
+      },
+      {
+        "name": "A Plus Kids TV",
+        "url": "https://www.apluskidstvsl.com/"
+      },
+      {
+        "name": "Talent TV Live",
+        "url": "https://talenttv.lk/"
+      },
+      {
+        "name": "Parliament TV Live",
+        "url": "https://www.parliament.lk/en/parliament-live/chamber-live"
+      }
+    ],
+    "Tamil": [
+      {
+        "name": "Vasantham TV Live",
+        "url": "https://vasantham.lk/"
+      },
+      {
+        "name": "Nethra TV Live",
+        "url": "https://nethratv.lk/rupavahini-live-webcast/"
+      },
+      {
+        "name": "Shakthi TV Live",
+        "url": "https://www.youtube.com/@ShakthiTVOfficial/live"
+      },
+      {
+        "name": "Athavan TV Live",
+        "url": "https://athavantv.com/live/new-stream.php"
+      },
+      {
+        "name": "Dan Tamil Oli Live",
+        "url": "https://www.youtube.com/c/DANTamilOli/live"
+      },
+      {
+        "name": "UTV Live",
+        "url": "https://www.youtube.com/@UTVHDLK/live"
+      },
+      {
+        "name": "Star Tamil Live",
+        "url": "https://www.youtube.com/channel/UChDLy_EdNeFmw54sQqWVjfg/live"
+      },
+      {
+        "name": "Guru TV Live",
+        "url": "https://www.youtube.com/@GuruTVofficial/live"
+      },
+      {
+        "name": "Yarl TV",
+        "url": "https://www.facebook.com/DanYarlTV"
+      },
+      {
+        "name": "Lankasri TV",
+        "url": "https://www.youtube.com/user/lankasrinews"
+      }
+    ],
+    "English": [
+      {
+        "name": "ThePapare Live",
+        "url": "https://www.thepapare.com/live/"
+      }
+    ]
+  }
+}
