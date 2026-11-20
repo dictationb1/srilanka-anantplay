@@ -1,2 +1,2 @@
-Sri Lanka IPTV Channels|https://raw.githubusercontent.com/YOUR_USERNAME/srilanka-anantplay/main/srilanka_category.m3u
-Sri Lanka Official Live TV Sites|https://raw.githubusercontent.com/YOUR_USERNAME/srilanka-anantplay/main/srilanka_sites.json
+Sri Lanka IPTV Channels|https://raw.githubusercontent.com/dictationb1/srilanka-anantplay/main/srilanka_category.m3u
+Sri Lanka Official Live TV Sites|https://raw.githubusercontent.com/dictationb1/srilanka-anantplay/main/srilanka_sites.json

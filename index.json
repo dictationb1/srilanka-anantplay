@@ -6,8 +6,8 @@
       "name": "Sri Lanka IPTV Channels",
       "description": "Verified public Free-To-Air Sri Lankan TV streams (M3U8)",
       "type": "playlist",
-      "url": "https://raw.githubusercontent.com/YOUR_USERNAME/srilanka-anantplay/main/srilanka_category.m3u",
-      "languages": "https://raw.githubusercontent.com/YOUR_USERNAME/srilanka-anantplay/main/srilanka_language.m3u",
+      "url": "https://raw.githubusercontent.com/dictationb1/srilanka-anantplay/main/srilanka_category.m3u",
+      "languages": "https://raw.githubusercontent.com/dictationb1/srilanka-anantplay/main/srilanka_language.m3u",
       "adult": false
     },
     {
@@ -15,7 +15,7 @@
       "name": "Sri Lanka Official Live TV Sites",
       "description": "Official broadcaster live web pages for AnantPlay native stream extraction",
       "type": "sites",
-      "url": "https://raw.githubusercontent.com/YOUR_USERNAME/srilanka-anantplay/main/srilanka_sites.json",
+      "url": "https://raw.githubusercontent.com/dictationb1/srilanka-anantplay/main/srilanka_sites.json",
       "adult": false
     }
   ]
