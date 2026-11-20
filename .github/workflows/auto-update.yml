@@ -47,9 +47,23 @@ jobs:
           summary=${summary//%/%25}
           summary=${summary//$'\n'/%0A}
           echo "::notice title=URL sweep::$summary"
-          while IFS= read -r missing; do
-            echo "::notice title=Missing URL observation::${missing//%/%25}"
-          done < <(sed '/^## All probe results/,$!d; /^--- a\//,$d' "$report" | grep -E ' \| (missing|dns-not-found|non-hls) \|' || true)
+          # Batch annotations to stay beneath GitHub's per-step count limit.
+          page=0
+          rows=0
+          batch=''
+          while IFS= read -r row; do
+            batch+="${row//%/%25}%0A"
+            rows=$((rows + 1))
+            if (( rows == 35 )); then
+              page=$((page + 1))
+              echo "::notice title=URL outcomes page $page::$batch"
+              rows=0
+              batch=''
+            fi
+          done < <(sed '/^## All probe results/,$!d; /^--- a\//,$d' "$report" | grep -E '^\| (raw|stream|site|logo) \|')
+          if (( rows > 0 )); then
+            echo "::notice title=URL outcomes page $((page + 1))::$batch"
+          fi
           sed '/^--- a\//,$d' "$report" >> "$GITHUB_STEP_SUMMARY"
 
   update:

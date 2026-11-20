@@ -192,10 +192,9 @@
       },
       {
         "name": "Vasantham TV",
-        "url": "https://vasantham.lk/live/",
+        "url": "https://vasantham.lk/",
         "mirrors": [
-          "https://www.youtube.com/@VasanthamTV/live",
-          "https://vasantham.lk/"
+          "https://www.youtube.com/@VasanthamTV/live"
         ],
         "tags": [
           "Tamil"
@@ -1746,10 +1745,9 @@
       },
       {
         "name": "Vasantham TV",
-        "url": "https://vasantham.lk/live/",
+        "url": "https://vasantham.lk/",
         "mirrors": [
-          "https://www.youtube.com/@VasanthamTV/live",
-          "https://vasantham.lk/"
+          "https://www.youtube.com/@VasanthamTV/live"
         ],
         "tags": [
           "Tamil"

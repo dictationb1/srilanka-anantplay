@@ -77,12 +77,10 @@
       "language": "Tamil",
       "logo": "https://yt3.googleusercontent.com/iCs5N08qJLhTPcbDTDGi8-xH-ogFJV0RWBMLzPo_zji6XnnYTPbo2K6Lyhq_9fkUiACT8xkL=s900-c-k-c0x00ffffff-no-rj",
       "streams": [],
-      "site": "https://vasantham.lk/live/",
+      "site": "https://vasantham.lk/",
       "youtube": "https://www.youtube.com/@VasanthamTV/live",
-      "mirrors": [
-        "https://vasantham.lk/"
-      ],
-      "note": ""
+      "mirrors": [],
+      "note": "Broadcaster live player is on the homepage; the previous /live/ path returned HTTP 404."
     },
     {
       "tvg_id": "ITN.lk",

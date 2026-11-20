@@ -1,6 +1,6 @@
 # Sri Lanka source health
 
-Run timestamp: 2026-11-20T20:09:40+05:30 (Sri Lanka Time, UTC+05:30)
+Run timestamp: 2026-11-20T20:15:04+05:30 (Sri Lanka Time, UTC+05:30)
 
 Index: `https://raw.githubusercontent.com/dictationb1/srilanka-anantplay/main/index.json`
 
@@ -8,7 +8,7 @@ Index: `https://raw.githubusercontent.com/dictationb1/srilanka-anantplay/main/in
 - Published IPTV entries in **each** playlist: **20** across **16** channels.
 - Published IPTV manifests verified this run: **0** across **0** channels.
 - Primary site HTTP 200 responses: **0/72**; not a live-video playback test.
-- Unique probe targets by kind, URL and Referer: **229**.
+- Unique probe targets by kind, URL and Referer: **228**.
 
 Safety guard active: no valid HLS manifests; retained all curated and previously published streams.
 
@@ -18,11 +18,11 @@ Results reflect the probing network only. HTTP 403/451 can indicate geo or other
 |---|---:|---:|---:|---:|---:|---:|
 | raw | 5 | 0 | 0 | 0 | 0 | 5 |
 | stream | 23 | 0 | 0 | 0 | 0 | 23 |
-| site | 135 | 0 | 0 | 0 | 0 | 135 |
+| site | 134 | 0 | 0 | 0 | 0 | 134 |
 | logo | 66 | 0 | 0 | 0 | 0 | 66 |
-| all | 229 | 0 | 0 | 0 | 0 | 229 |
+| all | 228 | 0 | 0 | 0 | 0 | 228 |
 
-Verdict totals: dns-not-found=8, network-error=1, tls-error=220
+Verdict totals: dns-not-found=8, network-error=1, tls-error=219
 
 ## All probe results
 
@@ -138,7 +138,6 @@ Verdict totals: dns-not-found=8, network-error=1, tls-error=220
 | site | `https://utv.lk/` | — | tls-error |  |
 | site | `https://varnamtv.com/` | — | tls-error |  |
 | site | `https://vasantham.lk/` | — | tls-error |  |
-| site | `https://vasantham.lk/live/` | — | tls-error |  |
 | site | `https://www.adaderana.lk/` | — | tls-error |  |
 | site | `https://www.apluskidstvsl.com/` | — | tls-error |  |
 | site | `https://www.asiatvnet.com/` | — | tls-error |  |
