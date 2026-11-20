@@ -71,10 +71,8 @@
       "streams": [],
       "site": "https://www.youtube.com/channel/UCB5aqOetGShRd8COycdf_PQ/live",
       "youtube": "",
-      "mirrors": [
-        "https://vasantham.lk/live/"
-      ],
-      "note": "vasantham.lk live page is JS/DDoS-Guard gated (200 for browsers, needs on-device WebView); YouTube /live mirror verified 200. direct_m3u8_status: none_public_web_only."
+      "mirrors": [],
+      "note": "Primary is the official YouTube live channel (HTTP 200). The vasantham.lk/live/ mirror returned confirmed HTTP 404 on 2026-11-20 and was removed; the site sits behind a DDoS-Guard interstitial for datacenter probes."
     },
     {
       "tvg_id": "ITN.lk",
@@ -188,7 +186,9 @@
           "note": "EBC proxy; DNS OK but connection times out from non-Asian networks (geo-routed). kept_if_missing because Sri Lankan playback is expected.",
           "published": true,
           "keep_if_missing": true,
-          "referer": "https://swarnavahini.lk/"
+          "referer": "https://swarnavahini.lk/",
+          "geo_restricted_sl": true,
+          "direct_m3u8_status": "geo_restricted_sl"
         }
       ],
       "site": "https://www.youtube.com/channel/UCaIc6SgS90ud_RgMSC6hW_w/live",
@@ -393,7 +393,9 @@
           "note": "yuppcdn Asia edge: DNS OK, TCP connect times out from US/EU networks. Listed by iptv-org (multi-region checks). kept_if_missing for Sri Lankan playback.",
           "published": true,
           "keep_if_missing": true,
-          "referer": ""
+          "referer": "",
+          "geo_restricted_sl": true,
+          "direct_m3u8_status": "geo_restricted_sl"
         }
       ],
       "site": "https://www.youtube.com/channel/UChDLy_EdNeFmw54sQqWVjfg/live",
@@ -478,7 +480,9 @@
           "note": "yuppcdn Asia edge: DNS OK, TCP connect times out from US/EU. kept_if_missing for Sri Lankan playback.",
           "published": true,
           "keep_if_missing": true,
-          "referer": ""
+          "referer": "",
+          "geo_restricted_sl": true,
+          "direct_m3u8_status": "geo_restricted_sl"
         }
       ],
       "site": "https://www.shraddha.lk/",
@@ -499,15 +503,15 @@
           "note": "yuppcdn Asia edge: DNS OK, TCP connect times out from US/EU. kept_if_missing for Sri Lankan playback.",
           "published": true,
           "keep_if_missing": true,
-          "referer": ""
+          "referer": "",
+          "geo_restricted_sl": true,
+          "direct_m3u8_status": "geo_restricted_sl"
         }
       ],
       "site": "https://www.youtube.com/channel/UCfQqHQ0uiF7OHo6peS-8Rsw/live",
       "youtube": "",
-      "mirrors": [
-        "https://www.thebuddhist.tv/live/"
-      ],
-      "note": "direct_m3u8_status: geo_restricted_sl (yuppcdn). thebuddhist.tv times out from US/EU runners (Asia-served); YT /live is primary."
+      "mirrors": [],
+      "note": "Direct HLS is served from an Asia-only yuppcdn edge (timeout from US/EU runners, retained as geo-restricted). Primary is the official YouTube live channel (HTTP 200); thebuddhist.tv/live/ returned confirmed HTTP 404 on 2026-11-20 and was removed."
     },
     {
       "tvg_id": "RangiriSriLanka.lk",
@@ -567,7 +571,9 @@
           "note": "yuppcdn Asia edge mirror; TCP timeout from US/EU. kept_if_missing for Sri Lankan playback.",
           "published": true,
           "keep_if_missing": true,
-          "referer": ""
+          "referer": "",
+          "geo_restricted_sl": true,
+          "direct_m3u8_status": "geo_restricted_sl"
         }
       ],
       "site": "https://www.verbumtv.com/",
@@ -636,7 +642,9 @@
           "note": "yuppcdn Asia edge: DNS OK, TCP connect times out from US/EU. kept_if_missing for Sri Lankan playback.",
           "published": true,
           "keep_if_missing": true,
-          "referer": ""
+          "referer": "",
+          "geo_restricted_sl": true,
+          "direct_m3u8_status": "geo_restricted_sl"
         }
       ],
       "site": "https://www.charanatv.lk/watch-live",
@@ -781,13 +789,15 @@
           "note": "Asia TV (LK) own host; DNS OK, TCP connect times out from US/EU (Asia-region edge). kept_if_missing for Sri Lankan playback.",
           "published": true,
           "keep_if_missing": true,
-          "referer": ""
+          "referer": "",
+          "geo_restricted_sl": true,
+          "direct_m3u8_status": "geo_restricted_sl"
         }
       ],
       "site": "https://stream.asiatvnet.com/",
       "youtube": "",
       "mirrors": [],
-      "note": "direct_m3u8_status: geo_restricted_sl. @AsiaTVLK on YouTube is an unrelated music-show channel (rejected this session); the broadcaster's own stream host is the online presence. Logo left empty: the only known logo URL times out."
+      "note": "The only public online presence is the broadcaster host stream.asiatvnet.com, which accepts Asian networks only. It failed TLS and the HLS feed timed out from the US GitHub runner on 2026-11-20, so the channel is retained as SL geo-restricted rather than removed: no alternative endpoint exists and no defunct evidence was found."
     },
     {
       "tvg_id": "NDTVLANKA.lk",
@@ -850,20 +860,12 @@
           "published": true,
           "keep_if_missing": false,
           "referer": ""
-        },
-        {
-          "url": "http://live.talenttv.lk:8080/hls/x8kd5n3tm8e8lsv/index.m3u8",
-          "quality": "720p",
-          "note": "Talent TV live host (plain http); verified 200 + #EXTM3U.",
-          "published": true,
-          "keep_if_missing": false,
-          "referer": ""
         }
       ],
       "site": "https://talenttv.lk/",
       "youtube": "https://www.youtube.com/channel/UCV4GLFGsZIw1bDfqgzlLNeA",
       "mirrors": [],
-      "note": "Two direct HLS endpoints verified; talenttv.lk verified 200."
+      "note": "Both endpoints were verified as HLS on 2026-11-20. The plaintext http://live.talenttv.lk:8080 mirror was removed as a redundant, insecure duplicate of the verified HTTPS cast.talenttv.lk stream, so every published URL is HTTPS-only."
     },
     {
       "tvg_id": "ChannelC.lk",
@@ -943,10 +945,8 @@
       "streams": [],
       "site": "https://www.youtube.com/channel/UCOtYyt7W5PmPnwQjWWF_Z-Q/live",
       "youtube": "",
-      "mirrors": [
-        "https://www.hirufm.lk/listen-live"
-      ],
-      "note": "'Hiru FM' ID-captured this session."
+      "mirrors": [],
+      "note": "Primary is the official YouTube live channel (HTTP 200). The hirufm.lk/listen-live mirror returned confirmed HTTP 404 on 2026-11-20 and was removed."
     },
     {
       "tvg_id": "ShaaFM.lk",

@@ -20,8 +20,6 @@ https://oj7lnxonyg82-hls-live.5centscdn.com/uks/24263a839810d2041a349baaeef36a79
 https://edge4-moblive.yuppcdn.net/trans1sd/smil:strtml19.smil/playlist.m3u8?dvr=
 #EXTINF:-1 tvg-id="TalentTV.lk@HD" tvg-name="Talent TV" tvg-logo="https://yt3.googleusercontent.com/2ZbQt_SH32MbRjqxfa7nEdcrbSZ-QCIjze1DhL_08vvvy0OSBHRCLpwhJLGOxD87gM3WfUNi6g=s900-c-k-c0x00ffffff-no-rj" group-title="Sports",Talent TV
 https://cast.talenttv.lk/hls/mcrlo1ygwpu8x4bj/index.m3u8
-#EXTINF:-1 tvg-id="TalentTV.lk@HD" tvg-name="Talent TV" tvg-logo="https://yt3.googleusercontent.com/2ZbQt_SH32MbRjqxfa7nEdcrbSZ-QCIjze1DhL_08vvvy0OSBHRCLpwhJLGOxD87gM3WfUNi6g=s900-c-k-c0x00ffffff-no-rj" group-title="Sports",Talent TV (Mirror 1)
-http://live.talenttv.lk:8080/hls/x8kd5n3tm8e8lsv/index.m3u8
 #EXTINF:-1 tvg-id="ShraddhaTV.lk@SD" tvg-name="Shraddha TV" tvg-logo="https://i.imgur.com/sZ3fEMi.png" group-title="Religious",Shraddha TV
 https://edge3-moblive.yuppcdn.net/drm1/smil:shraddhatvdrm.smil/index.m3u8
 #EXTINF:-1 tvg-id="TheBuddhist.lk@SD" tvg-name="The Buddhist TV" tvg-logo="https://i.imgur.com/DUzOKWM.png" group-title="Religious",The Buddhist TV

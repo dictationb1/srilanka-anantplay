@@ -1,17 +1,17 @@
 # Sri Lanka source health
 
-Run timestamp: 2026-11-20T21:43:56+05:30 (Sri Lanka Time, UTC+05:30)
+Run timestamp: 2026-11-20T21:46:46+05:30 (Sri Lanka Time, UTC+05:30)
 
 Index: `https://raw.githubusercontent.com/dictationb1/srilanka-anantplay/main/index.json`
 
 - Catalog channels / published site cards: **69 / 69**.
-- Published IPTV entries in **each** playlist: **19** across **15** channels.
+- Published IPTV entries in **each** playlist: **18** across **15** channels.
 - Published IPTV manifests verified this run: **0** across **0** channels.
 - Primary site HTTP 200 responses: **0/69**; not a live-video playback test.
-- Unique probe targets by kind, URL and Referer: **204**.
+- Unique probe targets by kind, URL and Referer: **200**.
 - Total direct IPTV channels in the **IPTV tab**: **15** (`srilanka_category.m3u` / `srilanka_language.m3u`).
 - Total official live TV channels in the **Home / Live Sites tab**: **69** (`srilanka_sites.json`).
-- Retained geo-restricted / timeout streams: **19** (listed below).
+- Retained geo-restricted / timeout streams: **18** (listed below).
 
 Safety guard active: no valid HLS manifests; retained all curated and previously published streams.
 
@@ -35,7 +35,6 @@ These curated Sri Lankan feeds resolve, but this probe runner sits outside Sri L
 | Siyatha TV | `https://rtmp01.voaplus.com/hls/6x6ik312qk4grfxocfcv.m3u8` | — | tls-error | SL Geo-Restricted / Timeout from US Runner (Retained) |
 | Star Tamil | `https://edge4-moblive.yuppcdn.net/trans1sd/smil:strtml19.smil/playlist.m3u8?dvr=` | — | tls-error | SL Geo-Restricted / Timeout from US Runner (Retained) |
 | Swarnavahini | `https://teledrama.ebc.lk/TTT/proxy.php` | — | tls-error | SL Geo-Restricted / Timeout from US Runner (Retained) |
-| Talent TV | `http://live.talenttv.lk:8080/hls/x8kd5n3tm8e8lsv/index.m3u8` | — | network-error | SL Geo-Restricted / Timeout from US Runner (Retained) |
 | Talent TV | `https://cast.talenttv.lk/hls/mcrlo1ygwpu8x4bj/index.m3u8` | — | tls-error | SL Geo-Restricted / Timeout from US Runner (Retained) |
 | The Buddhist TV | `https://edge3-moblive.yuppcdn.net/drm1/smil:thebuddhistdrm.smil/index.m3u8` | — | tls-error | SL Geo-Restricted / Timeout from US Runner (Retained) |
 | Verbum TV | `https://edge3-moblive.yuppcdn.net/drm1/smil:verbumtvdrm.smil/index.m3u8` | — | tls-error | SL Geo-Restricted / Timeout from US Runner (Retained) |
@@ -45,19 +44,90 @@ These curated Sri Lankan feeds resolve, but this probe runner sits outside Sri L
 
 Advisory only: only a confirmed HTTP 403/451/522/525/526 or TLS failure on a primary site is listed, and only when an official mirror answered HTTP 200 to this runner.
 
-No swap suggested: every primary that failed has no verified HTTP 200 mirror, or every primary answered.
+
+| Channel | Retained primary | Primary verdict | Action |
+|---|---|---|---|
+| A Plus Kids TV | `https://www.youtube.com/channel/UCeK7UyzG2P2Rd7Db91dfDEQ/live` | tls-error  | SL Geo-Restricted / Timeout from US Runner (Retained); no verified HTTP 200 alternative exists |
+| Ada Derana 24x7 | `https://www.youtube.com/channel/UCW_rA_jb-_vbZtU4cTpnT5Q/live` | tls-error  | SL Geo-Restricted / Timeout from US Runner (Retained); no verified HTTP 200 alternative exists |
+| Ahasa TV | `https://ahasatv.lk/` | tls-error  | SL Geo-Restricted / Timeout from US Runner (Retained); no verified HTTP 200 alternative exists |
+| AL Kuppiya TV | `https://www.youtube.com/channel/UCaI8gOmwQZJpganFN4-SZlg` | tls-error  | SL Geo-Restricted / Timeout from US Runner (Retained); no verified HTTP 200 alternative exists |
+| ART Television | `https://www.youtube.com/channel/UCQii5eghTJ5knI1_reM3xvg` | tls-error  | SL Geo-Restricted / Timeout from US Runner (Retained); no verified HTTP 200 alternative exists |
+| Asia TV | `https://stream.asiatvnet.com/` | tls-error  | SL Geo-Restricted / Timeout from US Runner (Retained); no verified HTTP 200 alternative exists |
+| Athavan TV | `https://athavantv.com/live/new-stream.php?w=100%25&h=390` | tls-error  | SL Geo-Restricted / Timeout from US Runner (Retained); no verified HTTP 200 alternative exists |
+| Capital TV | `https://www.youtube.com/channel/UC0_tgNvLgTJbcTSpuaQzcPg/live` | tls-error  | SL Geo-Restricted / Timeout from US Runner (Retained); no verified HTTP 200 alternative exists |
+| Channel C | `https://www.youtube.com/channel/UCcpIxAzRhFTR2aAZz-wpYng` | tls-error  | SL Geo-Restricted / Timeout from US Runner (Retained); no verified HTTP 200 alternative exists |
+| Channel Eye | `https://dammika.tulix.tv/iframe/plan1-a.php?s=slrc2&c=slrc2` | tls-error  | SL Geo-Restricted / Timeout from US Runner (Retained); no verified HTTP 200 alternative exists |
+| Channel One (MBC) | `https://www.youtube.com/channel/UCRyQB76ROvxKbcW4SOTUFcA` | tls-error  | SL Geo-Restricted / Timeout from US Runner (Retained); no verified HTTP 200 alternative exists |
+| Charana TV | `https://www.charanatv.lk/watch-live` | tls-error  | SL Geo-Restricted / Timeout from US Runner (Retained); no verified HTTP 200 alternative exists |
+| DAN Multi-Channel Live | `https://www.youtube.com/channel/UC2L1SsEmGrARu0LagZUPukA` | tls-error  | SL Geo-Restricted / Timeout from US Runner (Retained); no verified HTTP 200 alternative exists |
+| DAN News | `https://www.youtube.com/@DANNEWSTV/live` | tls-error  | SL Geo-Restricted / Timeout from US Runner (Retained); no verified HTTP 200 alternative exists |
+| DAN Tamil Oli | `https://www.youtube.com/channel/UCED67w-HOOpeWoY9vqzgyog/live` | tls-error  | SL Geo-Restricted / Timeout from US Runner (Retained); no verified HTTP 200 alternative exists |
+| Derana FM (Visual Radio) | `https://www.youtube.com/channel/UCYIPWw_op6ekQQAdlcrYTrA/live` | tls-error  | SL Geo-Restricted / Timeout from US Runner (Retained); no verified HTTP 200 alternative exists |
+| ETV | `https://www.youtube.com/channel/UC197_phntGZo8pgFNIW-jUw` | tls-error  | SL Geo-Restricted / Timeout from US Runner (Retained); no verified HTTP 200 alternative exists |
+| Gaja TV | `https://www.youtube.com/channel/UCOQM5Fb-JjqM61QqA-nlKCg/live` | tls-error  | SL Geo-Restricted / Timeout from US Runner (Retained); no verified HTTP 200 alternative exists |
+| Gold FM (Visual Radio) | `https://www.youtube.com/channel/UC8AMm5NxsMra2cjlewCb8QA/live` | tls-error  | SL Geo-Restricted / Timeout from US Runner (Retained); no verified HTTP 200 alternative exists |
+| Guru TV | `https://www.youtube.com/channel/UCOoCpNa2WliqrXOcOAMBpBQ/live` | tls-error  | SL Geo-Restricted / Timeout from US Runner (Retained); no verified HTTP 200 alternative exists |
+| Haritha TV | `https://www.youtube.com/channel/UCQLv6eVNJPfzw4AHP-2O5wQ/live` | tls-error  | SL Geo-Restricted / Timeout from US Runner (Retained); no verified HTTP 200 alternative exists |
+| Heritage TV | `https://www.youtube.com/channel/UCyxbER1SNYJ7ENSdzV1fQ-A` | tls-error  | SL Geo-Restricted / Timeout from US Runner (Retained); no verified HTTP 200 alternative exists |
+| Hiru FM (Visual Radio) | `https://www.youtube.com/channel/UCOtYyt7W5PmPnwQjWWF_Z-Q/live` | tls-error  | SL Geo-Restricted / Timeout from US Runner (Retained); no verified HTTP 200 alternative exists |
+| Hiru News | `https://www.youtube.com/channel/UCcDzc3CNB9g096rvxPb5Jdg/live` | tls-error  | SL Geo-Restricted / Timeout from US Runner (Retained); no verified HTTP 200 alternative exists |
+| Hiru TV | `https://www.hirutv.lk/hirulive.php` | tls-error  | SL Geo-Restricted / Timeout from US Runner (Retained); no verified HTTP 200 alternative exists |
+| IBC Tamil | `https://www.youtube.com/channel/UCwwBQhIa_bqhjC3OHAFOe-w/live` | tls-error  | SL Geo-Restricted / Timeout from US Runner (Retained); no verified HTTP 200 alternative exists |
+| Imai TV | `https://www.youtube.com/channel/UCuAsZtroEqW5tKYsb4IbpFA` | tls-error  | SL Geo-Restricted / Timeout from US Runner (Retained); no verified HTTP 200 alternative exists |
+| ITN | `https://www.youtube.com/channel/UCQTcNhAZidy1i9wwmdgf2Lw/live` | tls-error  | SL Geo-Restricted / Timeout from US Runner (Retained); no verified HTTP 200 alternative exists |
+| Jaya TV | `https://www.jayatv.lk/live` | tls-error  | SL Geo-Restricted / Timeout from US Runner (Retained); no verified HTTP 200 alternative exists |
+| Knowledge TV | `https://www.youtube.com/channel/UCT5jQx38HY6FVZUkg4XmofA` | tls-error  | SL Geo-Restricted / Timeout from US Runner (Retained); no verified HTTP 200 alternative exists |
+| Lakhanda (Visual Radio) | `https://www.youtube.com/channel/UCUs5-PFhqto4TzPC6ykYzIw/live` | tls-error  | SL Geo-Restricted / Timeout from US Runner (Retained); no verified HTTP 200 alternative exists |
+| Lankasri TV | `https://www.youtube.com/channel/UCZwrd_UhUk9_JXSC8eMYu9g/live` | tls-error  | SL Geo-Restricted / Timeout from US Runner (Retained); no verified HTTP 200 alternative exists |
+| Monara TV | `https://www.youtube.com/channel/UC5i6j8XFN-8uUBbu0rCwH4A/live` | tls-error  | SL Geo-Restricted / Timeout from US Runner (Retained); no verified HTTP 200 alternative exists |
+| NDTV Lanka | `https://www.youtube.com/channel/UC6YWhRiXB9AXQDcVpPtKslA/live` | tls-error  | SL Geo-Restricted / Timeout from US Runner (Retained); no verified HTTP 200 alternative exists |
+| Neth FM (Visual Radio) | `https://www.youtube.com/channel/UCqE4lfEdtS2A0mTsoBkyNpw/live` | tls-error  | SL Geo-Restricted / Timeout from US Runner (Retained); no verified HTTP 200 alternative exists |
+| Nethra TV | `https://www.youtube.com/channel/UC6b6XrsNOxQiS-FdfE8-Avw/live` | tls-error  | SL Geo-Restricted / Timeout from US Runner (Retained); no verified HTTP 200 alternative exists |
+| Newsfirst | `https://www.newsfirst.lk/live` | tls-error  | SL Geo-Restricted / Timeout from US Runner (Retained); no verified HTTP 200 alternative exists |
+| Parliament TV | `https://www.youtube.com/@ParliamentofSriLankaOfficial/streams` | tls-error  | SL Geo-Restricted / Timeout from US Runner (Retained); no verified HTTP 200 alternative exists |
+| Rangiri Sri Lanka TV | `https://www.youtube.com/channel/UCTlpgdx9M7Zi7SNexG2_Gfw/live` | tls-error  | SL Geo-Restricted / Timeout from US Runner (Retained); no verified HTTP 200 alternative exists |
+| Rhythm World (Visual Radio) | `https://www.youtube.com/channel/UCAfpnYCjpjXUyCG2TzuNmzQ/live` | tls-error  | SL Geo-Restricted / Timeout from US Runner (Retained); no verified HTTP 200 alternative exists |
+| Ridee TV | `https://www.youtube.com/channel/UCDR8ZWHRheX5Y1jn5ZS1Vag/live` | tls-error  | SL Geo-Restricted / Timeout from US Runner (Retained); no verified HTTP 200 alternative exists |
+| Rupavahini | `https://tv.rupavahini.lk/rupavahini-live-webcast` | tls-error  | SL Geo-Restricted / Timeout from US Runner (Retained); no verified HTTP 200 alternative exists |
+| Sarana TV | `https://www.youtube.com/channel/UC98ekB6ciaLZIEee-h93IgQ` | tls-error  | SL Geo-Restricted / Timeout from US Runner (Retained); no verified HTTP 200 alternative exists |
+| Shaa FM (Visual Radio) | `https://www.youtube.com/channel/UCwWwogHe02_iesos_QYyV3A/live` | tls-error  | SL Geo-Restricted / Timeout from US Runner (Retained); no verified HTTP 200 alternative exists |
+| Shakthi TV | `https://www.youtube.com/channel/UCjm7vbOwssao7Bhm9wX3-bw/live` | tls-error  | SL Geo-Restricted / Timeout from US Runner (Retained); no verified HTTP 200 alternative exists |
+| Shraddha TV | `https://www.shraddha.lk/` | tls-error  | SL Geo-Restricted / Timeout from US Runner (Retained); no verified HTTP 200 alternative exists |
+| Sirasa FM (Visual Radio) | `https://www.youtube.com/channel/UCsExZudI-3Bfi2ubAdwcgHw/live` | tls-error  | SL Geo-Restricted / Timeout from US Runner (Retained); no verified HTTP 200 alternative exists |
+| Sirasa TV | `https://www.youtube.com/channel/UCu3vWkFUnfddXnd0tsmmkkQ/live` | tls-error  | SL Geo-Restricted / Timeout from US Runner (Retained); no verified HTTP 200 alternative exists |
+| Siyatha FM (Visual Radio) | `https://www.youtube.com/channel/UCc30sTBdN9LRSxEuHaXV_bQ/live` | tls-error  | SL Geo-Restricted / Timeout from US Runner (Retained); no verified HTTP 200 alternative exists |
+| Siyatha News | `https://www.youtube.com/channel/UC8lKgUHo-2m1z6OoZB9CNmA/live` | tls-error  | SL Geo-Restricted / Timeout from US Runner (Retained); no verified HTTP 200 alternative exists |
+| Siyatha TV | `https://siyathatv.lk/live/` | tls-error  | SL Geo-Restricted / Timeout from US Runner (Retained); no verified HTTP 200 alternative exists |
+| Star Tamil | `https://www.youtube.com/channel/UChDLy_EdNeFmw54sQqWVjfg/live` | tls-error  | SL Geo-Restricted / Timeout from US Runner (Retained); no verified HTTP 200 alternative exists |
+| Sun FM (Visual Radio) | `https://www.youtube.com/channel/UCgj4AYKJHZCFjsG-0YqBbDQ/live` | tls-error  | SL Geo-Restricted / Timeout from US Runner (Retained); no verified HTTP 200 alternative exists |
+| Supreme TV | `https://www.youtube.com/channel/UCEuqtAYLS6nvKLUzQcV7lgA/live` | tls-error  | SL Geo-Restricted / Timeout from US Runner (Retained); no verified HTTP 200 alternative exists |
+| Swarga TV | `https://www.youtube.com/channel/UC-FHqQjZEz1bKvnU8zAT9kQ/live` | tls-error  | SL Geo-Restricted / Timeout from US Runner (Retained); no verified HTTP 200 alternative exists |
+| Swarnavahini | `https://www.youtube.com/channel/UCaIc6SgS90ud_RgMSC6hW_w/live` | tls-error  | SL Geo-Restricted / Timeout from US Runner (Retained); no verified HTTP 200 alternative exists |
+| Talent TV | `https://talenttv.lk/` | tls-error  | SL Geo-Restricted / Timeout from US Runner (Retained); no verified HTTP 200 alternative exists |
+| The Buddhist TV | `https://www.youtube.com/channel/UCfQqHQ0uiF7OHo6peS-8Rsw/live` | tls-error  | SL Geo-Restricted / Timeout from US Runner (Retained); no verified HTTP 200 alternative exists |
+| ThePapare TV | `https://www.thepapare.com/live/` | tls-error  | SL Geo-Restricted / Timeout from US Runner (Retained); no verified HTTP 200 alternative exists |
+| TNL TV | `https://www.youtube.com/channel/UCgFK94EtfymL9AvhxQucaTw/live` | tls-error  | SL Geo-Restricted / Timeout from US Runner (Retained); no verified HTTP 200 alternative exists |
+| TV 1 | `https://www.youtube.com/channel/UCoQXpCWew0Q3qz6buZYOAFg/live` | tls-error  | SL Geo-Restricted / Timeout from US Runner (Retained); no verified HTTP 200 alternative exists |
+| TV Derana | `https://www.youtube.com/channel/UCgUD68IjZ2XS0DqfmDuiTsA/live` | tls-error  | SL Geo-Restricted / Timeout from US Runner (Retained); no verified HTTP 200 alternative exists |
+| TV Didula | `https://www.youtube.com/channel/UCvQVUmJfQc-ov9cPaRcA3Rw/live` | tls-error  | SL Geo-Restricted / Timeout from US Runner (Retained); no verified HTTP 200 alternative exists |
+| UTV Tamil | `https://www.youtube.com/channel/UCu2CZBA74eIFLo5S7dN_1Ww/live` | tls-error  | SL Geo-Restricted / Timeout from US Runner (Retained); no verified HTTP 200 alternative exists |
+| Vasantham TV | `https://www.youtube.com/channel/UCB5aqOetGShRd8COycdf_PQ/live` | tls-error  | SL Geo-Restricted / Timeout from US Runner (Retained); no verified HTTP 200 alternative exists |
+| Verbum TV | `https://www.verbumtv.com/` | tls-error  | SL Geo-Restricted / Timeout from US Runner (Retained); no verified HTTP 200 alternative exists |
+| Y FM (Visual Radio) | `https://www.youtube.com/channel/UCQIRNmBsioZ0MelTT6PfuTg/live` | tls-error  | SL Geo-Restricted / Timeout from US Runner (Retained); no verified HTTP 200 alternative exists |
+| Yarl TV | `https://www.youtube.com/channel/UCCiNqOMFZvfLJoUs8qcNWmQ/live` | tls-error  | SL Geo-Restricted / Timeout from US Runner (Retained); no verified HTTP 200 alternative exists |
+| Yes FM (Visual Radio) | `https://www.youtube.com/channel/UCXFcukf9VvSWp731oQDJ7Bg/live` | tls-error  | SL Geo-Restricted / Timeout from US Runner (Retained); no verified HTTP 200 alternative exists |
 
 Results reflect the probing network only. HTTP 403/451 can indicate geo or other access restrictions. DNS, TLS and timeout results are not proof of a dead URL. An HLS header does not prove media segments, rights, DRM compatibility or playback. Raw links point to `main`, not the local candidate.
 
 | Target | Attempts | HTTP 200 | HTTP 403/451 | HTTP 404/410 | Other HTTP | No HTTP |
 |---|---:|---:|---:|---:|---:|---:|
 | raw | 5 | 0 | 0 | 0 | 0 | 5 |
-| stream | 22 | 0 | 0 | 0 | 0 | 22 |
-| site | 112 | 0 | 0 | 0 | 0 | 112 |
+| stream | 21 | 0 | 0 | 0 | 0 | 21 |
+| site | 109 | 0 | 0 | 0 | 0 | 109 |
 | logo | 65 | 0 | 0 | 0 | 0 | 65 |
-| all | 204 | 0 | 0 | 0 | 0 | 204 |
+| all | 200 | 0 | 0 | 0 | 0 | 200 |
 
-Verdict totals: network-error=1, tls-error=203
+Verdict totals: tls-error=200
 
 ## All probe results
 
@@ -160,11 +230,9 @@ Verdict totals: network-error=1, tls-error=203
 | site | `https://talenttv.lk/` | — | tls-error |  |
 | site | `https://tv.rupavahini.lk/rupavahini-live-webcast` | — | tls-error |  |
 | site | `https://tv1.lk/` | — | tls-error |  |
-| site | `https://vasantham.lk/live/` | — | tls-error |  |
 | site | `https://www.adaderana.lk/` | — | tls-error |  |
 | site | `https://www.charanatv.lk/watch-live` | — | tls-error |  |
 | site | `https://www.derana.lk/live/index.php` | — | tls-error |  |
-| site | `https://www.hirufm.lk/listen-live` | — | tls-error |  |
 | site | `https://www.hirunews.lk/` | — | tls-error |  |
 | site | `https://www.hirutv.lk/` | — | tls-error |  |
 | site | `https://www.hirutv.lk/hirulive.php` | — | tls-error |  |
@@ -174,7 +242,6 @@ Verdict totals: network-error=1, tls-error=203
 | site | `https://www.parliament.lk/en/parliament-live/chamber-live` | — | tls-error |  |
 | site | `https://www.rupavahini.lk/` | — | tls-error |  |
 | site | `https://www.shraddha.lk/` | — | tls-error |  |
-| site | `https://www.thebuddhist.tv/live/` | — | tls-error |  |
 | site | `https://www.thepapare.com/live/` | — | tls-error |  |
 | site | `https://www.verbumtv.com/` | — | tls-error |  |
 | site | `https://www.youtube.com/@DANNEWSTV/live` | — | tls-error |  |
@@ -245,7 +312,6 @@ Verdict totals: network-error=1, tls-error=203
 | site | `https://www.youtube.com/channel/UCwwBQhIa_bqhjC3OHAFOe-w/live` | — | tls-error |  |
 | site | `https://www.youtube.com/channel/UCyxbER1SNYJ7ENSdzV1fQ-A` | — | tls-error |  |
 | site | `https://www.youtube.com/channel/UCzbjAV5aqbJ790BcD3LkSJg/live` | — | tls-error |  |
-| stream | `http://live.talenttv.lk:8080/hls/x8kd5n3tm8e8lsv/index.m3u8` | — | network-error | ConnectionError; published |
 | stream | `https://183.giatvcdn.com/ssh101/ssh101/imaitv/chunks.m3u8` | — | tls-error | published |
 | stream | `https://ahasatv.lk/live-stream/rewind-3600.m3u8` | — | tls-error | not published |
 | stream | `https://cast.talenttv.lk/hls/mcrlo1ygwpu8x4bj/index.m3u8` | — | tls-error | published |

@@ -187,9 +187,7 @@
       {
         "name": "Vasantham TV",
         "url": "https://www.youtube.com/channel/UCB5aqOetGShRd8COycdf_PQ/live",
-        "mirrors": [
-          "https://vasantham.lk/live/"
-        ],
+        "mirrors": [],
         "tags": [
           "Tamil"
         ],
@@ -432,9 +430,7 @@
       {
         "name": "The Buddhist TV",
         "url": "https://www.youtube.com/channel/UCfQqHQ0uiF7OHo6peS-8Rsw/live",
-        "mirrors": [
-          "https://www.thebuddhist.tv/live/"
-        ],
+        "mirrors": [],
         "tags": [
           "Sinhala",
           "Religious"
@@ -800,9 +796,7 @@
       {
         "name": "Hiru FM (Visual Radio)",
         "url": "https://www.youtube.com/channel/UCOtYyt7W5PmPnwQjWWF_Z-Q/live",
-        "mirrors": [
-          "https://www.hirufm.lk/listen-live"
-        ],
+        "mirrors": [],
         "tags": [
           "Sinhala",
           "Visual Radio"
@@ -1199,9 +1193,7 @@
       {
         "name": "The Buddhist TV",
         "url": "https://www.youtube.com/channel/UCfQqHQ0uiF7OHo6peS-8Rsw/live",
-        "mirrors": [
-          "https://www.thebuddhist.tv/live/"
-        ],
+        "mirrors": [],
         "tags": [
           "Sinhala",
           "Religious"
@@ -1490,9 +1482,7 @@
       {
         "name": "Hiru FM (Visual Radio)",
         "url": "https://www.youtube.com/channel/UCOtYyt7W5PmPnwQjWWF_Z-Q/live",
-        "mirrors": [
-          "https://www.hirufm.lk/listen-live"
-        ],
+        "mirrors": [],
         "tags": [
           "Sinhala",
           "Visual Radio"
@@ -1674,9 +1664,7 @@
       {
         "name": "Vasantham TV",
         "url": "https://www.youtube.com/channel/UCB5aqOetGShRd8COycdf_PQ/live",
-        "mirrors": [
-          "https://vasantham.lk/live/"
-        ],
+        "mirrors": [],
         "tags": [
           "Tamil"
         ],

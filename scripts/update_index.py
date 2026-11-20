@@ -346,16 +346,19 @@ def render_status(channels, selected, results, policy, stamp):
     retained = sorted(((c, s, results[stream_endpoint(s)]) for c in channels for s in c['streams']
                        if s['url'] in selected and results[stream_endpoint(s)].verdict in GEO_VERDICTS),
                       key=lambda row: (row[0]['name'].casefold(), row[1]['url']))
-    swaps = []
+    swaps, unswapped = [], []
     for c in channels:
         primary = results[Endpoint('site', c['site'])]
         if primary.code not in (403, 451, 522, 525, 526) and primary.verdict != 'tls-error':
             continue
-        for mirror in [c['youtube'], *c['mirrors']]:
-            if mirror and results.get(Endpoint('site', mirror), Result(None, '')).code == 200:
-                swaps.append((c, mirror, primary))
-                break
+        verified = next((m for m in [c['youtube'], *c['mirrors']]
+                         if m and results.get(Endpoint('site', m), Result(None, '')).code == 200), None)
+        if verified:
+            swaps.append((c, verified, primary))
+        else:
+            unswapped.append((c, primary))
     swaps.sort(key=lambda row: row[0]['name'].casefold())
+    unswapped.sort(key=lambda row: row[0]['name'].casefold())
     lines = ['# Sri Lanka source health', '', f'Run timestamp: {stamp} (Sri Lanka Time, UTC+05:30)', '',
              f'Index: `{RAW}index.json`', '',
              f'- Catalog channels / published site cards: **{len(channels)} / {len(channels)}**.',
@@ -388,7 +391,11 @@ def render_status(channels, selected, results, policy, stamp):
         lines.extend(['| Channel | Current primary | Verified mirror | Primary verdict |', '|---|---|---|---|'])
         lines.extend(f'| {c["name"]} | `{c["site"]}` | `{u}` | {r.verdict} {r.code or ""} |'
                      for c, u, r in swaps)
-    else:
+    if unswapped:
+        lines.extend(['', '| Channel | Retained primary | Primary verdict | Action |', '|---|---|---|---|'])
+        lines.extend(f'| {c["name"]} | `{c["site"]}` | {r.verdict} {r.code or ""} | '
+                     f'{GEO_LABEL}; no verified HTTP 200 alternative exists |' for c, r in unswapped)
+    if not swaps and not unswapped:
         lines.append('No swap suggested: every primary that failed has no verified HTTP 200 mirror, '
                      'or every primary answered.')
     lines.extend(['', 'Results reflect the probing network only. HTTP 403/451 can indicate geo or other '
