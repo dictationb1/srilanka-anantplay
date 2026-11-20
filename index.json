@@ -1,22 +1,24 @@
 {
-  "name": "Sri Lanka Complete TV Index",
+  "name": "Sri Lanka TV Index",
   "sources": [
     {
-      "id": "sl-iptv-live",
-      "name": "Sri Lanka IPTV Channels",
-      "description": "Verified public Free-To-Air Sri Lankan TV streams (M3U8)",
+      "id": "sl-iptv-all",
+      "name": "Sri Lanka IPTV Playlist",
+      "description": "Curated direct streams by category, country and language. See STATUS.md for checks.",
       "type": "playlist",
       "url": "https://raw.githubusercontent.com/dictationb1/srilanka-anantplay/main/srilanka_category.m3u",
       "languages": "https://raw.githubusercontent.com/dictationb1/srilanka-anantplay/main/srilanka_language.m3u",
-      "adult": false
+      "adult": false,
+      "default": true
     },
     {
       "id": "sl-official-live-sites",
-      "name": "Sri Lanka Official Live TV Sites",
-      "description": "Official broadcaster live web pages for AnantPlay native stream extraction",
+      "name": "Sri Lanka Official Live Sites",
+      "description": "Broadcaster websites and video-channel links. Live coverage varies by broadcaster.",
       "type": "sites",
       "url": "https://raw.githubusercontent.com/dictationb1/srilanka-anantplay/main/srilanka_sites.json",
-      "adult": false
+      "adult": false,
+      "default": true
     }
   ]
 }
