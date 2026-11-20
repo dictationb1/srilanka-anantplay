@@ -13,6 +13,7 @@ import os
 from pathlib import Path
 import re
 import socket
+import time
 from tempfile import NamedTemporaryFile
 from urllib.parse import urlsplit
 from zoneinfo import ZoneInfo
@@ -35,6 +36,19 @@ UA = ('Mozilla/5.0 (Linux; Android 14) AppleWebKit/537.36 (KHTML, like Gecko) '
       'Chrome/131.0.0.0 Mobile Safari/537.36')
 ID = re.compile(r'[A-Za-z0-9_-]+\.lk')
 MIN_RETAIN_PERCENT = 80
+# V2 catalog vocabulary: how a curated direct stream behaved in the last live pass.
+STREAM_STATES = ('verified', 'geo_restricted_sl', 'none_public_web_only', 'dead')
+# Optional V2 keys. They are validated and then given explicit defaults so the
+# renderer never depends on their presence (older catalogs keep working).
+CHANNEL_OPTIONAL = {'geo_restricted_sl': bool, 'web_only': bool, 'direct_m3u8_status': str,
+                    'youtube_channel_id': str}
+STREAM_OPTIONAL = {'geo_restricted_sl': bool, 'direct_m3u8_status': str}
+RETRYABLE_VERDICTS = frozenset({'timeout', 'tls-error', 'network-error'})
+RETRYABLE_CODES = frozenset({429, 500, 502, 503, 504})
+# A published stream seen in one of these states in a probe from outside Sri Lanka is
+# kept and reported as geo-restricted/timeout, never treated as confirmed dead.
+GEO_VERDICTS = frozenset({'timeout', 'restricted', 'tls-error', 'network-error', 'dns-not-found'})
+GEO_LABEL = 'SL Geo-Restricted / Timeout from US Runner (Retained)'
 
 
 def json_text(data):
@@ -71,6 +85,31 @@ def url_ok(url):
         return False
 
 
+def _check_optional(owner, item, allowed, label):
+    """Validate optional V2 keys, then fill explicit defaults.
+
+    The V2 catalog adds curation vocabulary (`geo_restricted_sl`,
+    `direct_m3u8_status`, `youtube_channel_id`, `web_only`) without removing any
+    V1 field, so both shapes must load and render identically.
+    """
+    unknown = set(item) - set(allowed)
+    require(not unknown, f'{label}: unsupported field(s) {sorted(unknown)}')
+    for key, kind in owner.items():
+        value = item.setdefault(key, False if kind is bool else '')
+        require(isinstance(value, kind), f'{label}: {key} must be {kind.__name__}')
+        if key == 'direct_m3u8_status' and value:
+            require(value in STREAM_STATES, f'{label}: unknown direct_m3u8_status {value!r}')
+        if key == 'youtube_channel_id' and value:
+            require(re.fullmatch(r'UC[A-Za-z0-9_-]{22}', value), f'{label}: bad YouTube channel id')
+    return item
+
+
+def stream_is_protected(stream):
+    """Curated SL feeds that a US/EU runner cannot reach are never auto-pruned."""
+    return bool(stream.get('keep_if_missing') or stream.get('geo_restricted_sl')
+                or stream.get('direct_m3u8_status') == 'geo_restricted_sl')
+
+
 def load_catalog(root=ROOT):
     catalog = load_json(root / 'channels_master.json')
     require(set(catalog) == {'country', 'maintainer', 'channels'}
@@ -79,9 +118,12 @@ def load_catalog(root=ROOT):
     channels = catalog['channels']
     require(isinstance(channels, list) and channels, 'empty catalog')
     ids, names, sites, streams = set(), set(), set(), set()
+    required = {'tvg_id', 'name', 'category', 'language', 'logo', 'site', 'youtube',
+                'mirrors', 'streams', 'note'}
+    stream_required = {'url', 'quality', 'note', 'published', 'keep_if_missing', 'referer'}
     for c in channels:
-        require(set(c) == {'tvg_id', 'name', 'category', 'language', 'logo', 'site', 'youtube',
-                           'mirrors', 'streams', 'note'}, f'channel fields: {c}')
+        require(isinstance(c, dict) and required <= set(c), f'channel fields: {c}')
+        _check_optional(CHANNEL_OPTIONAL, c, required | set(CHANNEL_OPTIONAL), 'channel')
         cid = c['tvg_id']
         require(isinstance(cid, str) and ID.fullmatch(cid) and cid.casefold() not in ids, f'bad ID: {cid}')
         ids.add(cid.casefold())
@@ -100,8 +142,8 @@ def load_catalog(root=ROOT):
         require(len(set(mirrors)) == len(mirrors), f'{cid}: duplicate mirror')
         require(isinstance(c['streams'], list), f'{cid}: streams type')
         for s in c['streams']:
-            require(set(s) == {'url', 'quality', 'note', 'published', 'keep_if_missing', 'referer'},
-                    f'{cid}: stream fields')
+            require(isinstance(s, dict) and stream_required <= set(s), f'{cid}: stream fields')
+            _check_optional(STREAM_OPTIONAL, s, stream_required | set(STREAM_OPTIONAL), f'{cid}: stream')
             require(url_ok(s['url']) and s['url'] not in streams, f'{cid}: invalid/duplicate stream URL')
             streams.add(s['url'])
             require(re.fullmatch(r'[1-9][0-9]{2,3}[pi]|SD|HD', s['quality']) and isinstance(s['note'], str),
@@ -109,6 +151,11 @@ def load_catalog(root=ROOT):
             require(type(s['published']) is bool and type(s['keep_if_missing']) is bool,
                     f'{cid}: stream policy flags')
             require(s['referer'] == '' or url_ok(s['referer']), f'{cid}: invalid Referer')
+            require(not (s['geo_restricted_sl'] and s['direct_m3u8_status'] == 'dead'),
+                    f'{cid}: geo-restricted stream cannot also be marked dead')
+            if s['geo_restricted_sl'] or s['direct_m3u8_status'] == 'geo_restricted_sl':
+                require(not s['published'] or s['keep_if_missing'],
+                        f'{cid}: a published geo-restricted stream must set keep_if_missing')
     return channels
 
 
@@ -124,6 +171,7 @@ class Result:
     code: int | None
     verdict: str
     detail: str = ''
+    attempts: int = 1
 
 
 def stream_endpoint(s):
@@ -160,13 +208,16 @@ def error_chain(exc):
         pending.extend([item.__cause__, item.__context__, *item.args])
 
 
-def probe(endpoint, timeout):
+def probe_once(endpoint, timeout, connect_timeout):
     headers = {'User-Agent': UA}
     if endpoint.referer:
         headers['Referer'] = endpoint.referer
     code = None
     try:
-        with requests.get(endpoint.url, headers=headers, timeout=timeout, stream=True) as response:
+        # A separate connect timeout keeps slow-but-alive Sri Lankan edges from
+        # consuming the whole read budget, and vice versa.
+        with requests.get(endpoint.url, headers=headers, timeout=(connect_timeout, timeout),
+                          stream=True) as response:
             code = response.status_code
             prefix = (response.raw.read(4096, decode_content=True)
                       if code == 200 and (endpoint.kind == 'stream' or is_hls(endpoint.url)) else b'')
@@ -180,6 +231,27 @@ def probe(endpoint, timeout):
         if any(isinstance(e, (requests.exceptions.SSLError, urllib3.exceptions.SSLError)) for e in errors):
             return Result(code, 'tls-error')
         return Result(code, 'network-error', type(exc).__name__)
+
+
+def probe(endpoint, timeout, retries=0, connect_timeout=None, sleep=time.sleep):
+    """Probe one endpoint, retrying only transient outcomes.
+
+    Confirmed HTTP answers (404/410, 403/451, any other code) and DNS NXDOMAIN are
+    never retried: they are deterministic for this runner and must not slow the
+    sweep. Timeouts, TLS handshake failures, connection errors and 429/5xx are
+    retried with exponential backoff, so a single slow Sri Lankan edge does not
+    get misclassified as dead.
+    """
+    connect_timeout = timeout if connect_timeout is None else connect_timeout
+    result = probe_once(endpoint, timeout, connect_timeout)
+    attempts = 1
+    for attempt in range(1, max(0, retries) + 1):
+        if result.verdict not in RETRYABLE_VERDICTS and result.code not in RETRYABLE_CODES:
+            break
+        sleep(min(0.5 * 2 ** (attempt - 1), 4))
+        result = probe_once(endpoint, timeout, connect_timeout)
+        attempts += 1
+    return Result(result.code, result.verdict, result.detail, attempts)
 
 
 def build_index():
@@ -230,7 +302,7 @@ def select_streams(channels, results, previous):
     require(bool(baseline) and previous <= streams.keys(),
             'empty curated baseline or published URL missing from master; review playlist edits manually')
     healthy = {url for url, (_, s) in streams.items() if results[stream_endpoint(s)].verdict == 'manifest'}
-    confirmed_failure = {url for url, (_, s) in streams.items() if not s['keep_if_missing']
+    confirmed_failure = {url for url, (_, s) in streams.items() if not stream_is_protected(s)
                          and results[stream_endpoint(s)].verdict in {'missing', 'non-hls'}}
     retained = previous or baseline
     guard_reference = baseline | retained
@@ -271,18 +343,68 @@ def render_status(channels, selected, results, policy, stamp):
     published_channels = sum(any(s['url'] in selected for s in c['streams']) for c in channels)
     confirmed_channels = sum(any(s['url'] in manifests & selected for s in c['streams']) for c in channels)
     site_http = sum(results[Endpoint('site', c['site'])].code == 200 for c in channels)
+    retained = sorted(((c, s, results[stream_endpoint(s)]) for c in channels for s in c['streams']
+                       if s['url'] in selected and results[stream_endpoint(s)].verdict in GEO_VERDICTS),
+                      key=lambda row: (row[0]['name'].casefold(), row[1]['url']))
+    swaps, unswapped = [], []
+    for c in channels:
+        primary = results[Endpoint('site', c['site'])]
+        if primary.code not in (403, 451, 522, 525, 526) and primary.verdict != 'tls-error':
+            continue
+        verified = next((m for m in [c['youtube'], *c['mirrors']]
+                         if m and results.get(Endpoint('site', m), Result(None, '')).code == 200), None)
+        if verified:
+            swaps.append((c, verified, primary))
+        else:
+            unswapped.append((c, primary))
+    swaps.sort(key=lambda row: row[0]['name'].casefold())
+    unswapped.sort(key=lambda row: row[0]['name'].casefold())
     lines = ['# Sri Lanka source health', '', f'Run timestamp: {stamp} (Sri Lanka Time, UTC+05:30)', '',
              f'Index: `{RAW}index.json`', '',
              f'- Catalog channels / published site cards: **{len(channels)} / {len(channels)}**.',
              f'- Published IPTV entries in **each** playlist: **{len(selected)}** across **{published_channels}** channels.',
              f'- Published IPTV manifests verified this run: **{len(manifests & selected)}** across **{confirmed_channels}** channels.',
              f'- Primary site HTTP 200 responses: **{site_http}/{len(channels)}**; not a live-video playback test.',
-             f'- Unique probe targets by kind, URL and Referer: **{len(results)}**.', '', policy, '',
-             'Results reflect the probing network only. HTTP 403/451 can indicate geo or other access restrictions. '
-             'DNS, TLS and timeout results are not proof of a dead URL. An HLS header does not prove media segments, '
-             'rights, DRM compatibility or playback. Raw links point to `main`, not the local candidate.', '',
-             '| Target | Attempts | HTTP 200 | HTTP 403/451 | HTTP 404/410 | Other HTTP | No HTTP |',
-             '|---|---:|---:|---:|---:|---:|---:|']
+             f'- Unique probe targets by kind, URL and Referer: **{len(results)}**.',
+             f'- Total direct IPTV channels in the **IPTV tab**: **{published_channels}** '
+             f'(`{PLAYLISTS["category"]}` / `{PLAYLISTS["language"]}`).',
+             f'- Total official live TV channels in the **Home / Live Sites tab**: **{len(channels)}** '
+             f'(`{SITE_FILE}`).',
+             f'- Retained geo-restricted / timeout streams: **{len(retained)}** (listed below).', '',
+             policy, '',
+             '## Retained SL geo-restricted / timeout streams', '',
+             'These curated Sri Lankan feeds resolve, but this probe runner sits outside Sri Lanka '
+             '(GitHub Actions, US/EU), so they time out, return 403/451, or fail TLS. They are '
+             f'**retained**, labelled `{GEO_LABEL}`, and can play from a Sri Lankan network. '
+             'They are never a release blocker.', '',
+             '| Channel | Stream | Probed HTTP | Verdict | Curation |',
+             '|---|---|---:|---|---|']
+    if retained:
+        lines.extend(f'| {c["name"]} | `{s["url"]}` | {r.code or "—"} | {r.verdict} | {GEO_LABEL} |'
+                     for c, s, r in retained)
+    else:
+        lines.append('| — | — | — | — | None this run |')
+    lines.extend(['', '## Suggested primary site swaps', '',
+                  'Advisory only: only a confirmed HTTP 403/451/522/525/526 or TLS failure on a primary '
+                  'site is listed, and only when an official mirror answered HTTP 200 to this runner.', ''])
+    if swaps:
+        lines.extend(['| Channel | Current primary | Verified mirror | Primary verdict |', '|---|---|---|---|'])
+        lines.extend(f'| {c["name"]} | `{c["site"]}` | `{u}` | {r.verdict}'
+                     f'{" " + str(r.code) if r.code else ""} |' for c, u, r in swaps)
+    if unswapped:
+        lines.extend(['', '| Channel | Retained primary | Primary verdict | Action |', '|---|---|---|---|'])
+        lines.extend(f'| {c["name"]} | `{c["site"]}` | {r.verdict}'
+                     f'{" " + str(r.code) if r.code else ""} | '
+                     f'{GEO_LABEL}; no verified HTTP 200 alternative exists |' for c, r in unswapped)
+    if not swaps and not unswapped:
+        lines.append('No swap suggested: every primary that failed has no verified HTTP 200 mirror, '
+                     'or every primary answered.')
+    lines.extend(['', 'Results reflect the probing network only. HTTP 403/451 can indicate geo or other '
+                  'access restrictions. DNS, TLS and timeout results are not proof of a dead URL. '
+                  'An HLS header does not prove media segments, rights, DRM compatibility or playback. '
+                  'Raw links point to `main`, not the local candidate.', '',
+                  '| Target | Attempts | HTTP 200 | HTTP 403/451 | HTTP 404/410 | Other HTTP | No HTTP |',
+                  '|---|---:|---:|---:|---:|---:|---:|'])
     for kind in ('raw', 'stream', 'site', 'logo', 'all'):
         codes = Counter(r.code for e, r in results.items() if kind == 'all' or e.kind == kind)
         restricted, missing = codes[403] + codes[451], codes[404] + codes[410]
@@ -295,6 +417,8 @@ def render_status(channels, selected, results, policy, stamp):
                   '|---|---|---:|---|---|'])
     for endpoint, result in sorted(results.items()):
         detail = result.detail
+        if result.attempts > 1:
+            detail = (detail + '; ' if detail else '') + f'{result.attempts} attempts'
         if endpoint.kind == 'stream':
             detail = (detail + '; ' if detail else '') + ('published' if endpoint.url in selected else 'not published')
             if endpoint.referer:
@@ -333,16 +457,25 @@ def render_outputs(channels, selected):
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--dry-run', action='store_true', help='check every endpoint and print the full diff without writing files')
-    parser.add_argument('--timeout', type=float, default=10, help='per connect/read timeout in seconds')
+    parser.add_argument('--timeout', type=float, default=10, help='per read timeout in seconds')
+    parser.add_argument('--connect-timeout', type=float, default=10,
+                        help='per connect timeout in seconds (Sri Lankan edges can be slow)')
+    parser.add_argument('--retries', type=int, default=2,
+                        help='retries for transient timeout/TLS/network/5xx outcomes (0-5)')
     args = parser.parse_args()
-    if not 0 < args.timeout <= 60:
-        parser.error('--timeout must be greater than 0 and no more than 60 seconds')
+    for name in ('timeout', 'connect_timeout'):
+        value = getattr(args, name)
+        if not 0 < value <= 60:
+            parser.error(f'--{name.replace("_", "-")} must be greater than 0 and no more than 60 seconds')
+    if not 0 <= args.retries <= 5:
+        parser.error('--retries must be between 0 and 5')
     try:
         channels = load_catalog()
         previous = read_previous(ROOT)
         endpoints = endpoint_inventory(channels, build_index())
         with ThreadPoolExecutor(max_workers=16) as pool:
-            results = dict(zip(endpoints, pool.map(lambda e: probe(e, args.timeout), endpoints), strict=True))
+            results = dict(zip(endpoints, pool.map(
+                lambda e: probe(e, args.timeout, args.retries, args.connect_timeout), endpoints), strict=True))
         selected, policy = select_streams(channels, results, previous)
         stamp = datetime.now(ZoneInfo('Asia/Colombo')).isoformat(timespec='seconds')
         outputs = render_outputs(channels, selected)

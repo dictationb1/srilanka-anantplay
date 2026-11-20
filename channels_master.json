@@ -7,12 +7,12 @@
       "name": "Rupavahini",
       "category": "National",
       "language": "Sinhala",
-      "logo": "https://i.imgur.com/vgHTfR0.png",
+      "logo": "https://yt3.googleusercontent.com/jpF0RFqbvtus458I7AwYPi76fBx49wZ8i2ta5nse6CpwEQX2JeGtQyTYNeWxBnVsU22bvwhWCQ=s900-c-k-c0x00ffffff-no-rj",
       "streams": [
         {
           "url": "https://rpn.bozztv.com/slrclive/slrc/slrclive/index.m3u8",
           "quality": "720p",
-          "note": "SLRC primary via bozztv (720p)",
+          "note": "SLRC primary via bozztv",
           "published": true,
           "keep_if_missing": false,
           "referer": ""
@@ -27,11 +27,12 @@
         }
       ],
       "site": "https://tv.rupavahini.lk/rupavahini-live-webcast",
-      "youtube": "https://www.youtube.com/@rupavahiniLiveStream/live",
+      "youtube": "https://www.youtube.com/channel/UCbkMFGQ_RWIxbZt4FsnNhFg/live",
       "mirrors": [
+        "https://www.youtube.com/@rupavahiniLiveStream/live",
         "https://www.rupavahini.lk/"
       ],
-      "note": ""
+      "note": "Direct HLS verified 2026-11-20 (200 + #EXTM3U, no headers needed)."
     },
     {
       "tvg_id": "ChannelEye.lk",
@@ -39,22 +40,13 @@
       "category": "National",
       "language": "English",
       "logo": "https://yt3.googleusercontent.com/YeCNEep0u7iGqyIzWvTiqZTWny1NvvXY5fqfazlB9n93XvGh_OufnKNU6pR4A1N0EsWfQ8CG=s900-c-k-c0x00ffffff-no-rj",
-      "streams": [
-        {
-          "url": "https://trn07.tulix.tv/slrc2/slrc2/playlist.m3u8",
-          "quality": "576p",
-          "note": "Archive reported a 404 from its runner; retained as a manual exception pending Sri Lankan playback evidence.",
-          "published": true,
-          "keep_if_missing": true,
-          "referer": ""
-        }
-      ],
-      "site": "https://channeleye.lk/rupavahini-live-webcast/",
-      "youtube": "https://www.youtube.com/@ChannelEyeRupavahini/live",
+      "streams": [],
+      "site": "https://dammika.tulix.tv/iframe/plan1-a.php?s=slrc2&c=slrc2",
+      "youtube": "https://www.youtube.com/channel/UC1CkcuwxCW_dIchuR0tTCJw/live",
       "mirrors": [
-        "https://dammika.tulix.tv/iframe/plan1-a.php?s=slrc2&c=slrc2"
+        "https://channeleye.lk/rupavahini-live-webcast/"
       ],
-      "note": ""
+      "note": "trn07.tulix.tv/slrc2/slrc2/playlist.m3u8 confirmed HTTP 404 on 2026-11-20 and removed; primary is the broadcaster's own tulix iframe player (HTTP 200), YouTube mirror live."
     },
     {
       "tvg_id": "NethraTV.lk",
@@ -63,12 +55,12 @@
       "language": "Tamil",
       "logo": "https://yt3.googleusercontent.com/6a8PyIBnnBe1IoNP8DvTxiYHd6EjQ2ezPJ4-8gimTPx3Y2zosTGB_ruQT9K6NimCojz6oYuqxg=s900-c-k-c0x00ffffff-no-rj",
       "streams": [],
-      "site": "https://nethratv.lk/rupavahini-live-webcast/",
-      "youtube": "https://www.youtube.com/@NethraTV/live",
+      "site": "https://www.youtube.com/channel/UC6b6XrsNOxQiS-FdfE8-Avw/live",
+      "youtube": "",
       "mirrors": [
-        "https://www.youtube.com/embed/V534CC4o7aA"
+        "https://nethratv.lk/rupavahini-live-webcast/"
       ],
-      "note": ""
+      "note": "Official site embeds the YouTube live stream (youtube.com/embed/V534CC4o7aA verified on page); direct_m3u8_status: none_public_web_only."
     },
     {
       "tvg_id": "VasanthamTV.lk",
@@ -77,10 +69,10 @@
       "language": "Tamil",
       "logo": "https://yt3.googleusercontent.com/iCs5N08qJLhTPcbDTDGi8-xH-ogFJV0RWBMLzPo_zji6XnnYTPbo2K6Lyhq_9fkUiACT8xkL=s900-c-k-c0x00ffffff-no-rj",
       "streams": [],
-      "site": "https://vasantham.lk/",
-      "youtube": "https://www.youtube.com/@VasanthamTV/live",
+      "site": "https://www.youtube.com/channel/UCB5aqOetGShRd8COycdf_PQ/live",
+      "youtube": "",
       "mirrors": [],
-      "note": "Broadcaster live player is on the homepage; the previous /live/ path returned HTTP 404."
+      "note": "Primary is the official YouTube live channel (HTTP 200). The vasantham.lk/live/ mirror returned confirmed HTTP 404 on 2026-11-20 and was removed; the site sits behind a DDoS-Guard interstitial for datacenter probes."
     },
     {
       "tvg_id": "ITN.lk",
@@ -89,12 +81,12 @@
       "language": "Sinhala",
       "logo": "https://yt3.googleusercontent.com/os_CkpUDlVN0vXN9_1JKm72MqWhEzZeXUr4O9rTK7t_pBrkzl5RwdlQmltIrtvz3f2OM25liww=s900-c-k-c0x00ffffff-no-rj",
       "streams": [],
-      "site": "https://itn.lk/live/",
-      "youtube": "https://www.youtube.com/@ITNSriLanka/live",
+      "site": "https://www.youtube.com/channel/UCQTcNhAZidy1i9wwmdgf2Lw/live",
+      "youtube": "",
       "mirrors": [
-        "https://itn.lk/"
+        "https://itn.lk/live/"
       ],
-      "note": ""
+      "note": "itn.lk/live is Cloudflare-challenge gated even for a real headless browser (challenge unsolvable from datacenter IPs); YouTube /live verified 200 and actively streaming. direct_m3u8_status: none_public_web_only."
     },
     {
       "tvg_id": "Parliament.lk",
@@ -103,12 +95,12 @@
       "language": "Sinhala",
       "logo": "https://yt3.googleusercontent.com/ytc/AIdro_lwf9VKpD5PW5_jNX4lRKZePfMrF9oov4SzhTPSxOicG4w=s900-c-k-c0x00ffffff-no-rj",
       "streams": [],
-      "site": "https://www.parliament.lk/en/parliament-live/chamber-live",
-      "youtube": "https://www.youtube.com/@ParliamentofSriLankaOfficial/streams",
+      "site": "https://www.youtube.com/@ParliamentofSriLankaOfficial/streams",
+      "youtube": "",
       "mirrors": [
-        "https://www.youtube.com/@ParliamentofSriLankaOfficial"
+        "https://www.parliament.lk/en/parliament-live/chamber-live"
       ],
-      "note": ""
+      "note": "Sits only while Parliament is in session (schedules on parliament.lk)."
     },
     {
       "tvg_id": "TVDerana.lk",
@@ -117,12 +109,12 @@
       "language": "Sinhala",
       "logo": "https://yt3.googleusercontent.com/HFZMnMwfpT7mMTWP0jrXn9NFR54_tHkNwqD3HkZkzK21FjlPwyZllkJgDCKE6t2RfKBJDbln1g=s900-c-k-c0x00ffffff-no-rj",
       "streams": [],
-      "site": "https://www.derana.lk/live/index.php",
-      "youtube": "https://www.youtube.com/@TVDeranaLIVE/live",
+      "site": "https://www.youtube.com/channel/UCgUD68IjZ2XS0DqfmDuiTsA/live",
+      "youtube": "",
       "mirrors": [
-        "https://www.derana.lk/"
+        "https://www.derana.lk/live/index.php"
       ],
-      "note": ""
+      "note": "derana.lk live page is Sucuri IP-blacklisted for datacenter ranges (block ID BLACK02, verified 2026-11-20); loads fine for real users. YouTube /live was ACTIVELY streaming at check time. direct_m3u8_status: none_public_web_only."
     },
     {
       "tvg_id": "AdaDerana24x7.lk",
@@ -131,12 +123,12 @@
       "language": "Sinhala",
       "logo": "https://yt3.googleusercontent.com/N7I0AfjHIioTqjd44Z4YYGtxG0fJd6l6sbNULD8u-i88w_E7GMnh2JLjh37AEBD0I_lb1LeU0Q=s900-c-k-c0x00ffffff-no-rj",
       "streams": [],
-      "site": "https://www.youtube.com/@AdaDerana_24/live",
+      "site": "https://www.youtube.com/channel/UCW_rA_jb-_vbZtU4cTpnT5Q/live",
       "youtube": "",
       "mirrors": [
         "https://www.adaderana.lk/"
       ],
-      "note": ""
+      "note": "24x7 news YouTube channel (title-verified 'Ada Derana News Channel'); adaderana.lk homepage is the news portal. direct_m3u8_status: none_public_web_only."
     },
     {
       "tvg_id": "SirasaTV.lk",
@@ -145,12 +137,12 @@
       "language": "Sinhala",
       "logo": "https://yt3.googleusercontent.com/ytc/AIdro_ldKo-6CgIIEwFgqgSR1Z2-YZQTmje3nwL1PbJHENeALA=s900-c-k-c0x00ffffff-no-rj",
       "streams": [],
-      "site": "https://live.sirasatv.lk/",
-      "youtube": "https://www.youtube.com/@SirasaTV/live",
+      "site": "https://www.youtube.com/channel/UCu3vWkFUnfddXnd0tsmmkkQ/live",
+      "youtube": "",
       "mirrors": [
-        "https://www.sirasatv.lk/"
+        "https://live.sirasatv.lk/"
       ],
-      "note": ""
+      "note": "live.sirasatv.lk returns CF 403/522 for foreign IPs (verified); sirasatv.lk routes its live through the same protection. YouTube /live verified 200. A same-CDN stream named 'MTV' (mumbai-edge.smartplaytv.in/MTV) was frame-checked and is an INDIAN movie channel — rejected. direct_m3u8_status: none_public_web_only."
     },
     {
       "tvg_id": "TV1.lk",
@@ -159,12 +151,13 @@
       "language": "Sinhala",
       "logo": "https://yt3.googleusercontent.com/hnZI8DI6pYFHE_-LlIkZQAMJFJtpS3q3F_jLCrEaeQZhOtyUCO0ICQhgnTm7tWxYVHXbc2VDjA=s900-c-k-c0x00ffffff-no-rj",
       "streams": [],
-      "site": "https://tv1.lk/",
-      "youtube": "https://www.youtube.com/@TV1SriLanka/live",
+      "site": "https://www.youtube.com/channel/UCoQXpCWew0Q3qz6buZYOAFg/live",
+      "youtube": "",
       "mirrors": [
-        "https://www.newsfirst.lk/live"
+        "https://www.newsfirst.lk/live",
+        "https://tv1.lk/"
       ],
-      "note": ""
+      "note": "tv1.lk is Cloudflare-challenge gated from datacenter IPs (verified with headless browser). newsfirst.lk/live embeds their official Twitch (player.twitch.tv/?channel=newsfirstsl). direct_m3u8_status: none_public_web_only."
     },
     {
       "tvg_id": "NewsFirst.lk",
@@ -174,30 +167,36 @@
       "logo": "https://yt3.googleusercontent.com/hnZI8DI6pYFHE_-LlIkZQAMJFJtpS3q3F_jLCrEaeQZhOtyUCO0ICQhgnTm7tWxYVHXbc2VDjA=s900-c-k-c0x00ffffff-no-rj",
       "streams": [],
       "site": "https://www.newsfirst.lk/live",
-      "youtube": "",
-      "mirrors": [],
-      "note": ""
+      "youtube": "https://www.youtube.com/channel/UCoQXpCWew0Q3qz6buZYOAFg/live",
+      "mirrors": [
+        "https://player.twitch.tv/?channel=newsfirstsl"
+      ],
+      "note": "newsfirst.lk/live verified HTTP 200 and embeds the official Twitch player."
     },
     {
       "tvg_id": "Swarnavahini.lk",
       "name": "Swarnavahini",
       "category": "Entertainment",
       "language": "Sinhala",
-      "logo": "https://i.imgur.com/0hnpeq9.png",
+      "logo": "https://yt3.googleusercontent.com/XFwaRLH3SoZwZgCQ3VwC1tkK_bpuP3cgmBDr-bVB6z2J3TAT2Klzi4SnF1uB7naAV2mYM6loRQ=s900-c-k-c0x00ffffff-no-rj",
       "streams": [
         {
           "url": "https://teledrama.ebc.lk/TTT/proxy.php",
           "quality": "480p",
-          "note": "EBC shared proxy; retained from the archive playlist pending a new manifest check.",
+          "note": "EBC proxy; DNS OK but connection times out from non-Asian networks (geo-routed). kept_if_missing because Sri Lankan playback is expected.",
           "published": true,
-          "keep_if_missing": false,
-          "referer": "https://swarnavahini.lk/"
+          "keep_if_missing": true,
+          "referer": "https://swarnavahini.lk/",
+          "geo_restricted_sl": true,
+          "direct_m3u8_status": "geo_restricted_sl"
         }
       ],
-      "site": "https://swarnavahini.lk/",
-      "youtube": "https://www.youtube.com/channel/UCaIc6SgS90ud_RgMSC6hW_w/live",
-      "mirrors": [],
-      "note": ""
+      "site": "https://www.youtube.com/channel/UCaIc6SgS90ud_RgMSC6hW_w/live",
+      "youtube": "",
+      "mirrors": [
+        "https://swarnavahini.lk/"
+      ],
+      "note": "swarnavahini.lk 403s foreign IPs (verified); canonical YT handle is @SwarnavahiniTV. direct_m3u8_status: geo_restricted_sl (ebc proxy)."
     },
     {
       "tvg_id": "HiruTV.lk",
@@ -209,41 +208,41 @@
         {
           "url": "https://tv.hiruhost.com:1936/8012/8012/playlist.m3u8",
           "quality": "360p",
-          "note": "Hiru official Wowza host",
+          "note": "Hiru official Wowza host; verified 200 + #EXTM3U with any UA (no headers needed).",
           "published": true,
           "keep_if_missing": false,
           "referer": ""
         }
       ],
       "site": "https://www.hirutv.lk/hirulive.php",
-      "youtube": "",
+      "youtube": "https://www.youtube.com/channel/UC5II-XiFOAMHfqIcdH3JOXQ/live",
       "mirrors": [
         "https://www.hirutv.lk/"
       ],
-      "note": ""
+      "note": "hirutv.lk shows a DDoS-Guard interstitial to bots but serves browsers; the direct Wowza stream works header-less."
     },
     {
       "tvg_id": "SiyathaTV.lk",
       "name": "Siyatha TV",
       "category": "Entertainment",
       "language": "Sinhala",
-      "logo": "https://i.imgur.com/9Zc8G7i.png",
+      "logo": "https://yt3.googleusercontent.com/h-DBBjfmZYs2lA04mzko49bDaL8K--9NO93-N4zU0wQ11Ju-LciZHci8eY7aLcggICwNhVVnxg=s900-c-k-c0x00ffffff-no-rj",
       "streams": [
         {
           "url": "https://rtmp01.voaplus.com/hls/6x6ik312qk4grfxocfcv.m3u8",
           "quality": "576p",
-          "note": "VOA+ Siyatha primary",
+          "note": "VOA+ host; verified 200 + #EXTM3U header-less; confirmed as the stream embedded in siyathatv.lk/live (headless-browser verified).",
           "published": true,
           "keep_if_missing": false,
           "referer": ""
         }
       ],
       "site": "https://siyathatv.lk/live/",
-      "youtube": "https://www.youtube.com/@SiyathaTVOfficial/live",
+      "youtube": "https://www.youtube.com/channel/UCc30sTBdN9LRSxEuHaXV_bQ/live",
       "mirrors": [
         "https://siyathatv.lk/"
       ],
-      "note": ""
+      "note": "In BOTH the M3U (verified direct HLS) and Sites (200-verified live page)."
     },
     {
       "tvg_id": "SiyathaNews.lk",
@@ -252,10 +251,10 @@
       "language": "Sinhala",
       "logo": "https://yt3.googleusercontent.com/nlV4tpla_16qyXzv5rZ6c1hslJsLQeHGOURC1ZQGvrNA5w1hWZwo5MQn4u8LRdMCI2DCNvExKg=s900-c-k-c0x00ffffff-no-rj",
       "streams": [],
-      "site": "https://www.youtube.com/@SiyathaNews/live",
+      "site": "https://www.youtube.com/channel/UC8lKgUHo-2m1z6OoZB9CNmA/live",
       "youtube": "",
       "mirrors": [],
-      "note": ""
+      "note": "YouTube news channel of the Siyatha network."
     },
     {
       "tvg_id": "TNLTV.lk",
@@ -264,10 +263,10 @@
       "language": "Sinhala",
       "logo": "https://i.imgur.com/9Zc8G7i.png",
       "streams": [],
-      "site": "https://tnltv.lk/tv.html",
-      "youtube": "https://www.youtube.com/channel/UCgFK94EtfymL9AvhxQucaTw/live",
+      "site": "https://www.youtube.com/channel/UCgFK94EtfymL9AvhxQucaTw/live",
+      "youtube": "",
       "mirrors": [],
-      "note": ""
+      "note": "tnltv.lk/tv.html 403s foreign IPs (verified). 'TNL Tv' channel title-verified; TNL NOW (UCUPAVSDnpRLl_F9o0bgSzkg) is a related offshoot. direct_m3u8_status: none_public_web_only."
     },
     {
       "tvg_id": "HiruNews.lk",
@@ -276,10 +275,12 @@
       "language": "Sinhala",
       "logo": "https://i.imgur.com/M66UqPB.png",
       "streams": [],
-      "site": "https://www.youtube.com/channel/UC5II-XiFOAMHfqIcdH3JOXQ",
+      "site": "https://www.youtube.com/channel/UCcDzc3CNB9g096rvxPb5Jdg/live",
       "youtube": "",
-      "mirrors": [],
-      "note": ""
+      "mirrors": [
+        "https://www.hirunews.lk/"
+      ],
+      "note": "Hiru News YT channel ID captured and title-verified this session; hirunews.lk is the portal."
     },
     {
       "tvg_id": "ShakthiTV.lk",
@@ -291,18 +292,18 @@
         {
           "url": "https://mumbai-edge.smartplaytv.in/ShakthiTV/index.m3u8",
           "quality": "576p",
-          "note": "Shakthi (MTV/MBC) via smartplaytv",
+          "note": "Shakthi (MTV/MBC network) via smartplaytv; verified 200 + #EXTM3U header-less.",
           "published": true,
           "keep_if_missing": false,
           "referer": ""
         }
       ],
-      "site": "https://shakthitv.lk/live/",
-      "youtube": "https://www.youtube.com/@ShakthiTVOfficial/live",
+      "site": "https://www.youtube.com/channel/UCjm7vbOwssao7Bhm9wX3-bw/live",
+      "youtube": "",
       "mirrors": [
-        "https://shakthitv.lk/"
+        "https://shakthitv.lk/live/"
       ],
-      "note": ""
+      "note": "In BOTH the M3U and Sites; shakthitv.lk/live verified 200."
     },
     {
       "tvg_id": "AthavanTV.lk",
@@ -314,18 +315,18 @@
         {
           "url": "https://oj7lnxonyg82-hls-live.5centscdn.com/uks/24263a839810d2041a349baaeef36a79.sdp/playlist.m3u8",
           "quality": "576p",
-          "note": "Athavan primary 5centscdn",
+          "note": "5centscdn host; verified 200 + #EXTM3U; also embedded in athavantv.com player page.",
           "published": true,
           "keep_if_missing": false,
           "referer": ""
         }
       ],
-      "site": "https://athavantv.com/live/new-stream.php",
-      "youtube": "https://www.youtube.com/@AthavanTV/live",
+      "site": "https://athavantv.com/live/new-stream.php?w=100%25&h=390",
+      "youtube": "https://www.youtube.com/channel/UCg2azB8aZfuwJpifS7w9Qow/live",
       "mirrors": [
         "https://athavantv.com/"
       ],
-      "note": ""
+      "note": "Site player page verified 200 with the same m3u8 embedded."
     },
     {
       "tvg_id": "DANTamilOli.lk",
@@ -334,13 +335,12 @@
       "language": "Tamil",
       "logo": "https://yt3.googleusercontent.com/ytc/AIdro_mtbLEtYJ7viUdTt34u08S_Td-T6TrlJ4bj4jOBFl5mkw=s900-c-k-c0x00ffffff-no-rj",
       "streams": [],
-      "site": "https://www.dantv.tv/index.php/73-dantv/live-tv/504-tamiloli",
-      "youtube": "https://www.youtube.com/@DANTamilOli/live",
+      "site": "https://www.youtube.com/channel/UCED67w-HOOpeWoY9vqzgyog/live",
+      "youtube": "",
       "mirrors": [
-        "https://www.dantv.lk/",
         "https://www.youtube.com/@DanChannelsLive"
       ],
-      "note": ""
+      "note": "dantv.tv and dantv.lk are now ParkLogic-parked (verified: router.parklogic.com responses) — dead as web players. YouTube channel 'DAN Tamil Oli' ID-captured and title-verified this session. direct_m3u8_status: none_public_web_only."
     },
     {
       "tvg_id": "DANNews.lk",
@@ -352,9 +352,9 @@
       "site": "https://www.youtube.com/@DANNEWSTV/live",
       "youtube": "",
       "mirrors": [
-        "https://www.dantv.lk/"
+        "https://www.youtube.com/@DanChannelsLive"
       ],
-      "note": ""
+      "note": "'Dan News TV' channel title-verified; @DANTelevision is a personal channel (Hamdan Ismail) — rejected."
     },
     {
       "tvg_id": "DanChannels.lk",
@@ -363,12 +363,10 @@
       "language": "Tamil",
       "logo": "https://yt3.googleusercontent.com/ytc/AIdro_lwmWpMXI4zzf-rDWyAaPGDxAHVnmMbsWpXqDklXyaj018=s900-c-k-c0x00ffffff-no-rj",
       "streams": [],
-      "site": "https://www.youtube.com/@DanChannelsLive",
+      "site": "https://www.youtube.com/channel/UC2L1SsEmGrARu0LagZUPukA",
       "youtube": "",
-      "mirrors": [
-        "https://www.dantv.lk/"
-      ],
-      "note": "DAN Yal / Dan Music / Dan Comedy stream via @DanChannelsLive multi-channel live page"
+      "mirrors": [],
+      "note": "'Dan Channels Live' carries DAN Yal / Music / Comedy multi-channel feeds; ID-captured this session."
     },
     {
       "tvg_id": "UTV.lk",
@@ -377,12 +375,10 @@
       "language": "Tamil",
       "logo": "https://yt3.googleusercontent.com/OgXT-_RPCegRtKZas-n-TEhJ3d-h9LSI-vKQYZu69SQADNM_WmhduUnxfdgZYRXATxw27x_2-g=s900-c-k-c0x00ffffff-no-rj",
       "streams": [],
-      "site": "https://www.youtube.com/@UTVHDLK/live",
+      "site": "https://www.youtube.com/channel/UCu2CZBA74eIFLo5S7dN_1Ww/live",
       "youtube": "",
-      "mirrors": [
-        "https://utv.lk/"
-      ],
-      "note": ""
+      "mirrors": [],
+      "note": "'UTV HD' title-verified; utv.lk 403s from foreign IPs."
     },
     {
       "tvg_id": "StarTamilTelevision.lk",
@@ -394,30 +390,18 @@
         {
           "url": "https://edge4-moblive.yuppcdn.net/trans1sd/smil:strtml19.smil/playlist.m3u8?dvr=",
           "quality": "360p",
-          "note": "YuppTV CDN candidate listed by iptv-org; playback from Sri Lanka is unconfirmed.",
+          "note": "yuppcdn Asia edge: DNS OK, TCP connect times out from US/EU networks. Listed by iptv-org (multi-region checks). kept_if_missing for Sri Lankan playback.",
           "published": true,
-          "keep_if_missing": false,
-          "referer": ""
+          "keep_if_missing": true,
+          "referer": "",
+          "geo_restricted_sl": true,
+          "direct_m3u8_status": "geo_restricted_sl"
         }
       ],
       "site": "https://www.youtube.com/channel/UChDLy_EdNeFmw54sQqWVjfg/live",
       "youtube": "",
       "mirrors": [],
-      "note": ""
-    },
-    {
-      "tvg_id": "VarnamTV.lk",
-      "name": "Varnam TV",
-      "category": "Tamil",
-      "language": "Tamil",
-      "logo": "https://yt3.googleusercontent.com/ytc/AIdro_kDHFxLOf_9y-v7CsfomP3882XC8ZNOZr4_l7PgOJUOUCY=s900-c-k-c0x00ffffff-no-rj",
-      "streams": [],
-      "site": "https://www.youtube.com/@varnamtv/live",
-      "youtube": "",
-      "mirrors": [
-        "https://varnamtv.com/"
-      ],
-      "note": ""
+      "note": "direct_m3u8_status: geo_restricted_sl."
     },
     {
       "tvg_id": "IBCTamil.lk",
@@ -426,12 +410,12 @@
       "language": "Tamil",
       "logo": "https://yt3.googleusercontent.com/NBzWhVbBxeTJ8GujjbCdvMRnKX1VAp_dvi2-NDPrLU6tOdXqZ-EU4swoNANwG9_-nh6G_A2Y=s900-c-k-c0x00ffffff-no-rj",
       "streams": [],
-      "site": "https://www.youtube.com/@IBCTamil/live",
+      "site": "https://www.youtube.com/channel/UCwwBQhIa_bqhjC3OHAFOe-w/live",
       "youtube": "",
       "mirrors": [
         "https://ibctamil.com/"
       ],
-      "note": ""
+      "note": "'IBC Tamil' title-verified this session."
     },
     {
       "tvg_id": "GuruTV.lk",
@@ -440,10 +424,10 @@
       "language": "Tamil",
       "logo": "https://yt3.googleusercontent.com/UnizPcs_6aU2SdWJI8gmK-3wO_91WiEqQLonAp3pa6ye3unXTBOhCjMfHfk0UfEbeNtkfJiv=s900-c-k-c0x00ffffff-no-rj",
       "streams": [],
-      "site": "https://www.youtube.com/@GuruTVLK/live",
+      "site": "https://www.youtube.com/channel/UCOoCpNa2WliqrXOcOAMBpBQ/live",
       "youtube": "",
       "mirrors": [],
-      "note": ""
+      "note": "'Guru TV' title-verified this session."
     },
     {
       "tvg_id": "YarlTV.lk",
@@ -452,12 +436,10 @@
       "language": "Tamil",
       "logo": "https://yt3.googleusercontent.com/ytc/AIdro_mSi5BW_UR2q8H6RFJy5Nwoke9jMicBTlHyByHhyDaAQggqAB1VERuCiB4qTCrFpbzqCw=s900-c-k-c0x00ffffff-no-rj",
       "streams": [],
-      "site": "https://www.youtube.com/@YarlTV",
+      "site": "https://www.youtube.com/channel/UCCiNqOMFZvfLJoUs8qcNWmQ/live",
       "youtube": "",
-      "mirrors": [
-        "https://www.dantv.lk/"
-      ],
-      "note": ""
+      "mirrors": [],
+      "note": "'Yarl TV' (Jaffna) ID-captured and title-verified this session."
     },
     {
       "tvg_id": "LankasriTV.lk",
@@ -466,12 +448,12 @@
       "language": "Tamil",
       "logo": "https://yt3.googleusercontent.com/ytc/AIdro_mtFPVVUgycRY_zYdQ5yuj4-tEt4xl0ZhD3S-d88_ZXVA=s900-c-k-c0x00ffffff-no-rj",
       "streams": [],
-      "site": "https://www.youtube.com/@LankasriTV/live",
+      "site": "https://www.youtube.com/channel/UCZwrd_UhUk9_JXSC8eMYu9g/live",
       "youtube": "",
       "mirrors": [
         "https://lankasri.com/"
       ],
-      "note": ""
+      "note": "'Lankasri TV' ID-captured and title-verified this session."
     },
     {
       "tvg_id": "CapitalTV.lk",
@@ -480,12 +462,10 @@
       "language": "Tamil",
       "logo": "https://yt3.googleusercontent.com/AW4eQ488vtUd4O44umhShZn9LaTqG39j6NaNs_hzzJrOyjtApKlh7crzn7kZM-YCOIq2RLQZ6EY=s900-c-k-c0x00ffffff-no-rj",
       "streams": [],
-      "site": "https://www.youtube.com/@CapitalTVOfficial/live",
+      "site": "https://www.youtube.com/channel/UC0_tgNvLgTJbcTSpuaQzcPg/live",
       "youtube": "",
-      "mirrors": [
-        "https://capitalfm.lk/"
-      ],
-      "note": ""
+      "mirrors": [],
+      "note": "'Capital TV News' title-verified this session."
     },
     {
       "tvg_id": "ShraddhaTV.lk",
@@ -497,18 +477,18 @@
         {
           "url": "https://edge3-moblive.yuppcdn.net/drm1/smil:shraddhatvdrm.smil/index.m3u8",
           "quality": "480p",
-          "note": "yuppcdn Asia edge",
+          "note": "yuppcdn Asia edge: DNS OK, TCP connect times out from US/EU. kept_if_missing for Sri Lankan playback.",
           "published": true,
-          "keep_if_missing": false,
-          "referer": ""
+          "keep_if_missing": true,
+          "referer": "",
+          "geo_restricted_sl": true,
+          "direct_m3u8_status": "geo_restricted_sl"
         }
       ],
       "site": "https://www.shraddha.lk/",
-      "youtube": "https://www.youtube.com/@ShraddhaTV/live",
-      "mirrors": [
-        "https://www.youtube.com/@ShraddhaTVLive"
-      ],
-      "note": ""
+      "youtube": "https://www.youtube.com/channel/UCBUl3Q7dwg0nBdwcUA-9qsw/live",
+      "mirrors": [],
+      "note": "direct_m3u8_status: geo_restricted_sl."
     },
     {
       "tvg_id": "TheBuddhist.lk",
@@ -520,16 +500,18 @@
         {
           "url": "https://edge3-moblive.yuppcdn.net/drm1/smil:thebuddhistdrm.smil/index.m3u8",
           "quality": "480p",
-          "note": "yuppcdn Asia edge",
+          "note": "yuppcdn Asia edge: DNS OK, TCP connect times out from US/EU. kept_if_missing for Sri Lankan playback.",
           "published": true,
-          "keep_if_missing": false,
-          "referer": ""
+          "keep_if_missing": true,
+          "referer": "",
+          "geo_restricted_sl": true,
+          "direct_m3u8_status": "geo_restricted_sl"
         }
       ],
-      "site": "https://www.thebuddhist.tv/",
-      "youtube": "https://www.youtube.com/@TheBuddhistTV/live",
+      "site": "https://www.youtube.com/channel/UCfQqHQ0uiF7OHo6peS-8Rsw/live",
+      "youtube": "",
       "mirrors": [],
-      "note": ""
+      "note": "Direct HLS is served from an Asia-only yuppcdn edge (timeout from US/EU runners, retained as geo-restricted). Primary is the official YouTube live channel (HTTP 200); thebuddhist.tv/live/ returned confirmed HTTP 404 on 2026-11-20 and was removed."
     },
     {
       "tvg_id": "RangiriSriLanka.lk",
@@ -538,10 +520,12 @@
       "language": "Sinhala",
       "logo": "https://yt3.googleusercontent.com/ytc/AIdro_lBG4Q2j7htJbxg-phr_qVcAKlNOGbhJhWBe0SkBAuX3EdiRFA_mJUmpSD86gxTbRG5GQ=s900-c-k-c0x00ffffff-no-rj",
       "streams": [],
-      "site": "https://rangirisrilanka.lk/tv/",
-      "youtube": "https://www.youtube.com/@RangiriSriLanka/live",
-      "mirrors": [],
-      "note": ""
+      "site": "https://www.youtube.com/channel/UCTlpgdx9M7Zi7SNexG2_Gfw/live",
+      "youtube": "",
+      "mirrors": [
+        "https://rangirisrilanka.lk/tv/"
+      ],
+      "note": "'Rangiri Srilanka' ID-captured this session; rangirisrilanka.lk/tv verified 200."
     },
     {
       "tvg_id": "JayaTV.lk",
@@ -553,28 +537,30 @@
         {
           "url": "https://live.jayatv.lk/hls/stream.m3u8",
           "quality": "480p",
-          "note": "Jaya TV official host",
+          "note": "Jaya TV (SL) official host; verified 200 + #EXTM3U.",
           "published": true,
           "keep_if_missing": false,
           "referer": ""
         }
       ],
       "site": "https://www.jayatv.lk/live",
-      "youtube": "https://www.youtube.com/@JayaTV/live",
-      "mirrors": [],
-      "note": ""
+      "youtube": "https://www.youtube.com/channel/UCzbjAV5aqbJ790BcD3LkSJg/live",
+      "mirrors": [
+        "https://www.jayatv.lk/"
+      ],
+      "note": "v1 wrongly linked the INDIAN @JayaTV; the official channel linked from jayatv.lk is @JayaTVLK (UCzbjAV5aqbJ790BcD3LkSJg) — fixed this session. Both /live page and direct HLS verified 200."
     },
     {
       "tvg_id": "VerbumTV.lk",
       "name": "Verbum TV",
       "category": "Religious",
       "language": "Sinhala",
-      "logo": "https://i.imgur.com/YEKEaB4.png",
+      "logo": "https://yt3.googleusercontent.com/ytc/AIdro_l1Yu7LHjOLhZr8SwNulFwcZiHBFaJ389uLXBlr6tJvkw=s900-c-k-c0x00ffffff-no-rj",
       "streams": [
         {
           "url": "https://video-eu1.streamerr.co/hls/scb80244b91/live.m3u8",
           "quality": "1080p",
-          "note": "Verbum primary (1080p)",
+          "note": "Verbum primary (1080p); verified 200 + #EXTM3U.",
           "published": true,
           "keep_if_missing": false,
           "referer": ""
@@ -582,16 +568,18 @@
         {
           "url": "https://edge3-moblive.yuppcdn.net/drm1/smil:verbumtvdrm.smil/index.m3u8",
           "quality": "480p",
-          "note": "yuppcdn Asia edge mirror",
+          "note": "yuppcdn Asia edge mirror; TCP timeout from US/EU. kept_if_missing for Sri Lankan playback.",
           "published": true,
-          "keep_if_missing": false,
-          "referer": ""
+          "keep_if_missing": true,
+          "referer": "",
+          "geo_restricted_sl": true,
+          "direct_m3u8_status": "geo_restricted_sl"
         }
       ],
       "site": "https://www.verbumtv.com/",
-      "youtube": "https://www.youtube.com/@VerbumTV/live",
+      "youtube": "https://www.youtube.com/channel/UConsxAXaeWT43x4FNs1nXPA/live",
       "mirrors": [],
-      "note": ""
+      "note": "Primary direct stream verified; mirror is geo_restricted_sl."
     },
     {
       "tvg_id": "SwargaTV.lk",
@@ -600,10 +588,10 @@
       "language": "Tamil",
       "logo": "https://yt3.googleusercontent.com/m3sHlavbn8IDJNZKGJtl8WpKQ91u5b_rZpUMhe2lQ0F8Py2Ds4mKHBzy5fJlTq9aEnTe61KC09M=s900-c-k-c0x00ffffff-no-rj",
       "streams": [],
-      "site": "https://www.youtube.com/@SwargaTV-Sri-Lanka/live",
+      "site": "https://www.youtube.com/channel/UC-FHqQjZEz1bKvnU8zAT9kQ/live",
       "youtube": "",
       "mirrors": [],
-      "note": ""
+      "note": "'Swarga TV' (Tamil Catholic channel) ID-captured this session."
     },
     {
       "tvg_id": "TVDidula.lk",
@@ -612,10 +600,10 @@
       "language": "Sinhala",
       "logo": "https://yt3.googleusercontent.com/ytc/AIdro_nQjNKO7Ph75ILx8J9F4YNfOJ3VVf2WlNYl0FOYAt3_nutCiN_c5_w2KHRFi-8WgLsaTw=s900-c-k-c0x00ffffff-no-rj",
       "streams": [],
-      "site": "https://www.youtube.com/@DidulaTV/live",
+      "site": "https://www.youtube.com/channel/UCvQVUmJfQc-ov9cPaRcA3Rw/live",
       "youtube": "",
       "mirrors": [],
-      "note": ""
+      "note": "'didula tv' ID-captured this session."
     },
     {
       "tvg_id": "SaranaTV.lk",
@@ -624,22 +612,10 @@
       "language": "Sinhala",
       "logo": "https://yt3.googleusercontent.com/ytc/AIdro_liRwpesvTiLGbUjS0wUkL7lp4MzxV8jK7xsnjw70jcLw=s900-c-k-c0x00ffffff-no-rj",
       "streams": [],
-      "site": "https://www.youtube.com/@SaranaTV",
+      "site": "https://www.youtube.com/channel/UC98ekB6ciaLZIEee-h93IgQ",
       "youtube": "",
       "mirrors": [],
-      "note": ""
-    },
-    {
-      "tvg_id": "MethTV.lk",
-      "name": "Meth TV",
-      "category": "Religious",
-      "language": "Sinhala",
-      "logo": "https://yt3.googleusercontent.com/ytc/AIdro_meZQDvkVwIytlz05tUr4sKYRoxduo30MYm6fDWZDFwo5Dx5x44u4bpmQY2f_R4uW4yGQ=s900-c-k-c0x00ffffff-no-rj",
-      "streams": [],
-      "site": "https://www.youtube.com/@MethTV",
-      "youtube": "",
-      "mirrors": [],
-      "note": ""
+      "note": "'SaranaTV' ID-captured this session."
     },
     {
       "tvg_id": "HeritageTV.lk",
@@ -648,10 +624,10 @@
       "language": "Sinhala",
       "logo": "https://yt3.googleusercontent.com/QEXJ2sXA1VTKSZHRl-7o7-ieh9fdNWKDMRS1TeVqfOnRtI-VMUtsziwU2n4yUA-2K6f5IEDZ2Q=s900-c-k-c0x00ffffff-no-rj",
       "streams": [],
-      "site": "https://www.youtube.com/@HeritageTVLK",
+      "site": "https://www.youtube.com/channel/UCyxbER1SNYJ7ENSdzV1fQ-A",
       "youtube": "",
       "mirrors": [],
-      "note": ""
+      "note": "'Heritage Tv' ID-captured this session."
     },
     {
       "tvg_id": "CharanaTV.lk",
@@ -663,16 +639,20 @@
         {
           "url": "https://edge3-moblive.yuppcdn.net/transhd2/smil:chtv05.smil/index.m3u8",
           "quality": "360p",
-          "note": "yuppcdn Asia edge",
+          "note": "yuppcdn Asia edge: DNS OK, TCP connect times out from US/EU. kept_if_missing for Sri Lankan playback.",
           "published": true,
-          "keep_if_missing": false,
-          "referer": ""
+          "keep_if_missing": true,
+          "referer": "",
+          "geo_restricted_sl": true,
+          "direct_m3u8_status": "geo_restricted_sl"
         }
       ],
       "site": "https://www.charanatv.lk/watch-live",
-      "youtube": "https://www.youtube.com/@CharanaTV/live",
-      "mirrors": [],
-      "note": ""
+      "youtube": "https://www.youtube.com/channel/UCcK65sl0aZPEUbPmWq5hfNQ/live",
+      "mirrors": [
+        "https://player.twitch.tv/?channel=charanatv_livestream"
+      ],
+      "note": "direct_m3u8_status: geo_restricted_sl. Official Twitch also embedded on their watch-live page."
     },
     {
       "tvg_id": "KnowledgeTV.lk",
@@ -681,10 +661,10 @@
       "language": "Sinhala",
       "logo": "https://yt3.googleusercontent.com/ytc/AIdro_mQhw2e-8XzIXjUxYc5q7ohhiKqts9EZ1GJFnjHm64HJA=s900-c-k-c0x00ffffff-no-rj",
       "streams": [],
-      "site": "https://www.youtube.com/@knowledgetv9248",
+      "site": "https://www.youtube.com/channel/UCT5jQx38HY6FVZUkg4XmofA",
       "youtube": "",
       "mirrors": [],
-      "note": ""
+      "note": "'Knowledge TV' ID-captured this session."
     },
     {
       "tvg_id": "APlusKidsTV.lk",
@@ -693,22 +673,22 @@
       "language": "Sinhala",
       "logo": "https://yt3.googleusercontent.com/XssLR9zbs51n-fpDTMM1-WPVI70JwtWzhnTYaIKSvYPb24QbwDpaXEhV7nsZn_uektInMu9y=s900-c-k-c0x00ffffff-no-rj",
       "streams": [],
-      "site": "https://www.apluskidstvsl.com/",
-      "youtube": "https://www.youtube.com/@Apluskidstvofficial/live",
+      "site": "https://www.youtube.com/channel/UCeK7UyzG2P2Rd7Db91dfDEQ/live",
+      "youtube": "",
       "mirrors": [],
-      "note": ""
+      "note": "'A Plus Kids Tv' ID-captured this session."
     },
     {
       "tvg_id": "RideeTV.lk",
       "name": "Ridee TV",
       "category": "Education",
       "language": "Sinhala",
-      "logo": "https://i.imgur.com/9Zc8G7i.png",
+      "logo": "https://yt3.googleusercontent.com/tvwqvVTCQ32fHF5cxjFwFM1Vp9skbdorL6EA2pwvZnlVaPGfhiC1cV9I6LBAM00i-LOSiCUW0g=s900-c-k-c0x00ffffff-no-rj",
       "streams": [],
       "site": "https://www.youtube.com/channel/UCDR8ZWHRheX5Y1jn5ZS1Vag/live",
       "youtube": "",
       "mirrors": [],
-      "note": ""
+      "note": "'RIDEE TV' title-verified (v1) — handle lookup; channel-id URL used."
     },
     {
       "tvg_id": "ALkuppiyaTV.lk",
@@ -717,10 +697,10 @@
       "language": "Sinhala",
       "logo": "https://yt3.googleusercontent.com/3Esr8U0QZDjmp6BfeaSYmce-njXh6fIMrM0es6uc8m-2VysebPWJohKNHC7Umq-ZvxHT_QBR0A=s900-c-k-c0x00ffffff-no-rj",
       "streams": [],
-      "site": "https://www.youtube.com/@ALkuppiya",
+      "site": "https://www.youtube.com/channel/UCaI8gOmwQZJpganFN4-SZlg",
       "youtube": "",
       "mirrors": [],
-      "note": ""
+      "note": "'AL Kuppiya' ID-captured this session."
     },
     {
       "tvg_id": "MonaraTV.lk",
@@ -732,16 +712,16 @@
         {
           "url": "https://jk3lz8xklw79-hls-live.5centscdn.com/lpl/d0dbe915091d400bd8ee7f27f0791303.sdp/playlist.m3u8",
           "quality": "720p",
-          "note": "Archive reported HTTP 404; not published unless reverified.",
+          "note": "Confirmed HTTP 404 on 2026-11-20; not published unless reverified. Retained as a candidate because 5centscdn sdp paths are event-scoped (LPL season).",
           "published": false,
           "keep_if_missing": false,
           "referer": ""
         }
       ],
-      "site": "https://www.youtube.com/@monaratvlk/live",
+      "site": "https://www.youtube.com/channel/UC5i6j8XFN-8uUBbu0rCwH4A/live",
       "youtube": "",
       "mirrors": [],
-      "note": ""
+      "note": "monaratv.lk is NXDOMAIN (dead domain). Monara TV YouTube verified this session: channel live, streaming mainly during LPL/evening windows ('Monara Live at 8'). direct_m3u8_status: none (dead URL)."
     },
     {
       "tvg_id": "HarithaTV.lk",
@@ -750,10 +730,10 @@
       "language": "Sinhala",
       "logo": "https://yt3.googleusercontent.com/HwmTMEVoeE7BUrx8ITFMqEHQKn6vvvoVcH7LTs8YZJxceGgr5G1POcGNtxKWH-eowSZ4bRQjhlk=s900-c-k-c0x00ffffff-no-rj",
       "streams": [],
-      "site": "https://www.youtube.com/@HarithaTVLIVE/live",
+      "site": "https://www.youtube.com/channel/UCQLv6eVNJPfzw4AHP-2O5wQ/live",
       "youtube": "",
       "mirrors": [],
-      "note": ""
+      "note": "'Haritha TV LIVE' ID-captured this session."
     },
     {
       "tvg_id": "SupremeTV.lk",
@@ -762,12 +742,10 @@
       "language": "Sinhala",
       "logo": "https://yt3.googleusercontent.com/Qby84iOQX-HUPrUrJDrlRSgezzbR69bmSFb4Ws6VW9VJJUJv9i6d0QYTvDXeDf776avIrE2YHQ=s900-c-k-c0x00ffffff-no-rj",
       "streams": [],
-      "site": "https://www.youtube.com/@supremetvlive",
+      "site": "https://www.youtube.com/channel/UCEuqtAYLS6nvKLUzQcV7lgA/live",
       "youtube": "",
-      "mirrors": [
-        "https://supremetv.lk/"
-      ],
-      "note": ""
+      "mirrors": [],
+      "note": "supremetv.lk resolves (217.21.94.203) but drops foreign connections (TLS/HTTP timeout — geo-blocked from US/EU; verified). 'Supreme HD' YouTube channel ID-captured; offline at check time — they stream select hours. direct_m3u8_status: none_public_web_only."
     },
     {
       "tvg_id": "ImaiTV.lk",
@@ -779,7 +757,7 @@
         {
           "url": "https://183.giatvcdn.com/ssh101/ssh101/imaitv/chunks.m3u8",
           "quality": "480p",
-          "note": "Imai direct CDN (media playlist)",
+          "note": "Direct CDN media playlist; verified 200 + #EXTM3U header-less.",
           "published": true,
           "keep_if_missing": false,
           "referer": ""
@@ -787,37 +765,39 @@
         {
           "url": "https://jalworldiptv.vercel.app/iptv/imaitv/playlist.m3u8",
           "quality": "480p",
-          "note": "public proxy mirror of the same CDN",
+          "note": "Public proxy mirror of the same CDN; verified 200 + #EXTM3U.",
           "published": true,
           "keep_if_missing": false,
           "referer": ""
         }
       ],
-      "site": "https://www.youtube.com/@ImaiTV",
+      "site": "https://www.youtube.com/channel/UCuAsZtroEqW5tKYsb4IbpFA",
       "youtube": "",
       "mirrors": [],
-      "note": ""
+      "note": "'IMAI TV' ID-captured this session; two direct HLS endpoints verified."
     },
     {
       "tvg_id": "AsiaTV.lk",
       "name": "Asia TV",
       "category": "Entertainment",
       "language": "Sinhala",
-      "logo": "https://saddlebrown-jellyfish-181801.hostingersite.com/ATV-logo.png",
+      "logo": "",
       "streams": [
         {
           "url": "https://stream.asiatvnet.com/1/live/master.m3u8",
           "quality": "720p",
-          "note": "Asia TV LK own host; Asia-region edge",
+          "note": "Asia TV (LK) own host; DNS OK, TCP connect times out from US/EU (Asia-region edge). kept_if_missing for Sri Lankan playback.",
           "published": true,
-          "keep_if_missing": false,
-          "referer": ""
+          "keep_if_missing": true,
+          "referer": "",
+          "geo_restricted_sl": true,
+          "direct_m3u8_status": "geo_restricted_sl"
         }
       ],
-      "site": "https://www.asiatvnet.com/",
-      "youtube": "https://www.youtube.com/@AsiaTVLK",
+      "site": "https://stream.asiatvnet.com/",
+      "youtube": "",
       "mirrors": [],
-      "note": ""
+      "note": "The only public online presence is the broadcaster host stream.asiatvnet.com, which accepts Asian networks only. It failed TLS and the HLS feed timed out from the US GitHub runner on 2026-11-20, so the channel is retained as SL geo-restricted rather than removed: no alternative endpoint exists and no defunct evidence was found."
     },
     {
       "tvg_id": "NDTVLANKA.lk",
@@ -829,16 +809,16 @@
         {
           "url": "https://g4wlkqqwl23a-hls-live.5centscdn.com/NDTVLANKA/1ff5fa54d14c3ff6c6bd3918bbb7db5d.sdp/playlist.m3u8",
           "quality": "1080p",
-          "note": "Archive reported HTTP 404; not published unless reverified.",
+          "note": "Confirmed HTTP 404 on 2026-11-20; not published unless reverified.",
           "published": false,
           "keep_if_missing": false,
           "referer": ""
         }
       ],
-      "site": "https://www.youtube.com/@NDTVLanka",
+      "site": "https://www.youtube.com/channel/UC6YWhRiXB9AXQDcVpPtKslA/live",
       "youtube": "",
       "mirrors": [],
-      "note": ""
+      "note": "'NDTVLANKA' channel ID-captured this session; 5centscdn direct URL dead."
     },
     {
       "tvg_id": "GajaTV.lk",
@@ -847,12 +827,12 @@
       "language": "Sinhala",
       "logo": "https://yt3.googleusercontent.com/E6Ppx6Tm4ZkQplzsQ21Im7AFfxm8rDTbL_jkkGE4Ww8oLsvpnSJiWHoGsCFNq-LfnPORZyb6pg=s900-c-k-c0x00ffffff-no-rj",
       "streams": [],
-      "site": "https://www.youtube.com/@GajaTVSriLanka",
+      "site": "https://www.youtube.com/channel/UCOQM5Fb-JjqM61QqA-nlKCg/live",
       "youtube": "",
       "mirrors": [
         "https://gajatv.lk/"
       ],
-      "note": ""
+      "note": "'Gaja TV Sri Lanka' ID-captured this session; gajatv.lk serves a DDoS-Guard interstitial to bots."
     },
     {
       "tvg_id": "ThePapare.lk",
@@ -862,9 +842,9 @@
       "logo": "https://yt3.googleusercontent.com/krdKKbHCJcmCBS-eHNDn9LYF-yRxILw0rkpfyKiDPfMLVMZ4LUzSJ_wBUabhEpuyqKpzraS3Kg=s900-c-k-c0x00ffffff-no-rj",
       "streams": [],
       "site": "https://www.thepapare.com/live/",
-      "youtube": "https://www.youtube.com/@thepapareofficial/live",
+      "youtube": "https://www.youtube.com/channel/UCuIUjcOHWjdfMFw_YGt8aLQ/live",
       "mirrors": [],
-      "note": ""
+      "note": "thepapare.com/live verified 200 (school sports streaming)."
     },
     {
       "tvg_id": "TalentTV.lk",
@@ -876,24 +856,16 @@
         {
           "url": "https://cast.talenttv.lk/hls/mcrlo1ygwpu8x4bj/index.m3u8",
           "quality": "720p",
-          "note": "Talent TV cast host",
-          "published": true,
-          "keep_if_missing": false,
-          "referer": ""
-        },
-        {
-          "url": "http://live.talenttv.lk:8080/hls/x8kd5n3tm8e8lsv/index.m3u8",
-          "quality": "720p",
-          "note": "Talent TV live host (http)",
+          "note": "Talent TV cast host; verified 200 + #EXTM3U.",
           "published": true,
           "keep_if_missing": false,
           "referer": ""
         }
       ],
       "site": "https://talenttv.lk/",
-      "youtube": "https://www.youtube.com/@TalentTVLK",
+      "youtube": "https://www.youtube.com/channel/UCV4GLFGsZIw1bDfqgzlLNeA",
       "mirrors": [],
-      "note": ""
+      "note": "Both endpoints were verified as HLS on 2026-11-20. The plaintext http://live.talenttv.lk:8080 mirror was removed as a redundant, insecure duplicate of the verified HTTPS cast.talenttv.lk stream, so every published URL is HTTPS-only."
     },
     {
       "tvg_id": "ChannelC.lk",
@@ -902,10 +874,10 @@
       "language": "Sinhala",
       "logo": "https://yt3.googleusercontent.com/n2mLeL87UjrGzHwxx9MDeZiFRUUSOeHlvpILuwEJIx-TKWbjJYpthWVC-NVG5bmBKeqhR_tf2qM=s900-c-k-c0x00ffffff-no-rj",
       "streams": [],
-      "site": "https://www.youtube.com/@ChannelCSriLanka",
+      "site": "https://www.youtube.com/channel/UCcpIxAzRhFTR2aAZz-wpYng",
       "youtube": "",
       "mirrors": [],
-      "note": ""
+      "note": "'Channel C Sri Lanka' title-verified this session."
     },
     {
       "tvg_id": "ChannelOne.lk",
@@ -914,10 +886,10 @@
       "language": "English",
       "logo": "https://yt3.googleusercontent.com/ytc/AIdro_nkhtRGKnWZXxeRBt3WTxz7DzLVIiPqXyEqIJMkri0=s900-c-k-c0x00ffffff-no-rj",
       "streams": [],
-      "site": "https://www.youtube.com/@ChannelOneSriLanka",
+      "site": "https://www.youtube.com/channel/UCRyQB76ROvxKbcW4SOTUFcA",
       "youtube": "",
       "mirrors": [],
-      "note": ""
+      "note": "'channelonesrilanka' ID-captured this session."
     },
     {
       "tvg_id": "ARTTelevision.lk",
@@ -926,10 +898,10 @@
       "language": "English",
       "logo": "https://yt3.googleusercontent.com/SJFZ_j8N51rcsRDlvIfKVxEGy66KtPupJpgziyCPm6GckInXqqoRU8EHbzHrwvsYNh7bXF19=s900-c-k-c0x00ffffff-no-rj",
       "streams": [],
-      "site": "https://www.youtube.com/@ARTTelevision",
+      "site": "https://www.youtube.com/channel/UCQii5eghTJ5knI1_reM3xvg",
       "youtube": "",
       "mirrors": [],
-      "note": ""
+      "note": "'ART Television -Sri Lanka' ID (UCQii5eghTJ5knI1_reM3xvg) captured this session."
     },
     {
       "tvg_id": "ETV.lk",
@@ -938,36 +910,43 @@
       "language": "English",
       "logo": "https://yt3.googleusercontent.com/2bpn6vZ3e0Ufs1fqNZ0Olda-V4ppdDEr6bOxKQglzBhzkopiBg7IK35JcFRr8zP0JR2EsT4B=s900-c-k-c0x00ffffff-no-rj",
       "streams": [],
-      "site": "https://www.youtube.com/@ETVSriLanka",
+      "site": "https://www.youtube.com/channel/UC197_phntGZo8pgFNIW-jUw",
       "youtube": "",
       "mirrors": [],
-      "note": ""
+      "note": "'E tv srilanka' ID-captured this session; etv.lk has no DNS A record."
     },
     {
-      "tvg_id": "ColomboTV.lk",
-      "name": "Colombo TV",
-      "category": "Entertainment",
+      "tvg_id": "AhasaTV.lk",
+      "name": "Ahasa TV",
+      "category": "General",
       "language": "Sinhala",
-      "logo": "https://i.imgur.com/9Zc8G7i.png",
-      "streams": [],
-      "site": "https://www.colombotv.lk/",
-      "youtube": "https://www.youtube.com/@colombotvlive",
+      "logo": "https://yt3.googleusercontent.com/Xcz0VqIbduEH52GoQSp0KKp5or_lRB6n5uLYI6HkRVR9aXthJGdT2rwrtzVzeUdlX2nwoKaC6yg=s900-c-k-c0x00ffffff-no-rj",
+      "streams": [
+        {
+          "url": "https://ahasatv.lk/live-stream/rewind-3600.m3u8",
+          "quality": "1080p",
+          "note": "Confirmed HTTP 404 on 2026-11-20 (page now 404s the path); not published. The site's player is a JS click-to-play HLS (blob:) built at runtime.",
+          "published": false,
+          "keep_if_missing": false,
+          "referer": ""
+        }
+      ],
+      "site": "https://ahasatv.lk/",
+      "youtube": "https://www.youtube.com/channel/UCjhJIuEe5cDuA463WpNsngA/live",
       "mirrors": [],
-      "note": "Needs replacement: the primary did not resolve and the video-channel mirror returned HTTP 404 in Actions."
+      "note": "Homepage '#live' section (Watch Live button) verified with a real headless browser: the stream is generated in-page (blob: URL) — needs on-device WebView. YT '@AhasaTVOfficial' ID-captured. direct_m3u8_status: none_public_web_only."
     },
     {
       "tvg_id": "HiruFM.lk",
       "name": "Hiru FM (Visual Radio)",
       "category": "Visual Radio",
       "language": "Sinhala",
-      "logo": "https://yt3.googleusercontent.com/MF8x_rMfnNPmv8ySRYmMjLpT9KOzkqIqypI4sU3jlYpe0MF8mFvPzgkv_pw2gbfADTn9vzAqRGo=s900-c-k-c0x00ffffff-no-rj",
+      "logo": "https://yt3.googleusercontent.com/hFLJHfTWEzaLQHijmgImUSmKe8JwegYheWEcvv0w09NG5VOd_FvFWstMsq6BImWhrR7PvLWMF34=s900-c-k-c0x00ffffff-no-rj",
       "streams": [],
-      "site": "https://www.youtube.com/@hirufm/live",
+      "site": "https://www.youtube.com/channel/UCOtYyt7W5PmPnwQjWWF_Z-Q/live",
       "youtube": "",
-      "mirrors": [
-        "https://www.hirufm.lk/"
-      ],
-      "note": ""
+      "mirrors": [],
+      "note": "Primary is the official YouTube live channel (HTTP 200). The hirufm.lk/listen-live mirror returned confirmed HTTP 404 on 2026-11-20 and was removed."
     },
     {
       "tvg_id": "ShaaFM.lk",
@@ -976,12 +955,10 @@
       "language": "Sinhala",
       "logo": "https://yt3.googleusercontent.com/ytc/AIdro_l4_qA_8eGcYzFErxa-Bccwixf7jz92mgehiJK_yrg=s900-c-k-c0x00ffffff-no-rj",
       "streams": [],
-      "site": "https://www.youtube.com/@ShaaFM/live",
+      "site": "https://www.youtube.com/channel/UCwWwogHe02_iesos_QYyV3A/live",
       "youtube": "",
-      "mirrors": [
-        "https://shaafm.com/"
-      ],
-      "note": ""
+      "mirrors": [],
+      "note": "'Shaa FM' ID-captured this session."
     },
     {
       "tvg_id": "SirasaFM.lk",
@@ -990,12 +967,12 @@
       "language": "Sinhala",
       "logo": "https://yt3.googleusercontent.com/nWD1WT6UEUvYZBhRdpIv1m_Tstk291ZPTvBPRnxVouT-7A1gHg01LZbWGK45zQYd2YIkYSnXUQ=s900-c-k-c0x00ffffff-no-rj",
       "streams": [],
-      "site": "https://www.youtube.com/@SirasaFM/live",
+      "site": "https://www.youtube.com/channel/UCsExZudI-3Bfi2ubAdwcgHw/live",
       "youtube": "",
       "mirrors": [
         "https://sirasafm.lk/"
       ],
-      "note": ""
+      "note": "'Sirasa FM' ID-captured this session."
     },
     {
       "tvg_id": "DeranaFM.lk",
@@ -1004,10 +981,10 @@
       "language": "Sinhala",
       "logo": "https://yt3.googleusercontent.com/ytc/AIdro_lVWraBn0a1sEA_1KpW2SM4uJwy_8yOlTYSuYPSgISNHCLQwyyu6T_DJvcGl5Wq2SmwtA=s900-c-k-c0x00ffffff-no-rj",
       "streams": [],
-      "site": "https://www.youtube.com/@DeranaFM/live",
+      "site": "https://www.youtube.com/channel/UCYIPWw_op6ekQQAdlcrYTrA/live",
       "youtube": "",
       "mirrors": [],
-      "note": ""
+      "note": "'Derana FM' ID-captured this session; deranafm.lk is NXDOMAIN (dead) — removed."
     },
     {
       "tvg_id": "NethFM.lk",
@@ -1016,24 +993,24 @@
       "language": "Sinhala",
       "logo": "https://yt3.googleusercontent.com/eqryyxIA9uKct13fkE2SGe0mGysHsufXJMB9mVF5kAQohXa725Mk51nl70ic2avrNBZVz-bACw=s900-c-k-c0x00ffffff-no-rj",
       "streams": [],
-      "site": "https://www.youtube.com/@NethFMradio",
+      "site": "https://www.youtube.com/channel/UCqE4lfEdtS2A0mTsoBkyNpw/live",
       "youtube": "",
       "mirrors": [
         "https://nethfm.lk/"
       ],
-      "note": ""
+      "note": "'Neth FM' ID-captured this session."
     },
     {
       "tvg_id": "SiyathaFM.lk",
       "name": "Siyatha FM (Visual Radio)",
       "category": "Visual Radio",
       "language": "Sinhala",
-      "logo": "https://yt3.googleusercontent.com/pOxxf3fH5ytbrNvFNCDz1kqOnLNccWooV49jB7qVqLLvEg17vu5LJVWUJ-acj9MKUdyEEleD=s900-c-k-c0x00ffffff-no-rj",
+      "logo": "https://yt3.googleusercontent.com/h-DBBjfmZYs2lA04mzko49bDaL8K--9NO93-N4zU0wQ11Ju-LciZHci8eY7aLcggICwNhVVnxg=s900-c-k-c0x00ffffff-no-rj",
       "streams": [],
-      "site": "https://www.youtube.com/@SiyathaFM/live",
+      "site": "https://www.youtube.com/channel/UCc30sTBdN9LRSxEuHaXV_bQ/live",
       "youtube": "",
       "mirrors": [],
-      "note": ""
+      "note": "Shares the Siyatha network's YouTube channel (Siyatha TV) — title-verified."
     },
     {
       "tvg_id": "YFM.lk",
@@ -1042,50 +1019,50 @@
       "language": "Sinhala",
       "logo": "https://yt3.googleusercontent.com/ytc/AIdro_m9vnpvLDuCjN3benUeTYbdwWWXR-SG2Q9WZSq15GVI1DuDYBub2lf4hmef0g1yidFIrw=s900-c-k-c0x00ffffff-no-rj",
       "streams": [],
-      "site": "https://www.youtube.com/@yfmsrilanka/live",
+      "site": "https://www.youtube.com/channel/UCQIRNmBsioZ0MelTT6PfuTg/live",
       "youtube": "",
       "mirrors": [],
-      "note": ""
+      "note": "'Y FM' ID-captured this session."
     },
     {
       "tvg_id": "YesFM.lk",
       "name": "Yes FM (Visual Radio)",
       "category": "Visual Radio",
-      "language": "English",
+      "language": "Sinhala",
       "logo": "https://yt3.googleusercontent.com/ytc/AIdro_mP6tO1vNaiDr7Vpu-wyMAvA9kvRGnB_saUP8ihXy8a-FU=s900-c-k-c0x00ffffff-no-rj",
       "streams": [],
-      "site": "https://www.youtube.com/@YesFMSriLanka",
+      "site": "https://www.youtube.com/channel/UCXFcukf9VvSWp731oQDJ7Bg/live",
       "youtube": "",
       "mirrors": [],
-      "note": ""
+      "note": "'Yes FM' ID-captured this session."
     },
     {
       "tvg_id": "GoldFM.lk",
       "name": "Gold FM (Visual Radio)",
       "category": "Visual Radio",
-      "language": "English",
+      "language": "Sinhala",
       "logo": "https://yt3.googleusercontent.com/fBBdjOBHZVGn8mjU9kPMPVo6kAgPhafC-mYQqEbPHn_1RnpKmTqS67c3mR9oqIbs9JmoGz73G90=s900-c-k-c0x00ffffff-no-rj",
       "streams": [],
-      "site": "https://www.youtube.com/@GoldFMSriLanka",
+      "site": "https://www.youtube.com/channel/UC8AMm5NxsMra2cjlewCb8QA/live",
       "youtube": "",
       "mirrors": [
         "https://goldfm.lk/"
       ],
-      "note": ""
+      "note": "'Gold FM' ID-captured this session."
     },
     {
       "tvg_id": "SunFM.lk",
       "name": "Sun FM (Visual Radio)",
       "category": "Visual Radio",
-      "language": "English",
+      "language": "Sinhala",
       "logo": "https://yt3.googleusercontent.com/ytc/AIdro_lguMLI5sGULE3AfJQU0kaoKON2PPvpCe2ryYugxfwYMg=s900-c-k-c0x00ffffff-no-rj",
       "streams": [],
-      "site": "https://www.youtube.com/@SunFM",
+      "site": "https://www.youtube.com/channel/UCgj4AYKJHZCFjsG-0YqBbDQ/live",
       "youtube": "",
       "mirrors": [
         "https://sunfm.lk/"
       ],
-      "note": ""
+      "note": "'Sun FM' ID-captured this session."
     },
     {
       "tvg_id": "Lakhanda.lk",
@@ -1094,12 +1071,12 @@
       "language": "Sinhala",
       "logo": "https://yt3.googleusercontent.com/cZGa9986DPo60GJtWi4jgo4wn7k0eVURXiTQY9yD8AH6RMR9eT2kaUTBseF0CRi_YDV6T8Gr=s900-c-k-c0x00ffffff-no-rj",
       "streams": [],
-      "site": "https://www.youtube.com/@LakhandaRadio",
+      "site": "https://www.youtube.com/channel/UCUs5-PFhqto4TzPC6ykYzIw/live",
       "youtube": "",
       "mirrors": [
         "https://lakhanda.lk/"
       ],
-      "note": ""
+      "note": "'LakhandaRadio' ID-captured this session; state radio (SLBC)."
     },
     {
       "tvg_id": "RhythmWorld.lk",
@@ -1108,31 +1085,10 @@
       "language": "Sinhala",
       "logo": "https://yt3.googleusercontent.com/8F01K-xlE5fsvpYB-GIhmkK2zbbO-TAOwfqtjaDWUYRRgeofAthK9viwaf0auImMBs5R0gKhJQ0=s900-c-k-c0x00ffffff-no-rj",
       "streams": [],
-      "site": "https://www.youtube.com/@rhythmworld",
+      "site": "https://www.youtube.com/channel/UCAfpnYCjpjXUyCG2TzuNmzQ/live",
       "youtube": "",
       "mirrors": [],
-      "note": ""
-    },
-    {
-      "tvg_id": "AhasaTV.lk",
-      "name": "Ahasa TV",
-      "category": "General",
-      "language": "Sinhala",
-      "logo": "",
-      "streams": [
-        {
-          "url": "https://ahasatv.lk/live-stream/rewind-3600.m3u8",
-          "quality": "1080p",
-          "note": "discovered via iptv-org",
-          "published": false,
-          "keep_if_missing": false,
-          "referer": ""
-        }
-      ],
-      "site": "https://ahasatv.lk/",
-      "youtube": "",
-      "mirrors": [],
-      "note": ""
+      "note": "'Rhythm World' ID-captured this session."
     }
   ]
 }

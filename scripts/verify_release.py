@@ -2,20 +2,24 @@
 """Offline release checks. The updater's --dry-run handles the separate live sweep."""
 from collections import Counter
 from datetime import datetime
+import json
 import re
 import socket
 import subprocess
 import sys
+from tempfile import TemporaryDirectory
+from pathlib import Path
 import unittest
 from unittest.mock import Mock, patch
 
 import requests
 import yaml
 
-from update_index import (CATEGORIES, GENERATED, LANGUAGES, PLAYLISTS, RAW, ROOT, SITE_FILE,
-                          Endpoint, Result, build_index, classify_http, endpoint_inventory,
-                          load_catalog, load_json, probe, render_outputs, render_status,
-                          require, select_streams, stream_endpoint, url_ok)
+from update_index import (CATEGORIES, GENERATED, GEO_LABEL, GEO_VERDICTS, LANGUAGES, PLAYLISTS,
+                          RAW, ROOT, SITE_FILE, Endpoint, Result, build_index,
+                          classify_http, endpoint_inventory, load_catalog, load_json, probe,
+                          render_outputs, render_status, require, select_streams,
+                          stream_endpoint, stream_is_protected, url_ok)
 
 MAJORS = set('TVDerana AdaDerana24x7 SirasaTV TV1 Swarnavahini HiruTV Rupavahini ChannelEye '
              'NethraTV ITN VasanthamTV SiyathaTV ShakthiTV TNLTV SupremeTV MonaraTV CharanaTV '
@@ -69,6 +73,8 @@ def verify_files(channels):
     sites = load_json(ROOT / SITE_FILE)
     row = sites['rows']['live']
     require(MAJORS <= {c['tvg_id'].removesuffix('.lk') for c in channels}, 'required major channels missing')
+    require(all(c['site'].startswith('https://') for c in channels), 'non-TLS primary site URL')
+    require(all(not c['logo'] or c['logo'].startswith('https://') for c in channels), 'non-TLS logo URL')
     require(len(row) == len(channels) and set(sites['languages']) == set(LANGUAGES), 'sites coverage')
     require(sum(map(len, sites['languages'].values())) == len(row), 'site language partition')
     for entries in (row, *sites['languages'].values()):
@@ -91,7 +97,13 @@ def verify_files(channels):
         require((ROOT / name).read_text(encoding='utf-8') == expected, f'{name}: drift from master/generator')
     print(f'Gate 4: {len(selected)} matching streams per playlist across '
           f'{len({v[0].split("@")[0] for v in categories.values()})} channel IDs')
-    print(f'Gate 5: {len(channels)} catalog channels and {sum(len(c["streams"]) for c in channels)} candidates validated')
+    protected = [s for c in channels for s in c['streams'] if stream_is_protected(s)]
+    require(all(type(c['geo_restricted_sl']) is bool and type(c['web_only']) is bool
+                and isinstance(c['direct_m3u8_status'], str) for c in channels), 'V2 channel keys not normalized')
+    require(all(type(s['geo_restricted_sl']) is bool and isinstance(s['direct_m3u8_status'], str)
+                for c in channels for s in c['streams']), 'V2 stream keys not normalized')
+    print(f'Gate 5: {len(channels)} catalog channels and {sum(len(c["streams"]) for c in channels)} candidates '
+          f'validated; {len(protected)} geo-restricted/timeout streams protected from pruning')
     return selected
 
 
@@ -134,6 +146,20 @@ def verify_status(channels, selected):
     require(Counter(details) == expected, 'status log missing/extra endpoint rows')
     require(f'published site cards: **{len(channels)} / {len(channels)}**' in status
             and f'each** playlist: **{len(selected)}**' in status, 'status publication counts')
+    direct = len({c['name'] for c in channels if any(s['url'] in selected for s in c['streams'])})
+    require(f'Total direct IPTV channels in the **IPTV tab**: **{direct}**' in status,
+            'status IPTV tab count')
+    require(f'Total official live TV channels in the **Home / Live Sites tab**: **{len(channels)}**' in status,
+            'status sites tab count')
+    require('## Retained SL geo-restricted / timeout streams' in status and GEO_LABEL in status,
+            'status must label retained geo-restricted streams')
+    published = {s['url'] for c in channels for s in c['streams'] if s['url'] in selected}
+    geo_rows = re.findall(rf'^\| [^|]+ \| `([^`]+)` \| [^|]* \| ([a-z-]+) \| {re.escape(GEO_LABEL)} \|$',
+                          status, re.M)
+    require(all(url in published and verdict in GEO_VERDICTS for url, verdict in geo_rows),
+            'geo-restricted table must quote published streams and a geo verdict')
+    match = re.search(r'Retained geo-restricted / timeout streams: \*\*(\d+)\*\*', status)
+    require(match and int(match.group(1)) == len(geo_rows), 'geo-restricted count mismatch')
     timestamp = datetime.fromisoformat(status.splitlines()[2].split()[2])
     require(timestamp.strftime('%z') == '+0530', 'status time zone')
     for text in (readme, status):
@@ -220,6 +246,79 @@ class HealthTests(unittest.TestCase):
         report = render_status(channels, {stream.url}, results, 'test policy', '2026-11-20T12:00:00+05:30')
         self.assertIn('Published IPTV manifests verified this run: **1** across **1** channels.', report)
         self.assertIn('Primary site HTTP 200 responses: **1/1**;', report)
+
+    @staticmethod
+    def catalog_document(stream_extra=None, channel_extra=None):
+        stream = dict(url='https://streams.invalid/a.m3u8', quality='720p', note='probe',
+                      published=True, keep_if_missing=False, referer='')
+        stream.update(stream_extra or {})
+        channel = dict(tvg_id='Test.lk', name='Test TV', category='National', language='Sinhala',
+                       logo='', site='https://sites.invalid/live', youtube='',
+                       mirrors=['https://sites.invalid/mirror'], streams=[stream], note='')
+        channel.update(channel_extra or {})
+        return {'country': 'Sri Lanka', 'maintainer': 'dictationb1/srilanka-anantplay',
+                'channels': [channel]}
+
+    def write_catalog(self, data, tmp):
+        path = Path(tmp) / 'channels_master.json'
+        path.write_text(json.dumps(data), encoding='utf-8')
+        return Path(tmp)
+
+    def test_v2_optional_keys_roundtrip(self):
+        data = self.catalog_document(dict(geo_restricted_sl=True, direct_m3u8_status='geo_restricted_sl',
+                                 keep_if_missing=True),
+                            dict(geo_restricted_sl=True, web_only=False,
+                                 youtube_channel_id='UC' + 'a' * 22))
+        with TemporaryDirectory() as tmp:
+            channels = load_catalog(self.write_catalog(data, tmp))
+        stream = channels[0]['streams'][0]
+        self.assertTrue(stream['geo_restricted_sl'])
+        self.assertTrue(stream_is_protected(stream))
+        self.assertEqual(channels[0]['direct_m3u8_status'], '')
+        outputs = render_outputs(channels, {stream['url']})
+        self.assertIn(stream['url'], outputs[PLAYLISTS['category']])
+        self.assertIn('Test TV', outputs[SITE_FILE])
+
+    def test_v2_bad_vocabulary_and_unknown_keys_rejected(self):
+        for extra in ({'direct_m3u8_status': 'probably-fine'}, {'bogus_key': 1}):
+            with self.subTest(extra=extra), TemporaryDirectory() as tmp:
+                with self.assertRaises(ValueError):
+                    load_catalog(self.write_catalog(self.catalog_document(extra), tmp))
+        with TemporaryDirectory() as tmp:
+            with self.assertRaises(ValueError):
+                load_catalog(self.write_catalog(self.catalog_document(dict(geo_restricted_sl=True)), tmp))
+
+    def test_geo_flag_prevents_pruning_without_keep_flag(self):
+        geo = dict(self.streams[0], keep_if_missing=False, geo_restricted_sl=True,
+                   direct_m3u8_status='geo_restricted_sl', url='https://streams.invalid/geo.m3u8')
+        catalog = [{'tvg_id': 'Test.lk', 'name': 'Test TV', 'streams': [geo]}]
+        results = {stream_endpoint(geo): Result(404, 'missing'), **{k: v for k, v in self.results.items()}}
+        selected, _ = select_streams(catalog, results, {geo['url']})
+        self.assertIn(geo['url'], selected)
+        self.assertTrue(stream_is_protected(geo))
+
+    @patch('update_index.probe_once')
+    def test_retries_transient_outcomes_only(self, once):
+        endpoint = Endpoint('stream', 'https://streams.invalid/slow.m3u8')
+        once.side_effect = [Result(None, 'timeout'), Result(None, 'tls-error'), Result(200, 'manifest')]
+        result = probe(endpoint, 5, retries=2, connect_timeout=3, sleep=lambda _: None)
+        self.assertEqual((result.verdict, result.attempts, once.call_count), ('manifest', 3, 3))
+        once.reset_mock()
+        once.side_effect = [Result(404, 'missing')] * 3
+        result = probe(endpoint, 5, retries=3, sleep=lambda _: None)
+        self.assertEqual((result.verdict, result.attempts, once.call_count), ('missing', 1, 1))
+
+    def test_status_publishes_geo_retention_section(self):
+        site = 'https://sites.invalid/live'
+        channels = [dict(self.catalog[0], site=site, name='Test TV', youtube='', mirrors=[])]
+        stream = stream_endpoint(self.streams[0])
+        results = {stream: Result(None, 'timeout', attempts=3), Endpoint('site', site): Result(403, 'restricted')}
+        report = render_status(channels, {stream.url}, results, 'policy', '2026-11-20T12:00:00+05:30')
+        self.assertIn('## Retained SL geo-restricted / timeout streams', report)
+        self.assertIn(f'| {GEO_LABEL} |', report)
+        self.assertIn('Retained geo-restricted / timeout streams: **1**', report)
+        self.assertIn('Total official live TV channels in the **Home / Live Sites tab**: **1**', report)
+        self.assertIn('## Suggested primary site swaps', report)
 
     def test_individual_failure_geo_dns_and_manual_override(self):
         protected = next(s for s in self.streams if s['keep_if_missing'])
