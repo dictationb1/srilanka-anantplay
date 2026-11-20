@@ -1,17 +1,17 @@
 # Sri Lanka source health
 
-Run timestamp: 2026-11-20T21:47:50+05:30 (Sri Lanka Time, UTC+05:30)
+Run timestamp: 2026-11-21T05:09:52+05:30 (Sri Lanka Time, UTC+05:30)
 
 Index: `https://raw.githubusercontent.com/dictationb1/srilanka-anantplay/main/index.json`
 
 - Catalog channels / published site cards: **69 / 69**.
-- Published IPTV entries in **each** playlist: **18** across **15** channels.
-- Published IPTV manifests verified this run: **11** across **9** channels.
+- Published IPTV entries in **each** playlist: **16** across **14** channels.
+- Published IPTV manifests verified this run: **8** across **8** channels.
 - Primary site HTTP 200 responses: **68/69**; not a live-video playback test.
 - Unique probe targets by kind, URL and Referer: **200**.
-- Total direct IPTV channels in the **IPTV tab**: **15** (`srilanka_category.m3u` / `srilanka_language.m3u`).
+- Total direct IPTV channels in the **IPTV tab**: **14** (`srilanka_category.m3u` / `srilanka_language.m3u`).
 - Total official live TV channels in the **Home / Live Sites tab**: **69** (`srilanka_sites.json`).
-- Retained geo-restricted / timeout streams: **7** (listed below).
+- Retained geo-restricted / timeout streams: **6** (listed below).
 
 Safety guard passed: allowed individual HTTP 404/410 or non-HLS exclusions. DNS failures are reviewed, not auto-pruned.
 
@@ -25,7 +25,6 @@ These curated Sri Lankan feeds resolve, but this probe runner sits outside Sri L
 | Charana TV | `https://edge3-moblive.yuppcdn.net/transhd2/smil:chtv05.smil/index.m3u8` | — | timeout | SL Geo-Restricted / Timeout from US Runner (Retained) |
 | Shraddha TV | `https://edge3-moblive.yuppcdn.net/drm1/smil:shraddhatvdrm.smil/index.m3u8` | — | timeout | SL Geo-Restricted / Timeout from US Runner (Retained) |
 | Star Tamil | `https://edge4-moblive.yuppcdn.net/trans1sd/smil:strtml19.smil/playlist.m3u8?dvr=` | — | timeout | SL Geo-Restricted / Timeout from US Runner (Retained) |
-| Swarnavahini | `https://teledrama.ebc.lk/TTT/proxy.php` | 403 | restricted | SL Geo-Restricted / Timeout from US Runner (Retained) |
 | The Buddhist TV | `https://edge3-moblive.yuppcdn.net/drm1/smil:thebuddhistdrm.smil/index.m3u8` | — | timeout | SL Geo-Restricted / Timeout from US Runner (Retained) |
 | Verbum TV | `https://edge3-moblive.yuppcdn.net/drm1/smil:verbumtvdrm.smil/index.m3u8` | — | timeout | SL Geo-Restricted / Timeout from US Runner (Retained) |
 
@@ -43,12 +42,12 @@ Results reflect the probing network only. HTTP 403/451 can indicate geo or other
 | Target | Attempts | HTTP 200 | HTTP 403/451 | HTTP 404/410 | Other HTTP | No HTTP |
 |---|---:|---:|---:|---:|---:|---:|
 | raw | 5 | 5 | 0 | 0 | 0 | 0 |
-| stream | 21 | 11 | 1 | 1 | 0 | 8 |
-| site | 109 | 104 | 3 | 0 | 0 | 2 |
+| stream | 21 | 8 | 0 | 3 | 2 | 8 |
+| site | 109 | 106 | 2 | 0 | 0 | 1 |
 | logo | 65 | 65 | 0 | 0 | 0 | 0 |
-| all | 200 | 185 | 4 | 1 | 0 | 10 |
+| all | 200 | 184 | 2 | 3 | 2 | 9 |
 
-Verdict totals: manifest=11, missing=1, reachable=174, restricted=4, timeout=6, tls-error=4
+Verdict totals: manifest=8, missing=3, other-http=2, reachable=176, restricted=2, timeout=5, tls-error=4
 
 ## All probe results
 
@@ -124,10 +123,10 @@ Verdict totals: manifest=11, missing=1, reachable=174, restricted=4, timeout=6, 
 | raw | `https://raw.githubusercontent.com/dictationb1/srilanka-anantplay/main/srilanka_category.m3u` | 200 | reachable | HTTP only; content and playback not verified |
 | raw | `https://raw.githubusercontent.com/dictationb1/srilanka-anantplay/main/srilanka_language.m3u` | 200 | reachable | HTTP only; content and playback not verified |
 | raw | `https://raw.githubusercontent.com/dictationb1/srilanka-anantplay/main/srilanka_sites.json` | 200 | reachable | HTTP only; content and playback not verified |
-| site | `https://ahasatv.lk/` | 200 | reachable | HTTP only; content and playback not verified; 3 attempts |
+| site | `https://ahasatv.lk/` | 200 | reachable | HTTP only; content and playback not verified |
 | site | `https://athavantv.com/` | 200 | reachable | HTTP only; content and playback not verified |
 | site | `https://athavantv.com/live/new-stream.php?w=100%25&h=390` | 200 | reachable | HTTP only; content and playback not verified |
-| site | `https://channeleye.lk/rupavahini-live-webcast/` | — | timeout | 3 attempts |
+| site | `https://channeleye.lk/rupavahini-live-webcast/` | 200 | reachable | HTTP only; content and playback not verified |
 | site | `https://dammika.tulix.tv/iframe/plan1-a.php?s=slrc2&c=slrc2` | 200 | reachable | HTTP only; content and playback not verified |
 | site | `https://gajatv.lk/` | 200 | reachable | HTTP only; content and playback not verified |
 | site | `https://goldfm.lk/` | 200 | reachable | HTTP only; content and playback not verified |
@@ -137,7 +136,7 @@ Verdict totals: manifest=11, missing=1, reachable=174, restricted=4, timeout=6, 
 | site | `https://lankasri.com/` | 200 | reachable | HTTP only; content and playback not verified |
 | site | `https://live.sirasatv.lk/` | 403 | restricted | possible geo/access restriction; location not inferred |
 | site | `https://nethfm.lk/` | 200 | reachable | HTTP only; content and playback not verified |
-| site | `https://nethratv.lk/rupavahini-live-webcast/` | 200 | reachable | HTTP only; content and playback not verified; 2 attempts |
+| site | `https://nethratv.lk/rupavahini-live-webcast/` | 200 | reachable | HTTP only; content and playback not verified |
 | site | `https://player.twitch.tv/?channel=charanatv_livestream` | 200 | reachable | HTTP only; content and playback not verified |
 | site | `https://player.twitch.tv/?channel=newsfirstsl` | 200 | reachable | HTTP only; content and playback not verified |
 | site | `https://rangirisrilanka.lk/tv/` | 200 | reachable | HTTP only; content and playback not verified |
@@ -151,7 +150,7 @@ Verdict totals: manifest=11, missing=1, reachable=174, restricted=4, timeout=6, 
 | site | `https://talenttv.lk/` | 200 | reachable | HTTP only; content and playback not verified |
 | site | `https://tv.rupavahini.lk/rupavahini-live-webcast` | 200 | reachable | HTTP only; content and playback not verified |
 | site | `https://tv1.lk/` | 200 | reachable | HTTP only; content and playback not verified |
-| site | `https://www.adaderana.lk/` | 403 | restricted | possible geo/access restriction; location not inferred |
+| site | `https://www.adaderana.lk/` | 200 | reachable | HTTP only; content and playback not verified |
 | site | `https://www.charanatv.lk/watch-live` | 200 | reachable | HTTP only; content and playback not verified |
 | site | `https://www.derana.lk/live/index.php` | 200 | reachable | HTTP only; content and playback not verified |
 | site | `https://www.hirunews.lk/` | 200 | reachable | HTTP only; content and playback not verified |
@@ -161,7 +160,7 @@ Verdict totals: manifest=11, missing=1, reachable=174, restricted=4, timeout=6, 
 | site | `https://www.jayatv.lk/live` | 200 | reachable | HTTP only; content and playback not verified |
 | site | `https://www.newsfirst.lk/live` | 200 | reachable | HTTP only; content and playback not verified |
 | site | `https://www.parliament.lk/en/parliament-live/chamber-live` | 200 | reachable | HTTP only; content and playback not verified |
-| site | `https://www.rupavahini.lk/` | 200 | reachable | HTTP only; content and playback not verified; 3 attempts |
+| site | `https://www.rupavahini.lk/` | 200 | reachable | HTTP only; content and playback not verified |
 | site | `https://www.shraddha.lk/` | 200 | reachable | HTTP only; content and playback not verified |
 | site | `https://www.thepapare.com/live/` | 200 | reachable | HTTP only; content and playback not verified |
 | site | `https://www.verbumtv.com/` | 200 | reachable | HTTP only; content and playback not verified |
@@ -242,15 +241,15 @@ Verdict totals: manifest=11, missing=1, reachable=174, restricted=4, timeout=6, 
 | stream | `https://edge3-moblive.yuppcdn.net/transhd2/smil:chtv05.smil/index.m3u8` | — | timeout | 3 attempts; published |
 | stream | `https://edge4-moblive.yuppcdn.net/trans1sd/smil:strtml19.smil/playlist.m3u8?dvr=` | — | timeout | 3 attempts; published |
 | stream | `https://g4wlkqqwl23a-hls-live.5centscdn.com/NDTVLANKA/1ff5fa54d14c3ff6c6bd3918bbb7db5d.sdp/playlist.m3u8` | — | tls-error | 3 attempts; not published |
-| stream | `https://jalworldiptv.vercel.app/iptv/imaitv/playlist.m3u8` | 200 | manifest | published |
+| stream | `https://jalworldiptv.vercel.app/iptv/imaitv/playlist.m3u8` | 429 | other-http | 3 attempts; published |
 | stream | `https://jk3lz8xklw79-hls-live.5centscdn.com/lpl/d0dbe915091d400bd8ee7f27f0791303.sdp/playlist.m3u8` | — | tls-error | 3 attempts; not published |
-| stream | `https://live.jayatv.lk/hls/stream.m3u8` | 200 | manifest | 3 attempts; published |
+| stream | `https://live.jayatv.lk/hls/stream.m3u8` | 200 | manifest | published |
 | stream | `https://mumbai-edge.smartplaytv.in/ShakthiTV/index.m3u8` | 200 | manifest | published |
 | stream | `https://oj7lnxonyg82-hls-live.5centscdn.com/uks/24263a839810d2041a349baaeef36a79.sdp/playlist.m3u8` | 200 | manifest | published |
-| stream | `https://rpn.bozztv.com/slrclive/slrc/slrclive/index.m3u8` | 200 | manifest | published |
-| stream | `https://rpn.tulixcdn.com/slrclive/slrc/slrclive-mobile/index.m3u8` | 200 | manifest | published |
+| stream | `https://rpn.bozztv.com/slrclive/slrc/slrclive/index.m3u8` | 404 | missing | not published |
+| stream | `https://rpn.tulixcdn.com/slrclive/slrc/slrclive-mobile/index.m3u8` | 404 | missing | not published |
 | stream | `https://rtmp01.voaplus.com/hls/6x6ik312qk4grfxocfcv.m3u8` | 200 | manifest | published |
 | stream | `https://stream.asiatvnet.com/1/live/master.m3u8` | — | tls-error | 3 attempts; published |
-| stream | `https://teledrama.ebc.lk/TTT/proxy.php` | 403 | restricted | possible geo/access restriction; location not inferred; published; Referer `https://swarnavahini.lk/` |
+| stream | `https://teledrama.ebc.lk/TTT/proxy.php` | 521 | other-http | published; Referer `https://swarnavahini.lk/` |
 | stream | `https://tv.hiruhost.com:1936/8012/8012/playlist.m3u8` | 200 | manifest | published |
 | stream | `https://video-eu1.streamerr.co/hls/scb80244b91/live.m3u8` | 200 | manifest | published |
