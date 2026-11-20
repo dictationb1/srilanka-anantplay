@@ -1,6 +1,6 @@
 # Sri Lanka source health
 
-Run timestamp: 2026-11-20T20:15:04+05:30 (Sri Lanka Time, UTC+05:30)
+Run timestamp: 2026-11-20T20:16:34+05:30 (Sri Lanka Time, UTC+05:30)
 
 Index: `https://raw.githubusercontent.com/dictationb1/srilanka-anantplay/main/index.json`
 
@@ -8,7 +8,7 @@ Index: `https://raw.githubusercontent.com/dictationb1/srilanka-anantplay/main/in
 - Published IPTV entries in **each** playlist: **20** across **16** channels.
 - Published IPTV manifests verified this run: **0** across **0** channels.
 - Primary site HTTP 200 responses: **0/72**; not a live-video playback test.
-- Unique probe targets by kind, URL and Referer: **228**.
+- Unique probe targets by kind, URL and Referer: **220**.
 
 Safety guard active: no valid HLS manifests; retained all curated and previously published streams.
 
@@ -18,11 +18,11 @@ Results reflect the probing network only. HTTP 403/451 can indicate geo or other
 |---|---:|---:|---:|---:|---:|---:|
 | raw | 5 | 0 | 0 | 0 | 0 | 5 |
 | stream | 23 | 0 | 0 | 0 | 0 | 23 |
-| site | 134 | 0 | 0 | 0 | 0 | 134 |
+| site | 126 | 0 | 0 | 0 | 0 | 126 |
 | logo | 66 | 0 | 0 | 0 | 0 | 66 |
-| all | 228 | 0 | 0 | 0 | 0 | 228 |
+| all | 220 | 0 | 0 | 0 | 0 | 220 |
 
-Verdict totals: dns-not-found=8, network-error=1, tls-error=219
+Verdict totals: dns-not-found=1, network-error=1, tls-error=218
 
 ## All probe results
 
@@ -104,9 +104,7 @@ Verdict totals: dns-not-found=8, network-error=1, tls-error=219
 | site | `https://athavantv.com/live/new-stream.php` | — | tls-error |  |
 | site | `https://capitalfm.lk/` | — | tls-error |  |
 | site | `https://channeleye.lk/rupavahini-live-webcast/` | — | tls-error |  |
-| site | `https://channelone.lk/` | — | dns-not-found | resolver reported name not found; retry from another network |
 | site | `https://dammika.tulix.tv/iframe/plan1-a.php?s=slrc2&c=slrc2` | — | tls-error |  |
-| site | `https://deranafm.lk/listen-live` | — | dns-not-found | resolver reported name not found; retry from another network |
 | site | `https://gajatv.lk/` | — | tls-error |  |
 | site | `https://goldfm.lk/` | — | tls-error |  |
 | site | `https://ibctamil.com/` | — | tls-error |  |
@@ -115,23 +113,19 @@ Verdict totals: dns-not-found=8, network-error=1, tls-error=219
 | site | `https://lakhanda.lk/` | — | tls-error |  |
 | site | `https://lankasri.com/` | — | tls-error |  |
 | site | `https://live.sirasatv.lk/` | — | tls-error |  |
-| site | `https://liveatsrilanka.lk/` | — | dns-not-found | resolver reported name not found; retry from another network |
 | site | `https://nethfm.lk/` | — | tls-error |  |
 | site | `https://nethratv.lk/rupavahini-live-webcast/` | — | tls-error |  |
 | site | `https://rangirisrilanka.lk/tv/` | — | tls-error |  |
-| site | `https://rhythmworld.lk/` | — | dns-not-found | resolver reported name not found; retry from another network |
 | site | `https://shaafm.com/` | — | tls-error |  |
 | site | `https://shakthitv.lk/` | — | tls-error |  |
 | site | `https://shakthitv.lk/live/` | — | tls-error |  |
 | site | `https://sirasafm.lk/` | — | tls-error |  |
-| site | `https://siyatha.fm/` | — | dns-not-found | resolver reported name not found; retry from another network |
 | site | `https://siyathatv.lk/` | — | tls-error |  |
 | site | `https://siyathatv.lk/live/` | — | tls-error |  |
 | site | `https://sunfm.lk/` | — | tls-error |  |
 | site | `https://supremetv.lk/` | — | tls-error |  |
 | site | `https://swarnavahini.lk/` | — | tls-error |  |
 | site | `https://talenttv.lk/` | — | tls-error |  |
-| site | `https://tnl.lk/` | — | dns-not-found | resolver reported name not found; retry from another network |
 | site | `https://tnltv.lk/tv.html` | — | tls-error |  |
 | site | `https://tv.rupavahini.lk/rupavahini-live-webcast` | — | tls-error |  |
 | site | `https://tv1.lk/` | — | tls-error |  |
@@ -147,16 +141,14 @@ Verdict totals: dns-not-found=8, network-error=1, tls-error=219
 | site | `https://www.dantv.tv/index.php/73-dantv/live-tv/504-tamiloli` | — | tls-error |  |
 | site | `https://www.derana.lk/` | — | tls-error |  |
 | site | `https://www.derana.lk/live/index.php` | — | tls-error |  |
-| site | `https://www.hirufm.lk/listen-live` | — | tls-error |  |
+| site | `https://www.hirufm.lk/` | — | tls-error |  |
 | site | `https://www.hirutv.lk/` | — | tls-error |  |
 | site | `https://www.hirutv.lk/hirulive.php` | — | tls-error |  |
-| site | `https://www.hirutv.lk/hirunews/` | — | tls-error |  |
 | site | `https://www.jayatv.lk/live` | — | tls-error |  |
 | site | `https://www.newsfirst.lk/live` | — | tls-error |  |
 | site | `https://www.parliament.lk/en/parliament-live/chamber-live` | — | tls-error |  |
 | site | `https://www.rupavahini.lk/` | — | tls-error |  |
 | site | `https://www.shraddha.lk/` | — | tls-error |  |
-| site | `https://www.shraddha.lk/english/` | — | tls-error |  |
 | site | `https://www.sirasatv.lk/` | — | tls-error |  |
 | site | `https://www.thebuddhist.tv/` | — | tls-error |  |
 | site | `https://www.thepapare.com/live/` | — | tls-error |  |
@@ -200,6 +192,7 @@ Verdict totals: dns-not-found=8, network-error=1, tls-error=219
 | site | `https://www.youtube.com/@ShaaFM/live` | — | tls-error |  |
 | site | `https://www.youtube.com/@ShakthiTVOfficial/live` | — | tls-error |  |
 | site | `https://www.youtube.com/@ShraddhaTV/live` | — | tls-error |  |
+| site | `https://www.youtube.com/@ShraddhaTVLive` | — | tls-error |  |
 | site | `https://www.youtube.com/@SirasaFM/live` | — | tls-error |  |
 | site | `https://www.youtube.com/@SirasaTV/live` | — | tls-error |  |
 | site | `https://www.youtube.com/@SiyathaFM/live` | — | tls-error |  |
@@ -232,7 +225,6 @@ Verdict totals: dns-not-found=8, network-error=1, tls-error=219
 | site | `https://www.youtube.com/channel/UCgFK94EtfymL9AvhxQucaTw/live` | — | tls-error |  |
 | site | `https://www.youtube.com/channel/UChDLy_EdNeFmw54sQqWVjfg/live` | — | tls-error |  |
 | site | `https://www.youtube.com/embed/V534CC4o7aA` | — | tls-error |  |
-| site | `https://yesfm.lk/` | — | dns-not-found | resolver reported name not found; retry from another network |
 | stream | `http://live.talenttv.lk:8080/hls/x8kd5n3tm8e8lsv/index.m3u8` | — | network-error | ConnectionError; published |
 | stream | `https://183.giatvcdn.com/ssh101/ssh101/imaitv/chunks.m3u8` | — | tls-error | published |
 | stream | `https://ahasatv.lk/live-stream/rewind-3600.m3u8` | — | tls-error | not published |

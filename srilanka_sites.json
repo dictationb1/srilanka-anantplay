@@ -100,8 +100,7 @@
         "name": "Swarnavahini",
         "url": "https://swarnavahini.lk/",
         "mirrors": [
-          "https://www.youtube.com/channel/UCaIc6SgS90ud_RgMSC6hW_w/live",
-          "https://liveatsrilanka.lk/"
+          "https://www.youtube.com/channel/UCaIc6SgS90ud_RgMSC6hW_w/live"
         ],
         "tags": [
           "Sinhala",
@@ -147,8 +146,7 @@
         "name": "TNL TV",
         "url": "https://tnltv.lk/tv.html",
         "mirrors": [
-          "https://www.youtube.com/channel/UCgFK94EtfymL9AvhxQucaTw/live",
-          "https://tnl.lk/"
+          "https://www.youtube.com/channel/UCgFK94EtfymL9AvhxQucaTw/live"
         ],
         "tags": [
           "Sinhala",
@@ -264,9 +262,7 @@
       {
         "name": "Hiru News",
         "url": "https://www.youtube.com/channel/UC5II-XiFOAMHfqIcdH3JOXQ",
-        "mirrors": [
-          "https://www.hirutv.lk/hirunews/"
-        ],
+        "mirrors": [],
         "tags": [
           "Sinhala",
           "News"
@@ -448,7 +444,7 @@
         "url": "https://www.shraddha.lk/",
         "mirrors": [
           "https://www.youtube.com/@ShraddhaTV/live",
-          "https://www.shraddha.lk/english/"
+          "https://www.youtube.com/@ShraddhaTVLive"
         ],
         "tags": [
           "Sinhala",
@@ -796,9 +792,7 @@
       {
         "name": "Channel One (MBC)",
         "url": "https://www.youtube.com/@ChannelOneSriLanka",
-        "mirrors": [
-          "https://channelone.lk/"
-        ],
+        "mirrors": [],
         "tags": [
           "English"
         ],
@@ -850,7 +844,7 @@
         "name": "Hiru FM (Visual Radio)",
         "url": "https://www.youtube.com/@hirufm/live",
         "mirrors": [
-          "https://www.hirufm.lk/listen-live"
+          "https://www.hirufm.lk/"
         ],
         "tags": [
           "Sinhala",
@@ -894,9 +888,7 @@
       {
         "name": "Derana FM (Visual Radio)",
         "url": "https://www.youtube.com/@DeranaFM/live",
-        "mirrors": [
-          "https://deranafm.lk/listen-live"
-        ],
+        "mirrors": [],
         "tags": [
           "Sinhala",
           "Visual Radio"
@@ -924,9 +916,7 @@
       {
         "name": "Siyatha FM (Visual Radio)",
         "url": "https://www.youtube.com/@SiyathaFM/live",
-        "mirrors": [
-          "https://siyatha.fm/"
-        ],
+        "mirrors": [],
         "tags": [
           "Sinhala",
           "Visual Radio"
@@ -952,9 +942,7 @@
       {
         "name": "Yes FM (Visual Radio)",
         "url": "https://www.youtube.com/@YesFMSriLanka",
-        "mirrors": [
-          "https://yesfm.lk/"
-        ],
+        "mirrors": [],
         "tags": [
           "English",
           "Visual Radio"
@@ -1012,9 +1000,7 @@
       {
         "name": "Rhythm World (Visual Radio)",
         "url": "https://www.youtube.com/@rhythmworld",
-        "mirrors": [
-          "https://rhythmworld.lk/"
-        ],
+        "mirrors": [],
         "tags": [
           "Sinhala",
           "Visual Radio"
@@ -1140,8 +1126,7 @@
         "name": "Swarnavahini",
         "url": "https://swarnavahini.lk/",
         "mirrors": [
-          "https://www.youtube.com/channel/UCaIc6SgS90ud_RgMSC6hW_w/live",
-          "https://liveatsrilanka.lk/"
+          "https://www.youtube.com/channel/UCaIc6SgS90ud_RgMSC6hW_w/live"
         ],
         "tags": [
           "Sinhala",
@@ -1187,8 +1172,7 @@
         "name": "TNL TV",
         "url": "https://tnltv.lk/tv.html",
         "mirrors": [
-          "https://www.youtube.com/channel/UCgFK94EtfymL9AvhxQucaTw/live",
-          "https://tnl.lk/"
+          "https://www.youtube.com/channel/UCgFK94EtfymL9AvhxQucaTw/live"
         ],
         "tags": [
           "Sinhala",
@@ -1244,9 +1228,7 @@
       {
         "name": "Hiru News",
         "url": "https://www.youtube.com/channel/UC5II-XiFOAMHfqIcdH3JOXQ",
-        "mirrors": [
-          "https://www.hirutv.lk/hirunews/"
-        ],
+        "mirrors": [],
         "tags": [
           "Sinhala",
           "News"
@@ -1261,7 +1243,7 @@
         "url": "https://www.shraddha.lk/",
         "mirrors": [
           "https://www.youtube.com/@ShraddhaTV/live",
-          "https://www.shraddha.lk/english/"
+          "https://www.youtube.com/@ShraddhaTVLive"
         ],
         "tags": [
           "Sinhala",
@@ -1584,7 +1566,7 @@
         "name": "Hiru FM (Visual Radio)",
         "url": "https://www.youtube.com/@hirufm/live",
         "mirrors": [
-          "https://www.hirufm.lk/listen-live"
+          "https://www.hirufm.lk/"
         ],
         "tags": [
           "Sinhala",
@@ -1628,9 +1610,7 @@
       {
         "name": "Derana FM (Visual Radio)",
         "url": "https://www.youtube.com/@DeranaFM/live",
-        "mirrors": [
-          "https://deranafm.lk/listen-live"
-        ],
+        "mirrors": [],
         "tags": [
           "Sinhala",
           "Visual Radio"
@@ -1658,9 +1638,7 @@
       {
         "name": "Siyatha FM (Visual Radio)",
         "url": "https://www.youtube.com/@SiyathaFM/live",
-        "mirrors": [
-          "https://siyatha.fm/"
-        ],
+        "mirrors": [],
         "tags": [
           "Sinhala",
           "Visual Radio"
@@ -1701,9 +1679,7 @@
       {
         "name": "Rhythm World (Visual Radio)",
         "url": "https://www.youtube.com/@rhythmworld",
-        "mirrors": [
-          "https://rhythmworld.lk/"
-        ],
+        "mirrors": [],
         "tags": [
           "Sinhala",
           "Visual Radio"
@@ -2001,9 +1977,7 @@
       {
         "name": "Channel One (MBC)",
         "url": "https://www.youtube.com/@ChannelOneSriLanka",
-        "mirrors": [
-          "https://channelone.lk/"
-        ],
+        "mirrors": [],
         "tags": [
           "English"
         ],
@@ -2039,9 +2013,7 @@
       {
         "name": "Yes FM (Visual Radio)",
         "url": "https://www.youtube.com/@YesFMSriLanka",
-        "mirrors": [
-          "https://yesfm.lk/"
-        ],
+        "mirrors": [],
         "tags": [
           "English",
           "Visual Radio"

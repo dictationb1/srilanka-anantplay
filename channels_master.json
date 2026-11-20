@@ -196,9 +196,7 @@
       ],
       "site": "https://swarnavahini.lk/",
       "youtube": "https://www.youtube.com/channel/UCaIc6SgS90ud_RgMSC6hW_w/live",
-      "mirrors": [
-        "https://liveatsrilanka.lk/"
-      ],
+      "mirrors": [],
       "note": ""
     },
     {
@@ -268,9 +266,7 @@
       "streams": [],
       "site": "https://tnltv.lk/tv.html",
       "youtube": "https://www.youtube.com/channel/UCgFK94EtfymL9AvhxQucaTw/live",
-      "mirrors": [
-        "https://tnl.lk/"
-      ],
+      "mirrors": [],
       "note": ""
     },
     {
@@ -282,9 +278,7 @@
       "streams": [],
       "site": "https://www.youtube.com/channel/UC5II-XiFOAMHfqIcdH3JOXQ",
       "youtube": "",
-      "mirrors": [
-        "https://www.hirutv.lk/hirunews/"
-      ],
+      "mirrors": [],
       "note": ""
     },
     {
@@ -512,7 +506,7 @@
       "site": "https://www.shraddha.lk/",
       "youtube": "https://www.youtube.com/@ShraddhaTV/live",
       "mirrors": [
-        "https://www.shraddha.lk/english/"
+        "https://www.youtube.com/@ShraddhaTVLive"
       ],
       "note": ""
     },
@@ -922,9 +916,7 @@
       "streams": [],
       "site": "https://www.youtube.com/@ChannelOneSriLanka",
       "youtube": "",
-      "mirrors": [
-        "https://channelone.lk/"
-      ],
+      "mirrors": [],
       "note": ""
     },
     {
@@ -961,7 +953,7 @@
       "site": "https://www.colombotv.lk/",
       "youtube": "https://www.youtube.com/@colombotvlive",
       "mirrors": [],
-      "note": ""
+      "note": "Needs replacement: the primary did not resolve and the video-channel mirror returned HTTP 404 in Actions."
     },
     {
       "tvg_id": "HiruFM.lk",
@@ -973,7 +965,7 @@
       "site": "https://www.youtube.com/@hirufm/live",
       "youtube": "",
       "mirrors": [
-        "https://www.hirufm.lk/listen-live"
+        "https://www.hirufm.lk/"
       ],
       "note": ""
     },
@@ -1014,9 +1006,7 @@
       "streams": [],
       "site": "https://www.youtube.com/@DeranaFM/live",
       "youtube": "",
-      "mirrors": [
-        "https://deranafm.lk/listen-live"
-      ],
+      "mirrors": [],
       "note": ""
     },
     {
@@ -1042,9 +1032,7 @@
       "streams": [],
       "site": "https://www.youtube.com/@SiyathaFM/live",
       "youtube": "",
-      "mirrors": [
-        "https://siyatha.fm/"
-      ],
+      "mirrors": [],
       "note": ""
     },
     {
@@ -1068,9 +1056,7 @@
       "streams": [],
       "site": "https://www.youtube.com/@YesFMSriLanka",
       "youtube": "",
-      "mirrors": [
-        "https://yesfm.lk/"
-      ],
+      "mirrors": [],
       "note": ""
     },
     {
@@ -1124,9 +1110,7 @@
       "streams": [],
       "site": "https://www.youtube.com/@rhythmworld",
       "youtube": "",
-      "mirrors": [
-        "https://rhythmworld.lk/"
-      ],
+      "mirrors": [],
       "note": ""
     },
     {
