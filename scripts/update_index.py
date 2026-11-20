@@ -389,11 +389,12 @@ def render_status(channels, selected, results, policy, stamp):
                   'site is listed, and only when an official mirror answered HTTP 200 to this runner.', ''])
     if swaps:
         lines.extend(['| Channel | Current primary | Verified mirror | Primary verdict |', '|---|---|---|---|'])
-        lines.extend(f'| {c["name"]} | `{c["site"]}` | `{u}` | {r.verdict} {r.code or ""} |'
-                     for c, u, r in swaps)
+        lines.extend(f'| {c["name"]} | `{c["site"]}` | `{u}` | {r.verdict}'
+                     f'{" " + str(r.code) if r.code else ""} |' for c, u, r in swaps)
     if unswapped:
         lines.extend(['', '| Channel | Retained primary | Primary verdict | Action |', '|---|---|---|---|'])
-        lines.extend(f'| {c["name"]} | `{c["site"]}` | {r.verdict} {r.code or ""} | '
+        lines.extend(f'| {c["name"]} | `{c["site"]}` | {r.verdict}'
+                     f'{" " + str(r.code) if r.code else ""} | '
                      f'{GEO_LABEL}; no verified HTTP 200 alternative exists |' for c, r in unswapped)
     if not swaps and not unswapped:
         lines.append('No swap suggested: every primary that failed has no verified HTTP 200 mirror, '
