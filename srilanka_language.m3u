@@ -1,4 +1,8 @@
 #EXTM3U
+#EXTINF:-1 tvg-id="Rupavahini.lk@HD" tvg-name="Rupavahini" tvg-logo="https://yt3.googleusercontent.com/jpF0RFqbvtus458I7AwYPi76fBx49wZ8i2ta5nse6CpwEQX2JeGtQyTYNeWxBnVsU22bvwhWCQ=s900-c-k-c0x00ffffff-no-rj" group-title="Sinhala",Rupavahini
+https://rpn.bozztv.com/slrclive/slrc/slrclive/index.m3u8
+#EXTINF:-1 tvg-id="Rupavahini.lk@SD" tvg-name="Rupavahini" tvg-logo="https://yt3.googleusercontent.com/jpF0RFqbvtus458I7AwYPi76fBx49wZ8i2ta5nse6CpwEQX2JeGtQyTYNeWxBnVsU22bvwhWCQ=s900-c-k-c0x00ffffff-no-rj" group-title="Sinhala",Rupavahini (Mirror 1)
+https://rpn.tulixcdn.com/slrclive/slrc/slrclive-mobile/index.m3u8
 #EXTINF:-1 tvg-id="Swarnavahini.lk@SD" tvg-name="Swarnavahini" tvg-logo="https://yt3.googleusercontent.com/XFwaRLH3SoZwZgCQ3VwC1tkK_bpuP3cgmBDr-bVB6z2J3TAT2Klzi4SnF1uB7naAV2mYM6loRQ=s900-c-k-c0x00ffffff-no-rj" group-title="Sinhala",Swarnavahini
 #EXTVLCOPT:http-referrer=https://swarnavahini.lk/
 https://teledrama.ebc.lk/TTT/proxy.php
