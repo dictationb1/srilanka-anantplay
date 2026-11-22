@@ -1,6 +1,6 @@
 # Sri Lanka source health
 
-Run timestamp: 2026-11-22T10:23:17+05:30 (Sri Lanka Time, UTC+05:30)
+Run timestamp: 2026-11-22T19:29:27+05:30 (Sri Lanka Time, UTC+05:30)
 
 Index: `https://raw.githubusercontent.com/dictationb1/srilanka-anantplay/main/index.json`
 
@@ -11,7 +11,7 @@ Index: `https://raw.githubusercontent.com/dictationb1/srilanka-anantplay/main/in
 - Unique probe targets by kind, URL and Referer: **200**.
 - Total direct IPTV channels in the **IPTV tab**: **15** (`srilanka_category.m3u` / `srilanka_language.m3u`).
 - Total official live TV channels in the **Home / Live Sites tab**: **69** (`srilanka_sites.json`).
-- Retained geo-restricted / timeout streams: **7** (listed below).
+- Retained geo-restricted / timeout streams: **6** (listed below).
 
 Safety guard passed: allowed individual HTTP 404/410 or non-HLS exclusions. DNS failures are reviewed, not auto-pruned.
 
@@ -25,7 +25,6 @@ These curated Sri Lankan feeds resolve, but this probe runner sits outside Sri L
 | Charana TV | `https://edge3-moblive.yuppcdn.net/transhd2/smil:chtv05.smil/index.m3u8` | — | timeout | SL Geo-Restricted / Timeout from US Runner (Retained) |
 | Shraddha TV | `https://edge3-moblive.yuppcdn.net/drm1/smil:shraddhatvdrm.smil/index.m3u8` | — | timeout | SL Geo-Restricted / Timeout from US Runner (Retained) |
 | Star Tamil | `https://edge4-moblive.yuppcdn.net/trans1sd/smil:strtml19.smil/playlist.m3u8?dvr=` | — | timeout | SL Geo-Restricted / Timeout from US Runner (Retained) |
-| Swarnavahini | `https://teledrama.ebc.lk/TTT/proxy.php` | — | timeout | SL Geo-Restricted / Timeout from US Runner (Retained) |
 | The Buddhist TV | `https://edge3-moblive.yuppcdn.net/drm1/smil:thebuddhistdrm.smil/index.m3u8` | — | timeout | SL Geo-Restricted / Timeout from US Runner (Retained) |
 | Verbum TV | `https://edge3-moblive.yuppcdn.net/drm1/smil:verbumtvdrm.smil/index.m3u8` | — | timeout | SL Geo-Restricted / Timeout from US Runner (Retained) |
 
@@ -43,12 +42,12 @@ Results reflect the probing network only. HTTP 403/451 can indicate geo or other
 | Target | Attempts | HTTP 200 | HTTP 403/451 | HTTP 404/410 | Other HTTP | No HTTP |
 |---|---:|---:|---:|---:|---:|---:|
 | raw | 5 | 5 | 0 | 0 | 0 | 0 |
-| stream | 21 | 11 | 0 | 1 | 0 | 9 |
-| site | 109 | 106 | 2 | 0 | 0 | 1 |
+| stream | 21 | 11 | 0 | 1 | 1 | 8 |
+| site | 109 | 105 | 3 | 0 | 0 | 1 |
 | logo | 65 | 65 | 0 | 0 | 0 | 0 |
-| all | 200 | 187 | 2 | 1 | 0 | 10 |
+| all | 200 | 186 | 3 | 1 | 1 | 9 |
 
-Verdict totals: manifest=11, missing=1, reachable=176, restricted=2, timeout=6, tls-error=4
+Verdict totals: manifest=11, missing=1, other-http=1, reachable=175, restricted=3, timeout=5, tls-error=4
 
 ## All probe results
 
@@ -151,7 +150,7 @@ Verdict totals: manifest=11, missing=1, reachable=176, restricted=2, timeout=6, 
 | site | `https://talenttv.lk/` | 200 | reachable | HTTP only; content and playback not verified |
 | site | `https://tv.rupavahini.lk/rupavahini-live-webcast` | 200 | reachable | HTTP only; content and playback not verified |
 | site | `https://tv1.lk/` | 200 | reachable | HTTP only; content and playback not verified |
-| site | `https://www.adaderana.lk/` | 200 | reachable | HTTP only; content and playback not verified |
+| site | `https://www.adaderana.lk/` | 403 | restricted | possible geo/access restriction; location not inferred |
 | site | `https://www.charanatv.lk/watch-live` | 200 | reachable | HTTP only; content and playback not verified |
 | site | `https://www.derana.lk/live/index.php` | 200 | reachable | HTTP only; content and playback not verified |
 | site | `https://www.hirunews.lk/` | 200 | reachable | HTTP only; content and playback not verified |
@@ -251,6 +250,6 @@ Verdict totals: manifest=11, missing=1, reachable=176, restricted=2, timeout=6, 
 | stream | `https://rpn.tulixcdn.com/slrclive/slrc/slrclive-mobile/index.m3u8` | 200 | manifest | published |
 | stream | `https://rtmp01.voaplus.com/hls/6x6ik312qk4grfxocfcv.m3u8` | 200 | manifest | published |
 | stream | `https://stream.asiatvnet.com/1/live/master.m3u8` | — | tls-error | 3 attempts; published |
-| stream | `https://teledrama.ebc.lk/TTT/proxy.php` | — | timeout | 3 attempts; published; Referer `https://swarnavahini.lk/` |
+| stream | `https://teledrama.ebc.lk/TTT/proxy.php` | 521 | other-http | published; Referer `https://swarnavahini.lk/` |
 | stream | `https://tv.hiruhost.com:1936/8012/8012/playlist.m3u8` | 200 | manifest | published |
 | stream | `https://video-eu1.streamerr.co/hls/scb80244b91/live.m3u8` | 200 | manifest | published |
