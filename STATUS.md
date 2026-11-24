@@ -1,6 +1,6 @@
 # Sri Lanka source health
 
-Run timestamp: 2026-11-23T22:47:19+05:30 (Sri Lanka Time, UTC+05:30)
+Run timestamp: 2026-11-24T09:15:56+05:30 (Sri Lanka Time, UTC+05:30)
 
 Index: `https://raw.githubusercontent.com/dictationb1/srilanka-anantplay/main/index.json`
 
@@ -44,11 +44,11 @@ Results reflect the probing network only. HTTP 403/451 can indicate geo or other
 |---|---:|---:|---:|---:|---:|---:|
 | raw | 5 | 5 | 0 | 0 | 0 | 0 |
 | stream | 21 | 11 | 1 | 1 | 0 | 8 |
-| site | 109 | 102 | 3 | 0 | 3 | 1 |
+| site | 109 | 105 | 3 | 0 | 0 | 1 |
 | logo | 65 | 65 | 0 | 0 | 0 | 0 |
-| all | 200 | 183 | 4 | 1 | 3 | 9 |
+| all | 200 | 186 | 4 | 1 | 0 | 9 |
 
-Verdict totals: manifest=11, missing=1, other-http=3, reachable=172, restricted=4, timeout=5, tls-error=4
+Verdict totals: manifest=11, missing=1, reachable=175, restricted=4, timeout=5, tls-error=4
 
 ## All probe results
 
@@ -127,7 +127,7 @@ Verdict totals: manifest=11, missing=1, other-http=3, reachable=172, restricted=
 | site | `https://ahasatv.lk/` | 200 | reachable | HTTP only; content and playback not verified |
 | site | `https://athavantv.com/` | 200 | reachable | HTTP only; content and playback not verified |
 | site | `https://athavantv.com/live/new-stream.php?w=100%25&h=390` | 200 | reachable | HTTP only; content and playback not verified |
-| site | `https://channeleye.lk/rupavahini-live-webcast/` | 523 | other-http |  |
+| site | `https://channeleye.lk/rupavahini-live-webcast/` | 200 | reachable | HTTP only; content and playback not verified |
 | site | `https://dammika.tulix.tv/iframe/plan1-a.php?s=slrc2&c=slrc2` | 200 | reachable | HTTP only; content and playback not verified |
 | site | `https://gajatv.lk/` | 200 | reachable | HTTP only; content and playback not verified |
 | site | `https://goldfm.lk/` | 200 | reachable | HTTP only; content and playback not verified |
@@ -137,7 +137,7 @@ Verdict totals: manifest=11, missing=1, other-http=3, reachable=172, restricted=
 | site | `https://lankasri.com/` | 200 | reachable | HTTP only; content and playback not verified |
 | site | `https://live.sirasatv.lk/` | 403 | restricted | possible geo/access restriction; location not inferred |
 | site | `https://nethfm.lk/` | 200 | reachable | HTTP only; content and playback not verified |
-| site | `https://nethratv.lk/rupavahini-live-webcast/` | 523 | other-http |  |
+| site | `https://nethratv.lk/rupavahini-live-webcast/` | 200 | reachable | HTTP only; content and playback not verified |
 | site | `https://player.twitch.tv/?channel=charanatv_livestream` | 200 | reachable | HTTP only; content and playback not verified |
 | site | `https://player.twitch.tv/?channel=newsfirstsl` | 200 | reachable | HTTP only; content and playback not verified |
 | site | `https://rangirisrilanka.lk/tv/` | 200 | reachable | HTTP only; content and playback not verified |
@@ -161,7 +161,7 @@ Verdict totals: manifest=11, missing=1, other-http=3, reachable=172, restricted=
 | site | `https://www.jayatv.lk/live` | 200 | reachable | HTTP only; content and playback not verified |
 | site | `https://www.newsfirst.lk/live` | 200 | reachable | HTTP only; content and playback not verified |
 | site | `https://www.parliament.lk/en/parliament-live/chamber-live` | 200 | reachable | HTTP only; content and playback not verified |
-| site | `https://www.rupavahini.lk/` | 523 | other-http | 3 attempts |
+| site | `https://www.rupavahini.lk/` | 200 | reachable | HTTP only; content and playback not verified |
 | site | `https://www.shraddha.lk/` | 200 | reachable | HTTP only; content and playback not verified |
 | site | `https://www.thepapare.com/live/` | 200 | reachable | HTTP only; content and playback not verified |
 | site | `https://www.verbumtv.com/` | 200 | reachable | HTTP only; content and playback not verified |
@@ -234,7 +234,7 @@ Verdict totals: manifest=11, missing=1, other-http=3, reachable=172, restricted=
 | site | `https://www.youtube.com/channel/UCyxbER1SNYJ7ENSdzV1fQ-A` | 200 | reachable | HTTP only; content and playback not verified |
 | site | `https://www.youtube.com/channel/UCzbjAV5aqbJ790BcD3LkSJg/live` | 200 | reachable | HTTP only; content and playback not verified |
 | stream | `https://183.giatvcdn.com/ssh101/ssh101/imaitv/chunks.m3u8` | 200 | manifest | published |
-| stream | `https://ahasatv.lk/live-stream/rewind-3600.m3u8` | 404 | missing | 2 attempts; not published |
+| stream | `https://ahasatv.lk/live-stream/rewind-3600.m3u8` | 404 | missing | not published |
 | stream | `https://cast.talenttv.lk/hls/mcrlo1ygwpu8x4bj/index.m3u8` | 200 | manifest | published |
 | stream | `https://edge3-moblive.yuppcdn.net/drm1/smil:shraddhatvdrm.smil/index.m3u8` | — | timeout | 3 attempts; published |
 | stream | `https://edge3-moblive.yuppcdn.net/drm1/smil:thebuddhistdrm.smil/index.m3u8` | — | timeout | 3 attempts; published |
