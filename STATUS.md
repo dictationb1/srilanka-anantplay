@@ -1,6 +1,6 @@
 # Sri Lanka source health
 
-Run timestamp: 2026-11-24T22:25:40+05:30 (Sri Lanka Time, UTC+05:30)
+Run timestamp: 2026-11-25T07:23:47+05:30 (Sri Lanka Time, UTC+05:30)
 
 Index: `https://raw.githubusercontent.com/dictationb1/srilanka-anantplay/main/index.json`
 
@@ -44,11 +44,11 @@ Results reflect the probing network only. HTTP 403/451 can indicate geo or other
 |---|---:|---:|---:|---:|---:|---:|
 | raw | 5 | 5 | 0 | 0 | 0 | 0 |
 | stream | 21 | 11 | 1 | 1 | 0 | 8 |
-| site | 109 | 102 | 3 | 0 | 0 | 4 |
+| site | 109 | 105 | 3 | 0 | 0 | 1 |
 | logo | 65 | 65 | 0 | 0 | 0 | 0 |
-| all | 200 | 183 | 4 | 1 | 0 | 12 |
+| all | 200 | 186 | 4 | 1 | 0 | 9 |
 
-Verdict totals: manifest=11, missing=1, reachable=172, restricted=4, timeout=8, tls-error=4
+Verdict totals: manifest=11, missing=1, reachable=175, restricted=4, timeout=5, tls-error=4
 
 ## All probe results
 
@@ -130,7 +130,7 @@ Verdict totals: manifest=11, missing=1, reachable=172, restricted=4, timeout=8, 
 | site | `https://channeleye.lk/rupavahini-live-webcast/` | 200 | reachable | HTTP only; content and playback not verified |
 | site | `https://dammika.tulix.tv/iframe/plan1-a.php?s=slrc2&c=slrc2` | 200 | reachable | HTTP only; content and playback not verified |
 | site | `https://gajatv.lk/` | 200 | reachable | HTTP only; content and playback not verified |
-| site | `https://goldfm.lk/` | — | timeout | 3 attempts |
+| site | `https://goldfm.lk/` | 200 | reachable | HTTP only; content and playback not verified |
 | site | `https://ibctamil.com/` | 200 | reachable | HTTP only; content and playback not verified |
 | site | `https://itn.lk/live/` | 200 | reachable | HTTP only; content and playback not verified |
 | site | `https://lakhanda.lk/` | 200 | reachable | HTTP only; content and playback not verified |
@@ -146,7 +146,7 @@ Verdict totals: manifest=11, missing=1, reachable=172, restricted=4, timeout=8, 
 | site | `https://siyathatv.lk/` | 200 | reachable | HTTP only; content and playback not verified |
 | site | `https://siyathatv.lk/live/` | 200 | reachable | HTTP only; content and playback not verified |
 | site | `https://stream.asiatvnet.com/` | — | tls-error | 3 attempts |
-| site | `https://sunfm.lk/` | — | timeout | 3 attempts |
+| site | `https://sunfm.lk/` | 200 | reachable | HTTP only; content and playback not verified |
 | site | `https://swarnavahini.lk/` | 403 | restricted | possible geo/access restriction; location not inferred |
 | site | `https://talenttv.lk/` | 200 | reachable | HTTP only; content and playback not verified |
 | site | `https://tv.rupavahini.lk/rupavahini-live-webcast` | 200 | reachable | HTTP only; content and playback not verified |
@@ -154,7 +154,7 @@ Verdict totals: manifest=11, missing=1, reachable=172, restricted=4, timeout=8, 
 | site | `https://www.adaderana.lk/` | 403 | restricted | possible geo/access restriction; location not inferred |
 | site | `https://www.charanatv.lk/watch-live` | 200 | reachable | HTTP only; content and playback not verified |
 | site | `https://www.derana.lk/live/index.php` | 200 | reachable | HTTP only; content and playback not verified |
-| site | `https://www.hirunews.lk/` | — | timeout | 3 attempts |
+| site | `https://www.hirunews.lk/` | 200 | reachable | HTTP only; content and playback not verified |
 | site | `https://www.hirutv.lk/` | 200 | reachable | HTTP only; content and playback not verified |
 | site | `https://www.hirutv.lk/hirulive.php` | 200 | reachable | HTTP only; content and playback not verified |
 | site | `https://www.jayatv.lk/` | 200 | reachable | HTTP only; content and playback not verified |
