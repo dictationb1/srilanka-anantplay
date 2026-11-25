@@ -6,8 +6,6 @@ https://rpn.tulixcdn.com/slrclive/slrc/slrclive-mobile/index.m3u8
 #EXTINF:-1 tvg-id="Swarnavahini.lk@SD" tvg-name="Swarnavahini" tvg-logo="https://yt3.googleusercontent.com/XFwaRLH3SoZwZgCQ3VwC1tkK_bpuP3cgmBDr-bVB6z2J3TAT2Klzi4SnF1uB7naAV2mYM6loRQ=s900-c-k-c0x00ffffff-no-rj" group-title="Sinhala",Swarnavahini
 #EXTVLCOPT:http-referrer=https://swarnavahini.lk/
 https://teledrama.ebc.lk/TTT/proxy.php
-#EXTINF:-1 tvg-id="HiruTV.lk@SD" tvg-name="Hiru TV" tvg-logo="https://i.imgur.com/M66UqPB.png" group-title="Sinhala",Hiru TV
-https://tv.hiruhost.com:1936/8012/8012/playlist.m3u8
 #EXTINF:-1 tvg-id="SiyathaTV.lk@SD" tvg-name="Siyatha TV" tvg-logo="https://yt3.googleusercontent.com/h-DBBjfmZYs2lA04mzko49bDaL8K--9NO93-N4zU0wQ11Ju-LciZHci8eY7aLcggICwNhVVnxg=s900-c-k-c0x00ffffff-no-rj" group-title="Sinhala",Siyatha TV
 https://rtmp01.voaplus.com/hls/6x6ik312qk4grfxocfcv.m3u8
 #EXTINF:-1 tvg-id="ShraddhaTV.lk@SD" tvg-name="Shraddha TV" tvg-logo="https://i.imgur.com/sZ3fEMi.png" group-title="Sinhala",Shraddha TV
