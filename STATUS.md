@@ -1,15 +1,15 @@
 # Sri Lanka source health
 
-Run timestamp: 2026-11-26T07:00:52+05:30 (Sri Lanka Time, UTC+05:30)
+Run timestamp: 2026-11-26T21:49:09+05:30 (Sri Lanka Time, UTC+05:30)
 
 Index: `https://raw.githubusercontent.com/dictationb1/srilanka-anantplay/main/index.json`
 
 - Catalog channels / published site cards: **69 / 69**.
-- Published IPTV entries in **each** playlist: **18** across **15** channels.
-- Published IPTV manifests verified this run: **11** across **9** channels.
+- Published IPTV entries in **each** playlist: **17** across **14** channels.
+- Published IPTV manifests verified this run: **10** across **8** channels.
 - Primary site HTTP 200 responses: **68/69**; not a live-video playback test.
 - Unique probe targets by kind, URL and Referer: **200**.
-- Total direct IPTV channels in the **IPTV tab**: **15** (`srilanka_category.m3u` / `srilanka_language.m3u`).
+- Total direct IPTV channels in the **IPTV tab**: **14** (`srilanka_category.m3u` / `srilanka_language.m3u`).
 - Total official live TV channels in the **Home / Live Sites tab**: **69** (`srilanka_sites.json`).
 - Retained geo-restricted / timeout streams: **7** (listed below).
 
@@ -43,12 +43,12 @@ Results reflect the probing network only. HTTP 403/451 can indicate geo or other
 | Target | Attempts | HTTP 200 | HTTP 403/451 | HTTP 404/410 | Other HTTP | No HTTP |
 |---|---:|---:|---:|---:|---:|---:|
 | raw | 5 | 5 | 0 | 0 | 0 | 0 |
-| stream | 21 | 11 | 1 | 1 | 0 | 8 |
+| stream | 21 | 10 | 1 | 2 | 0 | 8 |
 | site | 109 | 105 | 3 | 0 | 0 | 1 |
 | logo | 65 | 65 | 0 | 0 | 0 | 0 |
-| all | 200 | 186 | 4 | 1 | 0 | 9 |
+| all | 200 | 185 | 4 | 2 | 0 | 9 |
 
-Verdict totals: manifest=11, missing=1, reachable=175, restricted=4, timeout=5, tls-error=4
+Verdict totals: manifest=10, missing=2, reachable=175, restricted=4, timeout=5, tls-error=4
 
 ## All probe results
 
@@ -245,7 +245,7 @@ Verdict totals: manifest=11, missing=1, reachable=175, restricted=4, timeout=5, 
 | stream | `https://jalworldiptv.vercel.app/iptv/imaitv/playlist.m3u8` | 200 | manifest | published |
 | stream | `https://jk3lz8xklw79-hls-live.5centscdn.com/lpl/d0dbe915091d400bd8ee7f27f0791303.sdp/playlist.m3u8` | — | tls-error | 3 attempts; not published |
 | stream | `https://live.jayatv.lk/hls/stream.m3u8` | 200 | manifest | published |
-| stream | `https://mumbai-edge.smartplaytv.in/ShakthiTV/index.m3u8` | 200 | manifest | published |
+| stream | `https://mumbai-edge.smartplaytv.in/ShakthiTV/index.m3u8` | 404 | missing | not published |
 | stream | `https://oj7lnxonyg82-hls-live.5centscdn.com/uks/24263a839810d2041a349baaeef36a79.sdp/playlist.m3u8` | 200 | manifest | published |
 | stream | `https://rpn.bozztv.com/slrclive/slrc/slrclive/index.m3u8` | 200 | manifest | published |
 | stream | `https://rpn.tulixcdn.com/slrclive/slrc/slrclive-mobile/index.m3u8` | 200 | manifest | published |
