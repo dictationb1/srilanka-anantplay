@@ -1,13 +1,13 @@
 # Sri Lanka source health
 
-Run timestamp: 2026-11-26T21:49:09+05:30 (Sri Lanka Time, UTC+05:30)
+Run timestamp: 2026-11-27T06:58:32+05:30 (Sri Lanka Time, UTC+05:30)
 
 Index: `https://raw.githubusercontent.com/dictationb1/srilanka-anantplay/main/index.json`
 
 - Catalog channels / published site cards: **69 / 69**.
 - Published IPTV entries in **each** playlist: **17** across **14** channels.
 - Published IPTV manifests verified this run: **10** across **8** channels.
-- Primary site HTTP 200 responses: **68/69**; not a live-video playback test.
+- Primary site HTTP 200 responses: **67/69**; not a live-video playback test.
 - Unique probe targets by kind, URL and Referer: **200**.
 - Total direct IPTV channels in the **IPTV tab**: **14** (`srilanka_category.m3u` / `srilanka_language.m3u`).
 - Total official live TV channels in the **Home / Live Sites tab**: **69** (`srilanka_sites.json`).
@@ -44,11 +44,11 @@ Results reflect the probing network only. HTTP 403/451 can indicate geo or other
 |---|---:|---:|---:|---:|---:|---:|
 | raw | 5 | 5 | 0 | 0 | 0 | 0 |
 | stream | 21 | 10 | 1 | 2 | 0 | 8 |
-| site | 109 | 105 | 3 | 0 | 0 | 1 |
+| site | 109 | 105 | 2 | 0 | 0 | 2 |
 | logo | 65 | 65 | 0 | 0 | 0 | 0 |
-| all | 200 | 185 | 4 | 2 | 0 | 9 |
+| all | 200 | 185 | 3 | 2 | 0 | 10 |
 
-Verdict totals: manifest=10, missing=2, reachable=175, restricted=4, timeout=5, tls-error=4
+Verdict totals: manifest=10, missing=2, reachable=175, restricted=3, timeout=6, tls-error=4
 
 ## All probe results
 
@@ -151,7 +151,7 @@ Verdict totals: manifest=10, missing=2, reachable=175, restricted=4, timeout=5, 
 | site | `https://talenttv.lk/` | 200 | reachable | HTTP only; content and playback not verified |
 | site | `https://tv.rupavahini.lk/rupavahini-live-webcast` | 200 | reachable | HTTP only; content and playback not verified |
 | site | `https://tv1.lk/` | 200 | reachable | HTTP only; content and playback not verified |
-| site | `https://www.adaderana.lk/` | 403 | restricted | possible geo/access restriction; location not inferred |
+| site | `https://www.adaderana.lk/` | 200 | reachable | HTTP only; content and playback not verified |
 | site | `https://www.charanatv.lk/watch-live` | 200 | reachable | HTTP only; content and playback not verified |
 | site | `https://www.derana.lk/live/index.php` | 200 | reachable | HTTP only; content and playback not verified |
 | site | `https://www.hirunews.lk/` | 200 | reachable | HTTP only; content and playback not verified |
@@ -162,7 +162,7 @@ Verdict totals: manifest=10, missing=2, reachable=175, restricted=4, timeout=5, 
 | site | `https://www.newsfirst.lk/live` | 200 | reachable | HTTP only; content and playback not verified |
 | site | `https://www.parliament.lk/en/parliament-live/chamber-live` | 200 | reachable | HTTP only; content and playback not verified |
 | site | `https://www.rupavahini.lk/` | 200 | reachable | HTTP only; content and playback not verified |
-| site | `https://www.shraddha.lk/` | 200 | reachable | HTTP only; content and playback not verified |
+| site | `https://www.shraddha.lk/` | — | timeout | 3 attempts |
 | site | `https://www.thepapare.com/live/` | 200 | reachable | HTTP only; content and playback not verified |
 | site | `https://www.verbumtv.com/` | 200 | reachable | HTTP only; content and playback not verified |
 | site | `https://www.youtube.com/@DANNEWSTV/live` | 200 | reachable | HTTP only; content and playback not verified |
