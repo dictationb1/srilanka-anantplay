@@ -26,6 +26,8 @@ https://edge3-moblive.yuppcdn.net/transhd2/smil:chtv05.smil/index.m3u8
 https://stream.asiatvnet.com/1/live/master.m3u8
 #EXTINF:-1 tvg-id="TalentTV.lk@HD" tvg-name="Talent TV" tvg-logo="https://yt3.googleusercontent.com/2ZbQt_SH32MbRjqxfa7nEdcrbSZ-QCIjze1DhL_08vvvy0OSBHRCLpwhJLGOxD87gM3WfUNi6g=s900-c-k-c0x00ffffff-no-rj" group-title="Sinhala",Talent TV
 https://cast.talenttv.lk/hls/mcrlo1ygwpu8x4bj/index.m3u8
+#EXTINF:-1 tvg-id="ShakthiTV.lk@SD" tvg-name="Shakthi TV" tvg-logo="https://i.imgur.com/RX6IwK8.png" group-title="Tamil",Shakthi TV
+https://mumbai-edge.smartplaytv.in/ShakthiTV/index.m3u8
 #EXTINF:-1 tvg-id="AthavanTV.lk@SD" tvg-name="Athavan TV" tvg-logo="https://yt3.googleusercontent.com/Tzpqe9Z9exXR0xWcULWhh_K_AvH7cAKdG3IRCXGfrBoF-oj2KHpc9qU4fI74mvOus2c4aOe-=s900-c-k-c0x00ffffff-no-rj" group-title="Tamil",Athavan TV
 https://oj7lnxonyg82-hls-live.5centscdn.com/uks/24263a839810d2041a349baaeef36a79.sdp/playlist.m3u8
 #EXTINF:-1 tvg-id="StarTamilTelevision.lk@SD" tvg-name="Star Tamil" tvg-logo="https://i.imgur.com/fjHcr9z.jpg" group-title="Tamil",Star Tamil
